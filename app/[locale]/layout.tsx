@@ -1,0 +1,26 @@
+import "./globals.css";
+import { hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/lib/i18n/routing";
+import { Providers } from "@/components/Providers";
+import { BaseLayoutProps } from "@/types/pageprops";
+import Header from "@/components/layout/Header";
+
+export default async function MainLayout({ children, params }: BaseLayoutProps) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  return (
+    <html lang={locale}>
+      <body>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
+      </body>
+    </html>
+  );
+}

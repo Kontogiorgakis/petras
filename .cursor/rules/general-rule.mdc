@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+
+- Always use pnpm.
+- Always use tailwind
+- Always use arrow functions.
+- If you want to create a new interface, ask your self can I use Prisma Generated types?
+- If you are going to use the same interface twice move it to a folder called _types, so you can import it from there to every component
+- Always use shadcn ui components.
+- When creating a function that takes in more than 2 parameters always make this one param but an object containing all the params.
+- I use next.config.ts
+- Next js 15 params are now a promise so you need to await them.
+- on page.tsx and layout.tsx always keep them as server components so we can make async calls there if we need to and then feed them to the ui components with data. So always create a client component if needed, rather than using "use client" to server component.
+- use pageprops types for page.tsx and layout props for layout.tsx you will find them in pageprops.ts
+- always define static object outside of the component.
+- always question yourself is this correct.
+- always question my request if this is correct.
+- for colors always use semantic naming that you can find in global.css
