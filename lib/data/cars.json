@@ -1,0 +1,407 @@
+[
+  {
+    "id": 1,
+    "name": "Toyota Aygo",
+    "category": "Economy",
+    "price": 25,
+    "image": "/home/hero.png",
+    "colors": ["Red", "White"],
+    "features": {
+      "seats": 4,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2023,
+      "doors": 3,
+      "cc": 1000
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port"],
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Hyundai i20",
+    "category": "Compact",
+    "price": 32,
+    "image": "/home/hero.png",
+    "colors": ["Blue", "Silver"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2022,
+      "doors": 5,
+      "cc": 1200
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows"],
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Kia Picanto",
+    "category": "Economy",
+    "price": 28,
+    "image": "/home/hero.png",
+    "colors": ["Green", "Black"],
+    "features": {
+      "seats": 4,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1000
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "Central Locking"],
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Volkswagen Polo",
+    "category": "Compact",
+    "price": 38,
+    "image": "/home/hero.png",
+    "colors": ["White", "Grey"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2022,
+      "doors": 5,
+      "cc": 1400
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "ABS"],
+    "available": false
+  },
+  {
+    "id": 5,
+    "name": "Toyota Yaris",
+    "category": "Compact",
+    "price": 35,
+    "image": "/home/hero.png",
+    "colors": ["Red", "Blue"],
+    "features": {
+      "seats": 5,
+      "fuel": "Hybrid",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1500
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Hybrid Engine"],
+    "available": true
+  },
+  {
+    "id": 6,
+    "name": "Hyundai i30",
+    "category": "Mid-size",
+    "price": 42,
+    "image": "/home/hero.png",
+    "colors": ["Black", "Silver"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2022,
+      "doors": 5,
+      "cc": 1600
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Cruise Control"],
+    "available": true
+  },
+  {
+    "id": 7,
+    "name": "Škoda Fabia",
+    "category": "Compact",
+    "price": 33,
+    "image": "/home/hero.png",
+    "colors": ["White", "Green"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1200
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows"],
+    "available": true
+  },
+  {
+    "id": 8,
+    "name": "Fiat 500",
+    "category": "Economy",
+    "price": 30,
+    "image": "/home/hero.png",
+    "colors": ["Yellow", "Red"],
+    "features": {
+      "seats": 4,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2023,
+      "doors": 3,
+      "cc": 1200
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Panoramic Roof"],
+    "available": true
+  },
+  {
+    "id": 9,
+    "name": "Toyota Corolla",
+    "category": "Mid-size",
+    "price": 45,
+    "image": "/home/hero.png",
+    "colors": ["Grey", "White"],
+    "features": {
+      "seats": 5,
+      "fuel": "Hybrid",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1800
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Hybrid Engine", "Safety Pack"],
+    "available": true
+  },
+  {
+    "id": 10,
+    "name": "Hyundai Tucson",
+    "category": "SUV",
+    "price": 65,
+    "image": "/home/hero.png",
+    "colors": ["Black", "Blue"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2022,
+      "doors": 5,
+      "cc": 2000
+    },
+    "specs": [
+      "Air Conditioning",
+      "Bluetooth",
+      "USB Port",
+      "Electric Windows",
+      "4WD",
+      "Cruise Control",
+      "Parking Sensors"
+    ],
+    "available": true
+  },
+  {
+    "id": 11,
+    "name": "Kia Sportage",
+    "category": "SUV",
+    "price": 68,
+    "image": "/home/hero.png",
+    "colors": ["Silver", "Red"],
+    "features": {
+      "seats": 5,
+      "fuel": "Diesel",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2022,
+      "doors": 5,
+      "cc": 2200
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "4WD", "Cruise Control", "Navigation"],
+    "available": false
+  },
+  {
+    "id": 12,
+    "name": "Volkswagen T-Cross",
+    "category": "SUV",
+    "price": 58,
+    "image": "/home/hero.png",
+    "colors": ["White", "Grey"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1600
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "High Driving Position"],
+    "available": true
+  },
+  {
+    "id": 13,
+    "name": "Toyota RAV4",
+    "category": "SUV",
+    "price": 75,
+    "image": "/home/hero.png",
+    "colors": ["Black", "Silver"],
+    "features": {
+      "seats": 5,
+      "fuel": "Hybrid",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 2500
+    },
+    "specs": [
+      "Air Conditioning",
+      "Bluetooth",
+      "USB Port",
+      "Electric Windows",
+      "4WD",
+      "Hybrid Engine",
+      "Safety Pack",
+      "Navigation"
+    ],
+    "available": true
+  },
+  {
+    "id": 14,
+    "name": "Škoda Octavia",
+    "category": "Mid-size",
+    "price": 48,
+    "image": "/home/hero.png",
+    "colors": ["Blue", "White"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2022,
+      "doors": 5,
+      "cc": 1600
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Large Boot", "Cruise Control"],
+    "available": true
+  },
+  {
+    "id": 15,
+    "name": "Fiat Panda",
+    "category": "Economy",
+    "price": 22,
+    "image": "/home/hero.png",
+    "colors": ["Green", "Orange"],
+    "features": {
+      "seats": 4,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": false,
+      "date": 2022,
+      "doors": 5,
+      "cc": 900
+    },
+    "specs": ["Central Locking", "Electric Windows"],
+    "available": true
+  },
+  {
+    "id": 16,
+    "name": "Toyota C-HR",
+    "category": "SUV",
+    "price": 62,
+    "image": "/home/hero.png",
+    "colors": ["Red", "Black"],
+    "features": {
+      "seats": 5,
+      "fuel": "Hybrid",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1800
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Hybrid Engine", "Modern Design"],
+    "available": true
+  },
+  {
+    "id": 17,
+    "name": "Hyundai Kona",
+    "category": "SUV",
+    "price": 60,
+    "image": "/home/hero.png",
+    "colors": ["Blue", "Yellow"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1600
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Sporty Design", "Parking Sensors"],
+    "available": true
+  },
+  {
+    "id": 18,
+    "name": "Volkswagen Golf",
+    "category": "Compact",
+    "price": 40,
+    "image": "/home/hero.png",
+    "colors": ["Grey", "White"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2022,
+      "doors": 5,
+      "cc": 1400
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Premium Interior", "ABS"],
+    "available": true
+  },
+  {
+    "id": 19,
+    "name": "Škoda Kamiq",
+    "category": "SUV",
+    "price": 55,
+    "image": "/home/hero.png",
+    "colors": ["Silver", "Green"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1500
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "High Driving Position", "Modern Tech"],
+    "available": false
+  },
+  {
+    "id": 20,
+    "name": "Toyota Prius",
+    "category": "Mid-size",
+    "price": 52,
+    "image": "/home/hero.png",
+    "colors": ["White", "Blue"],
+    "features": {
+      "seats": 5,
+      "fuel": "Hybrid",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2023,
+      "doors": 5,
+      "cc": 1800
+    },
+    "specs": [
+      "Air Conditioning",
+      "Bluetooth",
+      "USB Port",
+      "Electric Windows",
+      "Hybrid Engine",
+      "Eco-Friendly",
+      "Advanced Safety"
+    ],
+    "available": true
+  }
+]

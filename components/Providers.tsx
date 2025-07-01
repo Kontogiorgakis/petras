@@ -4,7 +4,7 @@ import { ThemeProvider } from "./ThemeProvider";
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <NextIntlClientProvider>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
         {children}
       </ThemeProvider>
     </NextIntlClientProvider>
