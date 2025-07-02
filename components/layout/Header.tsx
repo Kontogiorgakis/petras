@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { IoCarSport, IoImages, IoPeople, IoSend, IoMenu } from "react-icons/io5";
+import { IoCarSport, IoImages, IoPeople, IoSend, IoMenu, IoDocumentText } from "react-icons/io5";
 import { Button } from "../ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import LanguageSelector from "../LanguageSelector";
@@ -18,6 +18,11 @@ const NAVIGATION_ITEMS = [
     href: "/about-us",
     label: "About Us",
     icon: IoPeople,
+  },
+  {
+    href: "/terms-and-conditions",
+    label: "Terms and Conditions",
+    icon: IoDocumentText,
   },
 ] as const;
 
