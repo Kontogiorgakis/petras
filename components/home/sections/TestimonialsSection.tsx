@@ -30,8 +30,8 @@ export default function TestimonialsSection() {
             Say
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our valued customers have to say about their experience with
-            Petras Rental.
+            Don&apos;t just take our word for it. Here&apos;s what our valued customers have to say about their
+            experience with Petras Rental.
           </p>
         </div>
 

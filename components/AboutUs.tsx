@@ -1,20 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  IoCarSport,
-  IoShield,
-  IoTime,
-  IoStar,
-  IoCheckmarkCircle,
-  IoPeople,
-  IoHeart,
-  IoTrophy,
-  IoGlobe,
-  IoCall,
-  IoMail,
-  IoLocation,
-} from "react-icons/io5";
+import { IoCarSport, IoShield, IoStar, IoHeart, IoTrophy, IoGlobe, IoCall, IoMail, IoLocation } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 
 const COMPANY_VALUES = [
@@ -188,14 +175,14 @@ export default function AboutUs() {
             <p className="text-lg text-slate-600 leading-relaxed mb-12">
               Founded in 2008 by Petros Nikolakis, Petras Rental started with a simple mission: to help visitors
               discover the authentic beauty of Crete through reliable, comfortable transportation. What began as a small
-              family business with just five vehicles has grown into one of the island's most trusted car rental
+              family business with just five vehicles has grown into one of the island&apos;s most trusted car rental
               services.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Today, we're proud to offer a diverse fleet of over 50 premium vehicles, from compact city cars to
+              Today, we&apos;re proud to offer a diverse fleet of over 50 premium vehicles, from compact city cars to
               spacious SUVs, all maintained to the highest standards. Our local expertise and commitment to exceptional
-              service have made us the preferred choice for thousands of travelers seeking to explore Crete's stunning
-              landscapes, historic sites, and hidden gems.
+              service have made us the preferred choice for thousands of travelers seeking to explore Crete&apos;s
+              stunning landscapes, historic sites, and hidden gems.
             </p>
           </div>
         </div>

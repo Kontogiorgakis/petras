@@ -8,7 +8,6 @@ import {
   IoSettings,
   IoAccessibility,
   IoSnow,
-  IoCalendar,
   IoSpeedometer,
   IoCheckmarkCircle,
   IoFunnel,
@@ -22,7 +21,7 @@ const CATEGORIES = ["All", "Economy", "Compact", "Mid-size", "SUV"] as const;
 const TRANSMISSIONS = ["All", "Manual", "Automatic"] as const;
 const FUEL_TYPES = ["All", "Petrol", "Hybrid", "Diesel"] as const;
 const SEATS_OPTIONS = ["All", "4", "5"] as const;
-const DOORS_OPTIONS = ["All", "3", "5"] as const;
+
 const AC_OPTIONS = ["All", "Yes", "No"] as const;
 const YEAR_RANGES = [
   { label: "All", min: 0, max: Infinity },

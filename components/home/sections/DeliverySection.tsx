@@ -199,7 +199,7 @@ export default function DeliverySection() {
 
                 <div className="max-w-3xl mx-auto space-y-3">
                   <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Don't see your location above? No problem! We deliver anywhere across Crete.
+                    Don&apos;t see your location above? No problem! We deliver anywhere across Crete.
                   </p>
                   <p className="text-base text-muted-foreground/80">
                     From remote beaches to mountain villages, our team will bring your perfect rental car directly to

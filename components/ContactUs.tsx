@@ -2,20 +2,7 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
-import {
-  IoCarSport,
-  IoCall,
-  IoMail,
-  IoLocation,
-  IoTime,
-  IoSend,
-  IoCheckmarkCircle,
-  IoGlobe,
-  IoLogoWhatsapp,
-  IoLogoFacebook,
-  IoLogoInstagram,
-} from "react-icons/io5";
+import { IoCall, IoMail, IoLocation, IoTime, IoSend, IoLogoWhatsapp } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 
 // Dynamic import for the map component to avoid SSR issues

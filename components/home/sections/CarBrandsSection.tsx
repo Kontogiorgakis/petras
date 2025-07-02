@@ -39,7 +39,7 @@ export default function CarBrandsSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We partner with the world's leading automotive manufacturers to bring you the finest rental experience
+            We partner with the world&apos;s leading automotive manufacturers to bring you the finest rental experience
           </p>
         </div>
 

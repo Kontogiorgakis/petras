@@ -141,7 +141,7 @@ const TestimonialsCarousel = () => {
 
                   {/* Content */}
                   <div className="relative flex-1">
-                    <p className="text-foreground/90 leading-relaxed text-base">"{testimonial.text}"</p>
+                    <p className="text-foreground/90 leading-relaxed text-base">&ldquo;{testimonial.text}&rdquo;</p>
                   </div>
                 </div>
               </div>

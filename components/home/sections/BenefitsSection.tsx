@@ -77,7 +77,7 @@ export default function BenefitsSection() {
               {/* Overlay content */}
               <div className="absolute bottom-6 left-6 text-white">
                 <h3 className="text-2xl font-bold mb-2">Discover Crete</h3>
-                <p className="text-white/90">Explore the island's hidden gems</p>
+                <p className="text-white/90">Explore the island&apos;s hidden gems</p>
               </div>
             </div>
 

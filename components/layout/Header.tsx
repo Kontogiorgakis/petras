@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { IoCarSport, IoImages, IoPeople, IoSend, IoMenu, IoDocumentText } from "react-icons/io5";
+import { IoCarSport, IoPeople, IoSend, IoMenu, IoDocumentText } from "react-icons/io5";
 import { Button } from "../ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import LanguageSelector from "../LanguageSelector";
@@ -48,7 +48,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo and Brand */}
           <div className="flex items-center gap-3">
-            <img src="/logo/car.svg" height={70} alt="logo" className="h-[70px] w-auto" />
+            <img
+              src="/logo/car.svg"
+              height={70}
+              alt="logo"
+              className="h-[70px] w-auto"
+              style={{ height: "70px", width: "auto" }}
+            />
             <Link href="/" className="text-3xl font-bold text-foreground hover:text-primary transition-colors">
               Petras Rental
             </Link>
