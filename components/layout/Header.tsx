@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { IoCarSport, IoPeople, IoSend, IoMenu, IoDocumentText, IoStar } from "react-icons/io5";
+import { IoCarSport, IoPeople, IoSend, IoMenu, IoDocumentText } from "react-icons/io5";
 import { Button } from "../ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import LanguageSelector from "../LanguageSelector";
@@ -55,12 +56,12 @@ const Header = () => {
           <div className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-[#256bae]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <img
+              <Image
                 src="/logo/car.svg"
                 height={70}
+                width={70}
                 alt="logo"
                 className="relative h-[70px] w-auto transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
-                style={{ height: "70px", width: "auto" }}
               />
             </div>
             <Link href="/" className="relative">

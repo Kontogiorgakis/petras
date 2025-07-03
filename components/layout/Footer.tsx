@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   IoCarSport,
   IoCallSharp,
@@ -56,12 +57,12 @@ export const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <img
+                <Image
                   src="/logo/car.svg"
                   height={50}
+                  width={50}
                   alt="Petras Rental Logo"
                   className="h-[50px] w-auto"
-                  style={{ height: "50px", width: "auto" }}
                 />
                 <span className="text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                   Petras Rental
