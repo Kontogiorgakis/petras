@@ -4,7 +4,6 @@ import DeliverySection from "@/components/home/sections/DeliverySection";
 import CarBrandsSection from "@/components/home/sections/CarBrandsSection";
 import ServicesSection from "@/components/home/sections/ServicesSection";
 import TestimonialsSection from "@/components/home/sections/TestimonialsSection";
-import BenefitsSection from "@/components/home/sections/BenefitsSection";
 import CTASection from "@/components/home/sections/CTASection";
 
 export default function HomePage() {
