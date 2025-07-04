@@ -2,12 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import { IoCarSport, IoPeople, IoSend, IoMenu, IoDocumentText } from "react-icons/io5";
+import ReactCountryFlag from "react-country-flag";
 import { Button } from "../ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
-import LanguageSelector from "../LanguageSelector";
+import Image from "next/image";
 
 const NAVIGATION_ITEMS = [
   {
@@ -27,13 +28,29 @@ const NAVIGATION_ITEMS = [
   },
 ] as const;
 
+const LANGUAGES = [
+  { code: "en", name: "English", countryCode: "US" },
+  { code: "el", name: "Ελληνικά", countryCode: "GR" },
+] as const;
+
 const Header = () => {
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const currentLanguage = LANGUAGES.find((lang) => lang.code === locale) || LANGUAGES[0];
+
+  const handleLanguageChange = (langCode: string) => {
+    const segments = pathname.split("/");
+    segments[1] = langCode;
+    const newPath = segments.join("/");
+    router.push(newPath);
+  };
 
   const handleContactClick = () => {
     router.push("/contact-us");
@@ -46,26 +63,26 @@ const Header = () => {
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
         {/* Floating background elements */}
-        <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute top-0 right-1/4 w-24 h-24 bg-gradient-to-br from-[#256bae]/10 to-primary/10 rounded-full blur-2xl opacity-40"></div>
+        <div className="absolute top-0 left-1/4 w-24 h-24 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute top-0 right-1/4 w-20 h-20 bg-gradient-to-br from-[#256bae]/10 to-primary/10 rounded-full blur-2xl opacity-40"></div>
       </div>
 
-      <div className="relative container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="relative container mx-auto px-4 lg:px-6">
+        <div className="flex items-center justify-between h-16">
           {/* Enhanced Logo and Brand */}
-          <div className="flex items-center gap-3 group">
+          <div className="flex items-center gap-2 group">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-[#256bae]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <Image
                 src="/logo/car.svg"
-                height={70}
-                width={70}
+                height={56}
                 alt="logo"
-                className="relative h-[70px] w-auto transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
+                className="relative h-[56px] w-auto transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
+                style={{ height: "56px", width: "auto" }}
               />
             </div>
             <Link href="/" className="relative">
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent hover:from-primary hover:to-[#256bae] transition-all duration-500 transform hover:scale-105">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent hover:from-primary hover:to-[#256bae] transition-all duration-500 transform hover:scale-105">
                 Petras Rental
               </h1>
               {/* Subtle glow effect */}
@@ -74,19 +91,19 @@ const Header = () => {
           </div>
 
           {/* Enhanced Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            <ul className="flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
+            <ul className="flex items-center gap-4">
               {NAVIGATION_ITEMS.map((item) => {
                 const IconComponent = item.icon;
                 return (
                   <li key={item.href}>
                     <Link href={item.href} className="group relative">
-                      <div className="flex items-center gap-2 text-lg font-semibold text-foreground/90 hover:text-primary transition-all duration-300 transform hover:scale-105">
+                      <div className="flex items-center gap-2 text-base font-semibold text-foreground/90 hover:text-primary transition-all duration-300 transform hover:scale-105">
                         {/* Icon with gradient background */}
-                        <div className="relative p-2 rounded-xl bg-gradient-to-r from-muted/50 to-muted/30 group-hover:from-primary/15 group-hover:to-[#256bae]/15 transition-all duration-300 group-hover:scale-110">
-                          <IconComponent className="text-xl group-hover:text-primary transition-colors duration-300" />
+                        <div className="relative p-1.5 rounded-lg bg-gradient-to-r from-muted/50 to-muted/30 group-hover:from-primary/15 group-hover:to-[#256bae]/15 transition-all duration-300 group-hover:scale-110">
+                          <IconComponent className="text-lg group-hover:text-primary transition-colors duration-300" />
                           {/* Icon glow effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-[#256bae]/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-[#256bae]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></div>
                         </div>
                         <span className="relative">
                           {item.label}
@@ -102,35 +119,60 @@ const Header = () => {
               })}
             </ul>
 
-            {/* Enhanced Language Selector */}
+            {/* Flag Icons Language Selector */}
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-[#256bae]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
-              <div className="relative">
-                <LanguageSelector />
-              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="relative h-8 w-8 rounded-full bg-gradient-to-r from-muted/50 to-muted/30 hover:from-primary/15 hover:to-[#256bae]/15 border border-border/50 transition-all duration-300 hover:scale-110 group p-1"
+                  >
+                    <ReactCountryFlag
+                      countryCode={currentLanguage.countryCode}
+                      svg
+                      style={{
+                        width: "18px",
+                        height: "14px",
+                      }}
+                      className="group-hover:scale-110 transition-transform duration-300 rounded-sm"
+                    />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="end"
+                  className="w-14 mt-2 bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-2xl overflow-hidden p-1"
+                >
+                  {LANGUAGES.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => handleLanguageChange(language.code)}
+                      className={`flex items-center justify-center p-2 rounded-xl cursor-pointer transition-all duration-300 hover:bg-primary/10 group ${
+                        language.code === locale ? "bg-primary/15" : ""
+                      }`}
+                    >
+                      <ReactCountryFlag
+                        countryCode={language.countryCode}
+                        svg
+                        style={{
+                          width: "18px",
+                          height: "14px",
+                        }}
+                        className="group-hover:scale-110 transition-transform duration-300 rounded-sm"
+                      />
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
 
-            {/* Enhanced Contact Button */}
-            <div className="relative group">
-              {/* Button glow background */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-[#256bae] to-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-
+            {/* Simplified Contact Button */}
+            <div className="relative">
               <Button
                 onClick={handleContactClick}
-                className="relative ml-4 px-8 py-3 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl overflow-hidden bg-gradient-to-r from-primary to-[#256bae] hover:from-[#256bae] hover:to-primary text-primary-foreground shadow-xl border border-primary/20"
+                className="ml-3 px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-primary to-[#256bae] hover:shadow-lg text-primary-foreground"
               >
-                {/* Button background animation */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Icon with enhanced styling */}
-                <div className="relative p-1 rounded-full bg-white/20 group-hover:bg-white/30 transition-all duration-300">
-                  <IoSend className="text-lg group-hover:rotate-12 transition-transform duration-300" />
-                </div>
-                <span className="relative font-bold">Contact Us</span>
-
-                {/* Floating sparkle effect */}
-                <div className="absolute top-1 right-2 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-2 left-4 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <IoSend className="text-base" />
+                <span>Contact Us</span>
               </Button>
             </div>
           </div>
@@ -142,15 +184,15 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-12 w-12 rounded-xl bg-gradient-to-r from-muted/50 to-muted/30 hover:from-primary/15 hover:to-[#256bae]/15 transition-all duration-300 hover:scale-105 border border-border/50"
+                  className="h-10 w-10 rounded-xl bg-gradient-to-r from-muted/50 to-muted/30 hover:from-primary/15 hover:to-[#256bae]/15 transition-all duration-300 hover:scale-105 border border-border/50"
                 >
-                  <IoMenu className="text-2xl" />
+                  <IoMenu className="text-xl" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="w-56 mt-2 bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-2xl"
+                className="w-48 mt-2 bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-2xl"
               >
                 {/* Mobile menu gradient background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-[#256bae]/5 rounded-2xl"></div>
@@ -162,12 +204,12 @@ const Header = () => {
                       <DropdownMenuItem key={item.href} asChild className="rounded-xl mx-2 my-1">
                         <Link
                           href={item.href}
-                          className="flex items-center gap-3 w-full p-3 hover:bg-primary/10 transition-all duration-300 group"
+                          className="flex items-center gap-2 w-full p-2 hover:bg-primary/10 transition-all duration-300 group"
                         >
-                          <div className="p-2 rounded-lg bg-gradient-to-r from-muted/50 to-muted/30 group-hover:from-primary/15 group-hover:to-[#256bae]/15 transition-all duration-300">
-                            <IconComponent className="text-lg group-hover:text-primary transition-colors duration-300" />
+                          <div className="p-1.5 rounded-lg bg-gradient-to-r from-muted/50 to-muted/30 group-hover:from-primary/15 group-hover:to-[#256bae]/15 transition-all duration-300">
+                            <IconComponent className="text-base group-hover:text-primary transition-colors duration-300" />
                           </div>
-                          <span className="font-medium group-hover:text-primary transition-colors duration-300">
+                          <span className="font-medium text-sm group-hover:text-primary transition-colors duration-300">
                             {item.label}
                           </span>
                         </Link>
@@ -177,19 +219,59 @@ const Header = () => {
                   <DropdownMenuItem asChild className="rounded-xl mx-2 my-1">
                     <button
                       onClick={handleContactClick}
-                      className="flex items-center gap-3 w-full p-3 hover:bg-primary/10 transition-all duration-300 group"
+                      className="flex items-center gap-2 w-full p-2 hover:bg-primary/10 transition-all duration-300 group"
                     >
-                      <div className="p-2 rounded-lg bg-gradient-to-r from-muted/50 to-muted/30 group-hover:from-primary/15 group-hover:to-[#256bae]/15 transition-all duration-300">
-                        <IoSend className="text-lg group-hover:text-primary transition-colors duration-300" />
+                      <div className="p-1.5 rounded-lg bg-gradient-to-r from-muted/50 to-muted/30 group-hover:from-primary/15 group-hover:to-[#256bae]/15 transition-all duration-300">
+                        <IoSend className="text-base group-hover:text-primary transition-colors duration-300" />
                       </div>
-                      <span className="font-medium group-hover:text-primary transition-colors duration-300">
+                      <span className="font-medium text-sm group-hover:text-primary transition-colors duration-300">
                         Contact Us
                       </span>
                     </button>
                   </DropdownMenuItem>
+
                   <div className="border-t border-border/50 mt-2 pt-2 mx-2">
-                    <div className="px-2 py-3">
-                      <LanguageSelector />
+                    <div className="px-2 py-1">
+                      {/* Mobile Flag Icons Language Selector */}
+                      <div className="flex items-center justify-between p-2 rounded-lg bg-gradient-to-r from-muted/30 to-muted/20">
+                        <span className="text-xs font-medium text-muted-foreground">Language</span>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm" className="h-6 w-6 p-0.5 rounded-full">
+                              <ReactCountryFlag
+                                countryCode={currentLanguage.countryCode}
+                                svg
+                                style={{
+                                  width: "14px",
+                                  height: "10px",
+                                }}
+                                className="rounded-sm"
+                              />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end" className="w-12 p-1">
+                            {LANGUAGES.map((language) => (
+                              <DropdownMenuItem
+                                key={language.code}
+                                onClick={() => handleLanguageChange(language.code)}
+                                className={`flex items-center justify-center p-1.5 rounded cursor-pointer ${
+                                  language.code === locale ? "bg-primary/10" : ""
+                                }`}
+                              >
+                                <ReactCountryFlag
+                                  countryCode={language.countryCode}
+                                  svg
+                                  style={{
+                                    width: "14px",
+                                    height: "10px",
+                                  }}
+                                  className="rounded-sm"
+                                />
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
                     </div>
                   </div>
                 </div>
