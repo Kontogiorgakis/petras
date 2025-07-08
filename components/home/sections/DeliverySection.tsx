@@ -239,8 +239,8 @@ export default function DeliverySection() {
                       <div className="w-12 h-12 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                       </div>
-                      <span className="text-sm font-medium text-foreground">Available 24/7</span>
-                      <span className="text-xs text-muted-foreground">Round-the-clock service</span>
+                      <span className="text-sm font-medium text-foreground">Available Daily 09:00-20:00</span>
+                      <span className="text-xs text-muted-foreground">Daily delivery service</span>
                     </div>
 
                     <div className="flex flex-col items-center text-center group">

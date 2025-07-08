@@ -33,40 +33,6 @@ const COMPANY_VALUES = [
   },
 ] as const;
 
-const TEAM_MEMBERS = [
-  {
-    id: 1,
-    name: "Petros Nikolakis",
-    role: "Founder & CEO",
-    image: "/home/sitia.jpg", // Using placeholder
-    description:
-      "With over 15 years in the automotive industry, Petros founded Petras Rental with a vision to provide exceptional car rental services in Crete.",
-  },
-  {
-    id: 2,
-    name: "Maria Petrakis",
-    role: "Operations Manager",
-    image: "/home/sitia.jpg", // Using placeholder
-    description:
-      "Maria ensures our operations run smoothly and our customers receive the best possible service experience.",
-  },
-  {
-    id: 3,
-    name: "Yannis Kouris",
-    role: "Fleet Manager",
-    image: "/home/sitia.jpg", // Using placeholder
-    description:
-      "Yannis oversees our premium fleet, ensuring every vehicle meets our high standards for safety and quality.",
-  },
-  {
-    id: 4,
-    name: "Sophia Dalianis",
-    role: "Customer Relations",
-    image: "/home/sitia.jpg", // Using placeholder
-    description: "Sophia is dedicated to making sure every customer has an unforgettable experience exploring Crete.",
-  },
-] as const;
-
 const COMPANY_STATS = [
   {
     number: "15+",
@@ -87,9 +53,9 @@ const COMPANY_STATS = [
     gradient: "from-emerald-600 to-teal-600",
   },
   {
-    number: "24/7",
+    number: "Daily",
     label: "Customer Support",
-    description: "Always here when you need us",
+    description: "Available 09:00-20:00 every day",
     gradient: "from-violet-600 to-purple-600",
   },
 ] as const;
@@ -227,49 +193,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white/50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Meet Our </span>
-              <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                Team
-              </span>
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              The passionate professionals behind Petras Rental, dedicated to making your Crete experience
-              extraordinary.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {TEAM_MEMBERS.map((member) => (
-              <div key={member.id} className="group">
-                <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-[#256bae]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
-                  </div>
-                  <div className="p-6 relative">
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-3">{member.role}</p>
-                    <p className="text-sm text-slate-600 leading-relaxed">{member.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Company Stats */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[#256bae]/5"></div>
@@ -312,57 +235,62 @@ export default function AboutUs() {
       {/* Contact CTA */}
       <section className="py-20 bg-white/50">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-primary via-[#256bae] to-indigo-700 rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-white/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+
+            {/* Floating Background Shapes */}
+            <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-24 h-24 bg-gradient-to-br from-[#256bae]/10 to-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-primary/5 rounded-full blur-2xl"></div>
 
             <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Ready to Explore Crete?</h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                Ready to Explore Crete?
+              </h2>
+              <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Get in touch with our friendly team to book your perfect vehicle and start planning your Crete
                 adventure.
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-12">
-                <div className="flex items-center justify-center gap-3 text-blue-100">
-                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                    <IoCall className="text-2xl text-white" />
+                <div className="flex items-center justify-center gap-3 text-white/70">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                    <IoCall className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Phone</div>
-                    <div className="text-sm">+30 123 456 7890</div>
+                    <div className="font-semibold text-white">Mobile</div>
+                    <div className="text-sm">+30 693 668 5610</div>
                   </div>
                 </div>
-                <div className="flex items-center justify-center gap-3 text-blue-100">
-                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                    <IoMail className="text-2xl text-white" />
+                <div className="flex items-center justify-center gap-3 text-white/70">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                    <IoMail className="text-2xl text-primary" />
                   </div>
                   <div>
                     <div className="font-semibold text-white">Email</div>
-                    <div className="text-sm">info@petrasrental.gr</div>
+                    <div className="text-sm">info@petras-rentals.gr</div>
                   </div>
                 </div>
-                <div className="flex items-center justify-center gap-3 text-blue-100">
-                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                    <IoLocation className="text-2xl text-white" />
+                <div className="flex items-center justify-center gap-3 text-white/70">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                    <IoLocation className="text-2xl text-primary" />
                   </div>
                   <div>
                     <div className="font-semibold text-white">Location</div>
-                    <div className="text-sm">Heraklion, Crete</div>
+                    <div className="text-sm">Sitia, Crete</div>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button className="bg-white text-primary hover:bg-blue-50 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button className="bg-gradient-to-r from-primary to-[#256bae] text-white hover:from-primary/90 hover:to-[#256bae]/90 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                   <IoCall className="mr-2" />
                   Call Now
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-2xl backdrop-blur-sm"
+                  className="bg-white/10 border-white/20 text-white/90 hover:bg-white/20 hover:text-white px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"
                 >
                   <IoMail className="mr-2" />
                   Send Email

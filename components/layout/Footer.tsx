@@ -31,12 +31,12 @@ const SERVICES = [
 ] as const;
 
 const LOCATIONS = [
+  "Sitia (Main Office)",
   "Heraklion Airport",
   "Chania Airport",
   "Heraklion City",
   "Rethymno",
   "Agios Nikolaos",
-  "Sitia",
 ] as const;
 
 export const Footer = () => {
@@ -93,7 +93,7 @@ export const Footer = () => {
                   <IoLogoInstagram className="text-lg text-white/70 group-hover:text-white transition-colors duration-300" />
                 </a>
                 <a
-                  href="https://wa.me/306912345678"
+                  href="https://wa.me/306936685610"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 group"
@@ -151,8 +151,8 @@ export const Footer = () => {
                     <IoCallSharp className="text-primary text-sm" />
                   </div>
                   <div>
-                    <p className="text-white/90 font-medium text-sm sm:text-base">+30 691 234 5678</p>
-                    <p className="text-white/60 text-xs sm:text-sm">24/7 Support</p>
+                    <p className="text-white/90 font-medium text-sm sm:text-base">+30 693 668 5610</p>
+                    <p className="text-white/60 text-xs sm:text-sm">Mobile & WhatsApp</p>
                   </div>
                 </div>
 
@@ -161,8 +161,18 @@ export const Footer = () => {
                     <IoMail className="text-primary text-sm" />
                   </div>
                   <div>
-                    <p className="text-white/90 font-medium text-sm sm:text-base">info@petrasrental.gr</p>
+                    <p className="text-white/90 font-medium text-sm sm:text-base">info@petras-rentals.gr</p>
                     <p className="text-white/60 text-xs sm:text-sm">Get in Touch</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 group">
+                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors duration-300">
+                    <IoCallSharp className="text-primary text-sm" />
+                  </div>
+                  <div>
+                    <p className="text-white/90 font-medium text-sm sm:text-base">+30 284 302 4849</p>
+                    <p className="text-white/60 text-xs sm:text-sm">Landline</p>
                   </div>
                 </div>
 
@@ -171,8 +181,8 @@ export const Footer = () => {
                     <IoLocation className="text-primary text-sm" />
                   </div>
                   <div>
-                    <p className="text-white/90 font-medium text-sm sm:text-base">Heraklion, Crete</p>
-                    <p className="text-white/60 text-xs sm:text-sm">Main Office</p>
+                    <p className="text-white/90 font-medium text-sm sm:text-base">Sitia, Crete</p>
+                    <p className="text-white/60 text-xs sm:text-sm">Papandreou Andrea 10, 72300</p>
                   </div>
                 </div>
 
@@ -181,8 +191,8 @@ export const Footer = () => {
                     <IoTime className="text-primary text-sm" />
                   </div>
                   <div>
-                    <p className="text-white/90 font-medium text-sm sm:text-base">Always Available</p>
-                    <p className="text-white/60 text-xs sm:text-sm">24/7 Service</p>
+                    <p className="text-white/90 font-medium text-sm sm:text-base">Mon-Sun 09:00-20:00</p>
+                    <p className="text-white/60 text-xs sm:text-sm">Daily Service</p>
                   </div>
                 </div>
               </div>

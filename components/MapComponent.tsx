@@ -62,8 +62,8 @@ const MapComponent = () => {
     );
   }
 
-  // Coordinates for Heraklion, Crete, Greece
-  const position: [number, number] = [35.3387, 25.1442];
+  // Coordinates for Sitia, Crete, Greece
+  const position: [number, number] = [35.2065, 26.1027];
 
   return (
     <div className="w-full h-96 rounded-3xl overflow-hidden">
@@ -76,9 +76,10 @@ const MapComponent = () => {
           <Popup>
             <div className="text-center">
               <h3 className="font-bold text-slate-900 mb-2">Petras Car Rentals</h3>
-              <p className="text-sm text-slate-600 mb-2">123 Main Street</p>
-              <p className="text-sm text-slate-600 mb-2">Heraklion 71202, Crete</p>
-              <p className="text-sm text-primary font-semibold">+30 123 456 7890</p>
+              <p className="text-sm text-slate-600 mb-2">Papandreou Andrea 10</p>
+              <p className="text-sm text-slate-600 mb-2">Sitia 72300, Crete</p>
+              <p className="text-sm text-primary font-semibold">+30 693 668 5610</p>
+              <p className="text-sm text-slate-600">Mon-Sun 09:00-20:00</p>
             </div>
           </Popup>
         </Marker>

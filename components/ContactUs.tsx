@@ -21,33 +21,41 @@ const MapComponent = dynamic(() => import("./MapComponent"), {
 const CONTACT_METHODS = [
   {
     icon: IoCall,
-    title: "Phone",
+    title: "Mobile",
     description: "Call us directly",
-    value: "+30 123 456 7890",
-    action: "tel:+301234567890",
+    value: "+30 693 668 5610",
+    action: "tel:+306936685610",
     color: "from-green-500 to-emerald-600",
   },
   {
-    icon: IoMail,
-    title: "Email",
-    description: "Send us a message",
-    value: "info@petrasrental.gr",
-    action: "mailto:info@petrasrental.gr",
+    icon: IoCall,
+    title: "Landline",
+    description: "Office line",
+    value: "+30 284 302 4849",
+    action: "tel:+302843024849",
     color: "from-blue-500 to-primary",
   },
   {
     icon: IoLogoWhatsapp,
     title: "WhatsApp",
     description: "Chat with us",
-    value: "+30 123 456 7890",
-    action: "https://wa.me/301234567890",
+    value: "+30 693 668 5610",
+    action: "https://wa.me/306936685610",
     color: "from-green-600 to-teal-600",
+  },
+  {
+    icon: IoMail,
+    title: "Email",
+    description: "Send us a message",
+    value: "info@petras-rentals.gr",
+    action: "mailto:info@petras-rentals.gr",
+    color: "from-purple-500 to-indigo-600",
   },
   {
     icon: IoLocation,
     title: "Visit Us",
     description: "Find our office",
-    value: "Heraklion, Crete, Greece",
+    value: "Papandreou Andrea 10, Sitia",
     action: "#location",
     color: "from-red-500 to-rose-600",
   },
@@ -55,16 +63,12 @@ const CONTACT_METHODS = [
 
 const BUSINESS_HOURS = [
   {
-    day: "Monday - Friday",
-    hours: "8:00 AM - 8:00 PM",
+    day: "Monday - Sunday",
+    hours: "09:00 - 20:00",
   },
   {
-    day: "Saturday",
-    hours: "9:00 AM - 6:00 PM",
-  },
-  {
-    day: "Sunday",
-    hours: "10:00 AM - 4:00 PM",
+    day: "Every Day",
+    hours: "Daily Service Available",
   },
 ] as const;
 
@@ -206,7 +210,7 @@ export default function ContactUs() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                        placeholder="+30 123 456 7890"
+                        placeholder="+30 693 668 5610"
                       />
                     </div>
                     <div>
@@ -287,11 +291,11 @@ export default function ContactUs() {
                     <div>
                       <h4 className="font-semibold text-slate-900 mb-1">Address</h4>
                       <p className="text-slate-600">
-                        123 Main Street
+                        Papandreou Andrea 10
                         <br />
-                        Heraklion 71202
+                        Sitia 72300
                         <br />
-                        Crete, Greece
+                        Lassithi, Crete, Greece
                       </p>
                     </div>
                   </div>
@@ -301,11 +305,11 @@ export default function ContactUs() {
                       <IoCall className="text-green-600 text-xl" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">24/7 Support</h4>
+                      <h4 className="font-semibold text-slate-900 mb-1">Phone Numbers</h4>
                       <p className="text-slate-600">
-                        +30 123 456 7890
+                        Mobile: +30 693 668 5610
                         <br />
-                        Emergency: +30 987 654 3210
+                        Landline: +30 284 302 4849
                       </p>
                     </div>
                   </div>
@@ -316,11 +320,7 @@ export default function ContactUs() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900 mb-1">Email</h4>
-                      <p className="text-slate-600">
-                        info@petrasrental.gr
-                        <br />
-                        support@petrasrental.gr
-                      </p>
+                      <p className="text-slate-600">info@petras-rentals.gr</p>
                     </div>
                   </div>
                 </div>
@@ -351,8 +351,8 @@ export default function ContactUs() {
                   <div className="flex items-center gap-3">
                     <IoTime className="text-primary text-xl" />
                     <div>
-                      <p className="font-semibold text-slate-900">Emergency Support</p>
-                      <p className="text-sm text-slate-600">24/7 roadside assistance available</p>
+                      <p className="font-semibold text-slate-900">Daily Service</p>
+                      <p className="text-sm text-slate-600">Open every day from 09:00 to 20:00</p>
                     </div>
                   </div>
                 </div>
@@ -373,7 +373,7 @@ export default function ContactUs() {
               </span>
             </h2>
             <p className="text-lg text-slate-600">
-              Located in the heart of Heraklion, easily accessible from the airport and city center.
+              Located in Sitia, eastern Crete, easily accessible and perfect for exploring the region.
             </p>
           </div>
 

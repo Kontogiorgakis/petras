@@ -15,8 +15,8 @@ const SERVICES = [
   },
   {
     icon: IoTime,
-    title: "24/7 Support",
-    description: "Round-the-clock customer support and roadside assistance whenever you need it most.",
+    title: "Daily Support",
+    description: "Daily customer support (09:00-20:00) and assistance throughout your rental period.",
   },
   {
     icon: IoCard,

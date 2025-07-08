@@ -231,24 +231,25 @@ export const TermsAndConditions = () => {
           <div className="relative bg-gradient-to-br from-slate-900/95 to-slate-800/95 backdrop-blur-lg border border-slate-700 rounded-3xl p-8 shadow-2xl text-white">
             <h3 className="text-2xl font-bold mb-4">Do you have any questions?</h3>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              Our 24/7 support team is here to help you with any questions about our terms and conditions.
+              Our support team is here to help you with any questions about our terms and conditions. Available daily
+              from 09:00 to 20:00.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:+306912345678"
+                href="tel:+306936685610"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-[#256bae] text-white px-6 py-3 rounded-xl font-medium hover:from-primary/90 hover:to-[#256bae]/90 transition-all duration-300 transform hover:scale-105"
               >
                 <IoCallSharp className="text-lg" />
-                +30 691 234 5678
+                +30 693 668 5610
               </a>
 
               <a
-                href="mailto:info@petrasrental.gr"
+                href="mailto:info@petras-rentals.gr"
                 className="inline-flex items-center gap-3 bg-white/10 text-white px-6 py-3 rounded-xl font-medium hover:bg-white/20 transition-all duration-300 border border-white/20"
               >
                 <IoMail className="text-lg" />
-                info@petrasrental.gr
+                info@petras-rentals.gr
               </a>
             </div>
           </div>

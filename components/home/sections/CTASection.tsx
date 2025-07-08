@@ -174,7 +174,7 @@ export default function CTASection() {
           <div className="inline-flex items-center gap-4 bg-gradient-to-r from-primary/10 to-[#256bae]/10 backdrop-blur-lg border border-primary/20 rounded-2xl px-8 py-6 shadow-xl">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-muted-foreground">Available 24/7</span>
+              <span className="text-sm font-medium text-muted-foreground">Open Daily 09:00-20:00</span>
             </div>
             <div className="h-6 w-px bg-border"></div>
             <div className="flex items-center gap-2">

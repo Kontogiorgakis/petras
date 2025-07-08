@@ -2,70 +2,64 @@
 
 import { useState, useEffect } from "react";
 import { IoChevronBack, IoChevronForward, IoStar } from "react-icons/io5";
+import Avatar from "react-avatar";
 
 const TESTIMONIALS = [
   {
-    name: "Maria Papadopoulos",
-    location: "Athens, Greece",
+    name: "Μαρινα Β.Σ",
+    location: "Greece",
     rating: 5,
-    text: "Excellent service! The car was spotless and exactly as described. The staff was incredibly helpful and made the whole process seamless.",
+    text: "We rented a car — everything was great, and Soula was incredibly friendly and helpful! She’s definitely worth choosing if you’re looking to rent a vehicle and explore the beautiful places around the city of Sitia... the nearby villages and the amazing beaches! The prices were very good! Many kudos!",
     avatar: "MP",
   },
   {
-    name: "John Anderson",
-    location: "London, UK",
+    name: "Caroline Monnet",
+    location: "France",
     rating: 5,
-    text: "Amazing experience with Petras Rental. Great prices, clean vehicles, and outstanding customer service.",
+    text: "I got the contact details for Petras Rent a Car from the backpacker's guide. And indeed, I was glad to have done business with Soula twice this year! A brand-new car, very reasonable price, and Soula arranged my arrival in Heraklion. She is incredibly kind, and it's also a real pleasure to chat with her. I recommend it with my eyes closed!",
     avatar: "JA",
   },
   {
-    name: "Sophie Martin",
-    location: "Paris, France",
+    name: "Mc Bourdieu",
+    location: "France",
     rating: 5,
-    text: "Professional and reliable service. I needed a car last minute and they accommodated me perfectly.",
+    text: "I’ve been going to Sitia for 10 years and I always rent my vehicle from Petras Car Rentals. The manager of this local agency, Soula, is a capable person who knows how to adapt to her clients’ needs. Efficient, available, always smiling, with attractive prices! Highly recommended 👍",
     avatar: "SM",
   },
   {
-    name: "Alessandro Rossi",
-    location: "Rome, Italy",
+    name: "Blanc Cristophe",
+    location: "France",
     rating: 5,
-    text: "Top-quality rental experience! The car was delivered on time, clean, and well-maintained.",
+    text: "We rented a car from Soula in September 2019. She gave us a warm welcome, and we had no issues at all with the rental car. An added bonus is that the car is available upon arrival at the airport and can also be dropped off at the airport when departing from Heraklion. Highly recommended...",
     avatar: "AR",
   },
   {
-    name: "Emma Thompson",
-    location: "Manchester, UK",
+    name: "Sandrine Garcin",
+    location: "France",
     rating: 5,
-    text: "Fantastic service from start to finish. The team went above and beyond to ensure I had everything I needed.",
+    text: "For the past 4 years, I’ve been renting my cars from Soula.Reliable and well-maintained. Fair price and car as well. I had a flat tire this summer, and it was fixed within half an hour. I highly recommend her!",
     avatar: "ET",
   },
   {
-    name: "Carlos Rodriguez",
-    location: "Madrid, Spain",
+    name: "Manolis Hatzidakis",
+    location: "Germany",
     rating: 5,
-    text: "Outstanding car rental experience! The vehicle was in perfect condition and the staff was very professional.",
+    text: "Soula is always helpful and always kind. sI’m absolutely satisfied with the cars she provides, and I will continue renting cars from Petras Car.",
     avatar: "CR",
   },
   {
-    name: "Lisa Weber",
-    location: "Berlin, Germany",
+    name: "JML OKS",
+    location: "England",
     rating: 5,
-    text: "Reliable and efficient service. Great selection of cars and competitive prices. Highly recommended!",
+    text: "I had a warm welcome and was completely satisfied with Soula’s services! I was even given an upgrade!!!",
     avatar: "LW",
   },
   {
-    name: "François Dubois",
-    location: "Lyon, France",
-    rating: 5,
-    text: "Superb customer service and clean, modern vehicles. Made our vacation trip absolutely perfect!",
+    name: "ΔΗΜΟΣΘΕΝΗΣ ΖΙΟΥΛΑΣ",
+    location: "Greece",
+    rating: 4,
+    text: "The car we were given was a 2023 model. Kudos to the woman who runs the company — some of the best prices in town and very good cars.",
     avatar: "FD",
-  },
-  {
-    name: "Anna Kowalski",
-    location: "Warsaw, Poland",
-    rating: 5,
-    text: "Smooth booking process and excellent condition cars. Will definitely use Petras Rental again!",
-    avatar: "AK",
   },
 ] as const;
 
@@ -73,20 +67,31 @@ const TestimonialsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if we're on mobile
-  const itemsPerPage = isMobile ? 1 : 3;
+  // Check screen size for responsive layout
+  const [isTablet, setIsTablet] = useState(false);
+
+  // Set items per page based on screen size
+  const getItemsPerPage = () => {
+    if (isMobile) return 1;
+    if (isTablet) return 2;
+    return 4; // 2x2 grid on desktop
+  };
+
+  const itemsPerPage = getItemsPerPage();
   const totalPages = Math.ceil(TESTIMONIALS.length / itemsPerPage);
 
   // Effect to detect screen size
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkScreenSize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsTablet(width >= 768 && width < 1024);
     };
 
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
 
-    return () => window.removeEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   const nextPage = () => {
@@ -111,7 +116,11 @@ const TestimonialsCarousel = () => {
       {/* Carousel Container */}
       <div className="overflow-hidden py-4">
         <div className="transition-all duration-500 ease-in-out">
-          <div className={`grid gap-6 lg:gap-8 ${isMobile ? "grid-cols-1" : "md:grid-cols-2 lg:grid-cols-3"}`}>
+          <div
+            className={`grid gap-6 lg:gap-8 ${
+              isMobile ? "grid-cols-1" : isTablet ? "grid-cols-2" : "grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"
+            }`}
+          >
             {getCurrentTestimonials().map((testimonial, index) => (
               <div key={`${currentIndex}-${index}`} className="relative h-full">
                 <div className="relative bg-gradient-to-br from-white/95 via-white/90 to-white/85 backdrop-blur-2xl border border-white/60 rounded-3xl p-6 md:p-8 shadow-lg h-full flex flex-col">
@@ -119,9 +128,14 @@ const TestimonialsCarousel = () => {
                   <div className="relative mb-6">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="relative">
-                        <div className="w-14 h-14 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-2xl flex items-center justify-center">
-                          <span className="text-foreground font-bold text-lg">{testimonial.avatar}</span>
-                        </div>
+                        <Avatar
+                          name={testimonial.name}
+                          size="56"
+                          round={true}
+                          color="#3b82f6"
+                          fgColor="#ffffff"
+                          className="shadow-md"
+                        />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold text-foreground">{testimonial.name}</h3>

@@ -91,8 +91,8 @@ export const RentalTerms = () => {
       {/* Quick Info */}
       <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-[#256bae]/5 rounded-xl border border-primary/10">
         <p className="text-sm text-slate-600">
-          <strong className="text-slate-800">Need help?</strong> Our team is available 24/7 to assist you with your
-          rental needs. Contact us for personalized service and special offers.
+          <strong className="text-slate-800">Need help?</strong> Our team is available daily (09:00-20:00) to assist you
+          with your rental needs. Contact us for personalized service and special offers.
         </p>
       </div>
     </div>
