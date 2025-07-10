@@ -4,7 +4,7 @@ export interface Car {
   category: string;
   price: number;
   image: string;
-  color: string;
+  color: string | string[];
   features: {
     seats: number;
     fuel: string;

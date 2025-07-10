@@ -174,4 +174,11 @@
   animation: marquee 30s linear infinite;
 }
 
-/* Location scroll animation */
+/* Prevent layout shift from scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  @apply !min-w-full;
+}

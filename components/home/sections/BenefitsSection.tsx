@@ -37,7 +37,7 @@ export default function BenefitsSection() {
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               With years of experience in the car rental industry, we understand what matters most to our customers.
-              From premium vehicles to exceptional service, we deliver the perfect rental experience.
+              From reliable vehicles to exceptional service, we deliver the perfect rental experience.
             </p>
 
             <div className="grid gap-6 mb-8">

@@ -1,124 +1,20 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
+import Link from "next/link";
 import { CarCard } from "./CarCard";
-import { CarFilters } from "./CarFilters";
 import { CarDetailsModal } from "./CarDetailsModal";
 import { Car } from "@/types/car";
+import { Button } from "@/components/ui/button";
+import { IoCall, IoMail, IoLocation, IoTime } from "react-icons/io5";
 
 interface FleetProps {
   cars: Car[];
 }
 
 const Fleet = ({ cars }: FleetProps) => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedTransmission, setSelectedTransmission] = useState("All");
-  const [selectedFuel, setSelectedFuel] = useState("All");
-  const [selectedSeats, setSelectedSeats] = useState("All");
-  const [selectedDoors, setSelectedDoors] = useState("All");
-  const [selectedAC, setSelectedAC] = useState("All");
-  const [selectedYear, setSelectedYear] = useState("All");
-  const [selectedEngine, setSelectedEngine] = useState("All");
-  const [selectedPriceRange, setSelectedPriceRange] = useState("All");
-  const [showAvailableOnly, setShowAvailableOnly] = useState(false);
-  const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Filter cars based on selected criteria
-  const filteredCars = useMemo(() => {
-    const YEAR_RANGES = [
-      { label: "All", min: 0, max: Infinity },
-      { label: "2025", min: 2025, max: 2025 },
-      { label: "2024", min: 2024, max: 2024 },
-      { label: "2022", min: 2022, max: 2022 },
-      { label: "2020", min: 2020, max: 2020 },
-    ];
-    const ENGINE_RANGES = [
-      { label: "All", min: 0, max: Infinity },
-      { label: "< 1200cc", min: 0, max: 1200 },
-      { label: "1200-1600cc", min: 1200, max: 1600 },
-      { label: "1600-2000cc", min: 1600, max: 2000 },
-      { label: "> 2000cc", min: 2000, max: Infinity },
-    ];
-    const PRICE_RANGES = [
-      { label: "All", min: 0, max: Infinity },
-      { label: "€20-35", min: 20, max: 35 },
-      { label: "€36-50", min: 36, max: 50 },
-      { label: "€51-70", min: 51, max: 70 },
-      { label: "€71+", min: 71, max: Infinity },
-    ];
-
-    return cars.filter((car) => {
-      const categoryMatch = selectedCategory === "All" || car.category === selectedCategory;
-      const transmissionMatch = selectedTransmission === "All" || car.features.transmission === selectedTransmission;
-      const fuelMatch = selectedFuel === "All" || car.features.fuel === selectedFuel;
-      const seatsMatch = selectedSeats === "All" || car.features.seats.toString() === selectedSeats;
-      const doorsMatch = selectedDoors === "All" || car.features.doors.toString() === selectedDoors;
-      const acMatch = selectedAC === "All" || (selectedAC === "Yes" ? car.features.ac : !car.features.ac);
-
-      const yearRange = YEAR_RANGES.find((range) => range.label === selectedYear);
-      const yearMatch = !yearRange || (car.features.date >= yearRange.min && car.features.date <= yearRange.max);
-
-      const engineRange = ENGINE_RANGES.find((range) => range.label === selectedEngine);
-      const engineMatch = !engineRange || (car.features.cc >= engineRange.min && car.features.cc <= engineRange.max);
-
-      const priceRange = PRICE_RANGES.find((range) => range.label === selectedPriceRange);
-      const priceMatch = !priceRange || (car.price >= priceRange.min && car.price <= priceRange.max);
-
-      const availabilityMatch = !showAvailableOnly || car.available;
-
-      return (
-        categoryMatch &&
-        transmissionMatch &&
-        fuelMatch &&
-        seatsMatch &&
-        doorsMatch &&
-        acMatch &&
-        yearMatch &&
-        engineMatch &&
-        priceMatch &&
-        availabilityMatch
-      );
-    });
-  }, [
-    cars,
-    selectedCategory,
-    selectedTransmission,
-    selectedFuel,
-    selectedSeats,
-    selectedDoors,
-    selectedAC,
-    selectedYear,
-    selectedEngine,
-    selectedPriceRange,
-    showAvailableOnly,
-  ]);
-
-  const resetFilters = () => {
-    setSelectedCategory("All");
-    setSelectedTransmission("All");
-    setSelectedFuel("All");
-    setSelectedSeats("All");
-    setSelectedDoors("All");
-    setSelectedAC("All");
-    setSelectedYear("All");
-    setSelectedEngine("All");
-    setSelectedPriceRange("All");
-    setShowAvailableOnly(false);
-  };
-
-  const hasActiveFilters =
-    selectedCategory !== "All" ||
-    selectedTransmission !== "All" ||
-    selectedFuel !== "All" ||
-    selectedSeats !== "All" ||
-    selectedDoors !== "All" ||
-    selectedAC !== "All" ||
-    selectedYear !== "All" ||
-    selectedEngine !== "All" ||
-    selectedPriceRange !== "All" ||
-    showAvailableOnly;
 
   const handleCarClick = (car: Car) => {
     setSelectedCar(car);
@@ -135,59 +31,107 @@ const Fleet = ({ cars }: FleetProps) => {
       <div className="container mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight mt-10">
             <span className="text-slate-900">Our </span>
-            <span className="bg-gradient-to-r from-primary via-[#256bae] to-primary bg-clip-text text-transparent drop-shadow-sm">
-              Fleet
-            </span>
+            <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">Fleet</span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed font-light max-w-3xl mx-auto">
-            Choose from our extensive collection of premium vehicles, from economy cars to luxury SUVs
+            Choose from our extensive collection of reliable vehicles, from economy cars to luxury SUVs
           </p>
         </div>
 
-        {/* Dropdown Filters */}
-        <CarFilters
-          cars={cars}
-          filteredCount={filteredCars.length}
-          selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
-          selectedTransmission={selectedTransmission}
-          onTransmissionChange={setSelectedTransmission}
-          selectedFuel={selectedFuel}
-          onFuelChange={setSelectedFuel}
-          selectedSeats={selectedSeats}
-          onSeatsChange={setSelectedSeats}
-          selectedDoors={selectedDoors}
-          onDoorsChange={setSelectedDoors}
-          selectedAC={selectedAC}
-          onACChange={setSelectedAC}
-          selectedYear={selectedYear}
-          onYearChange={setSelectedYear}
-          selectedEngine={selectedEngine}
-          onEngineChange={setSelectedEngine}
-          selectedPriceRange={selectedPriceRange}
-          onPriceRangeChange={setSelectedPriceRange}
-          showAvailableOnly={showAvailableOnly}
-          onAvailableOnlyChange={setShowAvailableOnly}
-          filtersOpen={filtersOpen}
-          onFiltersToggle={() => setFiltersOpen(!filtersOpen)}
-          onResetFilters={resetFilters}
-          hasActiveFilters={hasActiveFilters}
-        />
-
         {/* Cars Grid - 3x3 Layout */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCars.length > 0 ? (
-            filteredCars.map((car) => <CarCard key={car.id} car={car} onCarClick={handleCarClick} />)
+          {cars.length > 0 ? (
+            cars.map((car) => <CarCard key={car.id} car={car} onCarClick={handleCarClick} />)
           ) : (
             <div className="md:col-span-2 lg:col-span-3 text-center py-20">
               <div className="text-6xl mb-4">🚗</div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-2">No cars found</h3>
-              <p className="text-slate-600">Try adjusting your filters to see more options.</p>
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">No cars available</h3>
+              <p className="text-slate-600">Please check back later for available vehicles.</p>
             </div>
           )}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-20">
+          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+
+            {/* Floating Background Shapes */}
+            <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-24 h-24 bg-gradient-to-br from-[#256bae]/10 to-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-primary/5 rounded-full blur-2xl"></div>
+
+            <div className="relative z-10">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                Ready to Book Your Perfect Car?
+              </h2>
+              <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Contact us now to reserve your vehicle and start exploring the beautiful island of Crete with
+                confidence.
+              </p>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div className="flex items-center justify-center gap-3 text-white/70">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                    <IoCall className="text-2xl text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white text-sm">Mobile</div>
+                    <div className="text-xs">+30 693 668 5610</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center gap-3 text-white/70">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                    <IoMail className="text-2xl text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white text-sm">Email</div>
+                    <div className="text-xs">info@petras-rentals.gr</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center gap-3 text-white/70">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                    <IoLocation className="text-2xl text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white text-sm">Location</div>
+                    <div className="text-xs">Sitia, Crete</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center gap-3 text-white/70">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                    <IoTime className="text-2xl text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white text-sm">Hours</div>
+                    <div className="text-xs">09:00 - 20:00</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="tel:+306936685610">
+                  <Button className="bg-gradient-to-r from-primary to-[#256bae] text-white hover:from-primary/90 hover:to-[#256bae]/90 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <IoCall className="mr-2" />
+                    Call Now
+                  </Button>
+                </a>
+                <Link href="/contact-us">
+                  <Button
+                    variant="outline"
+                    className="bg-white/10 border-white/20 text-white/90 hover:bg-white/20 hover:text-white px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"
+                  >
+                    <IoMail className="mr-2" />
+                    Get Quote
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

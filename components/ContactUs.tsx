@@ -1,22 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { IoCall, IoMail, IoLocation, IoTime, IoSend, IoLogoWhatsapp } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
-
-// Dynamic import for the map component to avoid SSR issues
-const MapComponent = dynamic(() => import("./MapComponent"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-96 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center rounded-3xl">
-      <div className="text-center">
-        <IoLocation className="text-6xl text-slate-400 mx-auto mb-4" />
-        <p className="text-slate-600 text-lg font-medium">Loading Map...</p>
-      </div>
-    </div>
-  ),
-});
+import { Card } from "@/components/ui/card";
 
 const CONTACT_METHODS = [
   {
@@ -50,14 +38,6 @@ const CONTACT_METHODS = [
     value: "info@petras-rentals.gr",
     action: "mailto:info@petras-rentals.gr",
     color: "from-purple-500 to-indigo-600",
-  },
-  {
-    icon: IoLocation,
-    title: "Visit Us",
-    description: "Find our office",
-    value: "Papandreou Andrea 10, Sitia",
-    action: "#location",
-    color: "from-red-500 to-rose-600",
   },
 ] as const;
 
@@ -100,11 +80,11 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 mt-12">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 mt-12 overflow-x-hidden">
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[#256bae]/5"></div>
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative w-full">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-[#256bae]/10 backdrop-blur-xl border border-primary/20 text-primary px-6 py-3 rounded-2xl text-sm font-semibold mb-8 shadow-lg">
               <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-[#256bae]/20 rounded-lg flex items-center justify-center">
@@ -127,7 +107,7 @@ export default function ContactUs() {
           </div>
 
           {/* Contact Methods Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 w-full">
             {CONTACT_METHODS.map((method, index) => (
               <a key={index} href={method.action} className="group block">
                 <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center relative overflow-hidden">
@@ -152,8 +132,8 @@ export default function ContactUs() {
 
       {/* Main Content Grid */}
       <section className="py-20 bg-white/50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 w-full">
             {/* Contact Form */}
             <div>
               <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl p-8 shadow-xl">
@@ -363,22 +343,106 @@ export default function ContactUs() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-white/50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              <span className="text-slate-900">Find </span>
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              <span className="text-slate-900">Visit </span>
               <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
                 Our Office
               </span>
             </h2>
-            <p className="text-lg text-slate-600">
-              Located in Sitia, eastern Crete, easily accessible and perfect for exploring the region.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Located in the heart of Sitia, eastern Crete. Our office is easily accessible and perfectly positioned for
+              exploring the beautiful region.
             </p>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl overflow-hidden shadow-xl">
-            <MapComponent />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6 lg:mb-8 w-full">
+            {/* Building Image */}
+            <Card className="shadow-xl border-0 overflow-hidden bg-white/95 backdrop-blur-xl w-full">
+              <div className="relative h-64 sm:h-80 lg:h-96 w-full">
+                <Image src="/about/store.jpg" alt="Petras Rental Office Building" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-white">
+                  <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Petras Rental Office</h3>
+                  <p className="text-sm sm:text-base text-white/90">Papandreou Andrea 10, Sitia</p>
+                </div>
+              </div>
+            </Card>
+
+            {/* Interactive Map */}
+            <Card className="shadow-xl border-0 overflow-hidden bg-white/95 backdrop-blur-xl w-full max-w-full">
+              <div className="h-64 sm:h-80 lg:h-96 bg-slate-100 w-full max-w-full overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6394.5713578!2d26.1297401!3d35.1953265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f11.5!3m3!1m2!1s0x1490ed919ebba6c3:0xfb7b7db08facbe7c!2s!5e0!3m2!1sen!2sgr!4v1640000000000!5m2!1sen!2sgr"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, width: "100%", height: "100%", maxWidth: "100%" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Petras Rental Office Location"
+                  className="w-full h-full block"
+                />
+              </div>
+            </Card>
+          </div>
+
+          {/* Enhanced Location Info */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
+            <Card className="bg-white/95 backdrop-blur-xl border border-white/60 p-6 shadow-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-[#256bae]/20 rounded-xl flex items-center justify-center">
+                  <IoLocation className="text-primary text-xl" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900">Address</h4>
+                  <p className="text-sm text-slate-600">Easy to find location</p>
+                </div>
+              </div>
+              <p className="text-slate-700">
+                Papandreou Andrea 10
+                <br />
+                Sitia 72300
+                <br />
+                Lassithi, Crete
+              </p>
+            </Card>
+
+            <Card className="bg-white/95 backdrop-blur-xl border border-white/60 p-6 shadow-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-600/20 rounded-xl flex items-center justify-center">
+                  <IoCall className="text-green-600 text-xl" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900">Contact</h4>
+                  <p className="text-sm text-slate-600">Call us directly</p>
+                </div>
+              </div>
+              <p className="text-slate-700">
+                +30 693 668 5610
+                <br />
+                +30 284 302 4849
+              </p>
+            </Card>
+
+            <Card className="bg-white/95 backdrop-blur-xl border border-white/60 p-6 shadow-lg">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-primary/20 rounded-xl flex items-center justify-center">
+                  <IoTime className="text-primary text-xl" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900">Hours</h4>
+                  <p className="text-sm text-slate-600">Daily service</p>
+                </div>
+              </div>
+              <p className="text-slate-700">
+                Monday - Sunday
+                <br />
+                09:00 - 20:00
+              </p>
+            </Card>
           </div>
         </div>
       </section>

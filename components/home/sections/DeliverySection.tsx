@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { IoLocation, IoArrowForward, IoCallSharp, IoCheckmarkCircle } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 
@@ -210,24 +211,28 @@ export default function DeliverySection() {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-6 rounded-2xl group"
-                >
-                  <IoCallSharp className="mr-3 text-xl group-hover:scale-110 transition-transform duration-300" />
-                  Call Us Now
-                  <div className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <IoArrowForward className="text-sm" />
-                  </div>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/5 text-lg px-8 py-6 rounded-2xl backdrop-blur group transition-all duration-300"
-                >
-                  <IoLocation className="mr-3 text-xl group-hover:scale-110 transition-transform duration-300" />
-                  Request Custom Location
-                </Button>
+                <a href="tel:+306936685610">
+                  <Button
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-6 rounded-2xl group"
+                  >
+                    <IoCallSharp className="mr-3 text-xl group-hover:scale-110 transition-transform duration-300" />
+                    Call Us Now
+                    <div className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <IoArrowForward className="text-sm" />
+                    </div>
+                  </Button>
+                </a>
+                <Link href="/contact-us">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/5 text-lg px-8 py-6 rounded-2xl backdrop-blur group transition-all duration-300"
+                  >
+                    <IoLocation className="mr-3 text-xl group-hover:scale-110 transition-transform duration-300" />
+                    Request Custom Location
+                  </Button>
+                </Link>
               </div>
 
               {/* Enhanced Contact Info */}

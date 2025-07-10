@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { IoCarSport, IoCallSharp, IoStar, IoLocation } from "react-icons/io5";
+import { IoCarSport, IoCallSharp, IoStar, IoLocation, IoLibrary } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/CountUp";
 import { useState, useEffect } from "react";
@@ -177,7 +177,7 @@ export default function HeroSection() {
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={50}
+                    to={12}
                     suffix="+"
                     duration={2000}
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-[#256bae] group-hover:to-indigo-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
@@ -209,7 +209,7 @@ export default function HeroSection() {
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={15}
+                    to={10}
                     suffix="+"
                     duration={1500}
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-emerald-500 group-hover:to-teal-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
@@ -224,35 +224,35 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Rating */}
+            {/* Years History */}
             <div className="relative group">
-              <div className="relative bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-sm border border-white/20 hover:border-yellow-500/50 rounded-3xl p-6 sm:p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105">
+              <div className="relative bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-sm border border-white/20 hover:border-primary/50 rounded-3xl p-6 sm:p-8 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105">
                 {/* Multi-layer Glow Effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute -inset-1 bg-gradient-to-br from-yellow-500/15 to-orange-500/15 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-br from-primary/15 to-[#256bae]/15 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
 
                 {/* Icon Container */}
                 <div className="relative mb-4">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto group-hover:from-yellow-500/30 group-hover:to-orange-500/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 border border-white/20">
-                    <IoStar className="text-xl sm:text-2xl text-white drop-shadow-lg group-hover:text-yellow-500 transition-colors duration-300" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto group-hover:from-primary/30 group-hover:to-[#256bae]/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 border border-white/20">
+                    <IoLibrary className="text-xl sm:text-2xl text-white drop-shadow-lg group-hover:text-primary transition-colors duration-300" />
                   </div>
                 </div>
 
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={5}
-                    suffix="★"
+                    to={100}
+                    suffix="+"
                     duration={1000}
-                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-yellow-500 group-hover:to-orange-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-[#256bae] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
                   />
                   <div className="text-sm sm:text-base text-white/90 mt-2 group-hover:text-white transition-colors duration-300 font-medium drop-shadow-lg">
-                    Rating
+                    Years History
                   </div>
                 </div>
 
                 {/* Animated Border */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-yellow-500/20 via-orange-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mask-border"></div>
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-primary/20 via-[#256bae]/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mask-border"></div>
               </div>
             </div>
           </div>

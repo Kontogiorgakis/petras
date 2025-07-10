@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
 import { ScrollArea } from "./ui/scroll-area";
-import { CarGallery } from "@/components/CarGallery";
-import { CarFeatures } from "@/components/CarFeatures";
 import { RentalTerms } from "@/components/RentalTerms";
 import { IoSpeedometer, IoColorPalette, IoCar } from "react-icons/io5";
 import { Car } from "@/types/car";
+import Link from "next/link";
 
 interface CarDetailsModalProps {
   car: Car | null;
@@ -16,11 +14,7 @@ interface CarDetailsModalProps {
 }
 
 export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
   if (!car) return null;
-
-  const carImages = [car.image, car.image, car.image, car.image];
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -38,120 +32,161 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
                 </DialogDescription>
               </div>
             </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-slate-800">€{car.price}</div>
-              <div className="text-sm text-slate-500">per day</div>
-            </div>
           </div>
         </DialogHeader>
 
         <ScrollArea className="h-[calc(95vh-140px)]">
-          <div className="p-8 space-y-8">
-            {/* Car Gallery */}
-            <CarGallery
-              images={carImages}
-              carName={car.name}
-              selectedIndex={selectedImageIndex}
-              onImageSelect={setSelectedImageIndex}
-            />
-
+          <div className="p-8 space-y-6">
             {/* Car Info Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Left Column - Features */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <IoSpeedometer className="text-lg text-primary" />
-                    </div>
-                    Vehicle Specifications
-                  </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Small Image */}
+              <div className="lg:col-span-1 space-y-4">
+                <div className="relative h-48 bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden shadow-sm">
+                  <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
+                </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex flex-col">
-                      <span className="text-sm text-slate-500">Engine</span>
-                      <span className="font-semibold text-slate-800">{car.features.cc}cc</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-sm text-slate-500">Doors</span>
-                      <span className="font-semibold text-slate-800">{car.features.doors}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <IoColorPalette className="text-lg text-primary" />
-                      <div className="flex flex-col">
-                        <span className="text-sm text-slate-500">Color</span>
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-slate-800">{car.color}</span>
-                          <div
-                            className="w-4 h-4 rounded-full border-2 border-white shadow-sm"
-                            style={{
-                              backgroundColor:
-                                car.color.toLowerCase() === "silver"
-                                  ? "#C0C0C0"
-                                  : car.color.toLowerCase() === "grey"
-                                  ? "#808080"
-                                  : car.color.toLowerCase() === "yellow"
-                                  ? "#FFD700"
-                                  : car.color.toLowerCase() === "orange"
-                                  ? "#FFA500"
-                                  : car.color.toLowerCase() === "white"
-                                  ? "#FFFFFF"
-                                  : car.color.toLowerCase() === "black"
-                                  ? "#000000"
-                                  : car.color.toLowerCase(),
-                            }}
-                          />
+                {/* Contact Section */}
+                <div className="bg-gradient-to-br from-primary/5 to-[#256bae]/5 border border-primary/20 rounded-2xl p-4">
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">Ready to Rent?</h3>
+                  <p className="text-slate-600 mb-3 text-sm">
+                    Contact us to reserve this vehicle or get more information.
+                  </p>
+                  <div className="flex flex-col gap-2">
+                    <Link
+                      href="/contact-us"
+                      className="border border-primary text-primary px-4 py-2 rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300 text-center"
+                    >
+                      Contact Us
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Content */}
+              <div className="lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Left Column - Features */}
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 rounded-2xl p-6 shadow-sm">
+                    <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <IoSpeedometer className="text-lg text-primary" />
+                      </div>
+                      Vehicle Specifications
+                    </h3>
+
+                    <div className="grid grid-cols-1 gap-6">
+                      {/* Main specs in 2x2 grid */}
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white rounded-lg p-4 border border-slate-100">
+                          <span className="text-sm text-slate-500">Passengers</span>
+                          <div className="text-lg font-semibold text-slate-800">{car.features.seats} seats</div>
+                        </div>
+                        <div className="bg-white rounded-lg p-4 border border-slate-100">
+                          <span className="text-sm text-slate-500">Transmission</span>
+                          <div className="text-lg font-semibold text-slate-800">{car.features.transmission}</div>
+                        </div>
+                        <div className="bg-white rounded-lg p-4 border border-slate-100">
+                          <span className="text-sm text-slate-500">Fuel Type</span>
+                          <div className="text-lg font-semibold text-slate-800">{car.features.fuel}</div>
+                        </div>
+                        <div className="bg-white rounded-lg p-4 border border-slate-100">
+                          <span className="text-sm text-slate-500">Engine</span>
+                          <div className="text-lg font-semibold text-slate-800">{car.features.cc}cc</div>
+                        </div>
+                      </div>
+
+                      {/* Secondary specs */}
+                      <div className="flex justify-between items-center pt-4 border-t border-slate-200">
+                        <div className="text-center">
+                          <span className="text-sm text-slate-500">Doors</span>
+                          <div className="text-lg font-semibold text-slate-800">{car.features.doors}</div>
+                        </div>
+
+                        <div className="text-center">
+                          <span className="text-sm text-slate-500">Year</span>
+                          <div className="text-lg font-semibold text-slate-800">{car.features.date}</div>
+                        </div>
+
+                        <div className="text-center">
+                          <span className="text-sm text-slate-500">A/C</span>
+                          <div className="text-lg font-semibold text-slate-800">{car.features.ac ? "Yes" : "No"}</div>
+                        </div>
+                      </div>
+
+                      {/* Colors section */}
+                      <div className="bg-white rounded-lg p-4 border border-slate-100">
+                        <div className="flex items-center gap-3 mb-3">
+                          <IoColorPalette className="text-lg text-primary" />
+                          <span className="text-sm text-slate-500">Available Colors</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="font-semibold text-slate-800">
+                            {Array.isArray(car.color) ? car.color.join(" / ") : car.color}
+                          </span>
+                          {Array.isArray(car.color) ? (
+                            <div className="flex gap-2">
+                              {car.color.map((color, index) => (
+                                <div
+                                  key={index}
+                                  className="w-6 h-6 rounded-full border-2 border-white shadow-sm"
+                                  style={{
+                                    backgroundColor:
+                                      color.toLowerCase() === "silver"
+                                        ? "#C0C0C0"
+                                        : color.toLowerCase() === "grey"
+                                        ? "#808080"
+                                        : color.toLowerCase() === "yellow"
+                                        ? "#FFD700"
+                                        : color.toLowerCase() === "orange"
+                                        ? "#FFA500"
+                                        : color.toLowerCase() === "white"
+                                        ? "#FFFFFF"
+                                        : color.toLowerCase() === "black"
+                                        ? "#000000"
+                                        : color.toLowerCase() === "pencil"
+                                        ? "#D3D3D3"
+                                        : color.toLowerCase() === "sea"
+                                        ? "#20B2AA"
+                                        : color.toLowerCase(),
+                                  }}
+                                />
+                              ))}
+                            </div>
+                          ) : (
+                            <div
+                              className="w-6 h-6 rounded-full border-2 border-white shadow-sm"
+                              style={{
+                                backgroundColor:
+                                  car.color.toLowerCase() === "silver"
+                                    ? "#C0C0C0"
+                                    : car.color.toLowerCase() === "grey"
+                                    ? "#808080"
+                                    : car.color.toLowerCase() === "yellow"
+                                    ? "#FFD700"
+                                    : car.color.toLowerCase() === "orange"
+                                    ? "#FFA500"
+                                    : car.color.toLowerCase() === "white"
+                                    ? "#FFFFFF"
+                                    : car.color.toLowerCase() === "black"
+                                    ? "#000000"
+                                    : car.color.toLowerCase() === "pencil"
+                                    ? "#D3D3D3"
+                                    : car.color.toLowerCase() === "sea"
+                                    ? "#20B2AA"
+                                    : car.color.toLowerCase(),
+                              }}
+                            />
+                          )}
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col">
-                      <span className="text-sm text-slate-500">Year</span>
-                      <span className="font-semibold text-slate-800">{car.features.date}</span>
-                    </div>
                   </div>
                 </div>
 
-                <CarFeatures car={car} />
-              </div>
-
-              {/* Right Column - Additional Info */}
-              <div className="space-y-6">
-                {/* Rental Terms */}
-                <RentalTerms />
-
-                {/* Availability Status */}
-                <div className="bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-xl font-bold text-slate-800 mb-4">Availability</h3>
-                  <div
-                    className={`inline-flex items-center px-4 py-2 rounded-full font-semibold ${
-                      car.available
-                        ? "bg-green-100 text-green-800 border border-green-200"
-                        : "bg-red-100 text-red-800 border border-red-200"
-                    }`}
-                  >
-                    {car.available ? "Available for Rental" : "Currently Rented"}
-                  </div>
-                  {car.available && (
-                    <p className="text-slate-600 mt-3">
-                      This vehicle is available for immediate rental. Contact us to book now!
-                    </p>
-                  )}
-                </div>
-
-                {/* Contact Information */}
-                <div className="bg-gradient-to-br from-primary/5 to-[#256bae]/5 border border-primary/20 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-slate-800 mb-4">Ready to Rent?</h3>
-                  <p className="text-slate-600 mb-4">
-                    Contact us to reserve this vehicle or get more information about rental terms.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <button className="flex-1 bg-gradient-to-r from-primary to-[#256bae] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                      Book Now
-                    </button>
-                    <button className="flex-1 border border-primary text-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300">
-                      Contact Us
-                    </button>
-                  </div>
+                {/* Right Column - Additional Info */}
+                <div className="space-y-6">
+                  {/* Rental Terms */}
+                  <RentalTerms />
                 </div>
               </div>
             </div>

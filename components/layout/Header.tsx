@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import { IoCarSport, IoPeople, IoSend, IoMenu, IoDocumentText, IoHome } from "react-icons/io5";
-import ReactCountryFlag from "react-country-flag";
 import { Button } from "../ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import Image from "next/image";
@@ -34,8 +33,10 @@ const NAVIGATION_ITEMS = [
 ] as const;
 
 const LANGUAGES = [
-  { code: "en", name: "English", countryCode: "US" },
-  { code: "el", name: "Ελληνικά", countryCode: "GR" },
+  { code: "en", name: "English", shortName: "EN" },
+  { code: "el", name: "Ελληνικά", shortName: "GR" },
+  { code: "fr", name: "Français", shortName: "FR" },
+  { code: "de", name: "Deutsch", shortName: "DE" },
 ] as const;
 
 const Header = () => {
@@ -71,10 +72,12 @@ const Header = () => {
           {/* Logo and Brand */}
           <div className="flex items-center gap-3 group">
             <div className="relative ">
-              <Image src="/logo/logo.png" height={60} width={90} alt="logo" />
+              <Image src="/logo/logo.png" height={60} width={60} alt="logo" className="object-contain" />
             </div>
             <Link href="/" className="text-base">
-              <h1 className="mt-1 text-2xl font-bold text-foreground ">Car Rental Petras</h1>
+              <h1 className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent text-2xl font-bold">
+                Car Rental Petras
+              </h1>
             </Link>
           </div>
 
@@ -107,40 +110,24 @@ const Header = () => {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="h-8 w-8 rounded-full bg-muted/50 hover:bg-primary/10 border border-border/50 transition-colors duration-300 p-1"
+                    className="h-8 px-3 rounded-full bg-muted/50 hover:bg-primary/10 border border-border/50 transition-colors duration-300 text-xs font-medium"
                   >
-                    <ReactCountryFlag
-                      countryCode={currentLanguage.countryCode}
-                      svg
-                      style={{
-                        width: "18px",
-                        height: "14px",
-                      }}
-                      className="rounded-sm"
-                    />
+                    {currentLanguage.shortName}
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="end"
-                  className="w-14 mt-2 bg-background/95 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl overflow-hidden p-1"
+                  className="w-32 mt-2 bg-background/95 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl overflow-hidden p-1"
                 >
                   {LANGUAGES.map((language) => (
                     <DropdownMenuItem
                       key={language.code}
                       onClick={() => handleLanguageChange(language.code)}
-                      className={`flex items-center justify-center p-2 rounded-lg cursor-pointer transition-colors duration-300 hover:bg-primary/10 ${
+                      className={`flex items-center justify-start p-2 rounded-lg cursor-pointer transition-colors duration-300 hover:bg-primary/10 ${
                         language.code === locale ? "bg-primary/15" : ""
                       }`}
                     >
-                      <ReactCountryFlag
-                        countryCode={language.countryCode}
-                        svg
-                        style={{
-                          width: "18px",
-                          height: "14px",
-                        }}
-                        className="rounded-sm"
-                      />
+                      <span className="text-sm font-medium">{language.name}</span>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -214,36 +201,20 @@ const Header = () => {
                       <span className="text-xs font-medium text-muted-foreground">Language</span>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="sm" className="h-6 w-6 p-0.5 rounded-full">
-                            <ReactCountryFlag
-                              countryCode={currentLanguage.countryCode}
-                              svg
-                              style={{
-                                width: "14px",
-                                height: "10px",
-                              }}
-                              className="rounded-sm"
-                            />
+                          <Button variant="ghost" size="sm" className="h-6 px-2 text-xs font-medium rounded-full">
+                            {currentLanguage.shortName}
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="w-12 p-1">
+                        <DropdownMenuContent align="end" className="w-32 p-1">
                           {LANGUAGES.map((language) => (
                             <DropdownMenuItem
                               key={language.code}
                               onClick={() => handleLanguageChange(language.code)}
-                              className={`flex items-center justify-center p-1.5 rounded cursor-pointer transition-colors duration-300 ${
+                              className={`flex items-center justify-start p-1.5 rounded cursor-pointer transition-colors duration-300 ${
                                 language.code === locale ? "bg-primary/10" : ""
                               }`}
                             >
-                              <ReactCountryFlag
-                                countryCode={language.countryCode}
-                                svg
-                                style={{
-                                  width: "14px",
-                                  height: "10px",
-                                }}
-                                className="rounded-sm"
-                              />
+                              <span className="text-sm font-medium">{language.name}</span>
                             </DropdownMenuItem>
                           ))}
                         </DropdownMenuContent>

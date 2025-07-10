@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { IoPeople, IoSettings, IoAccessibility, IoSnow, IoSpeedometer, IoExit } from "react-icons/io5";
+import { IoPeople, IoSettings, IoSnow, IoSpeedometer, IoExit } from "react-icons/io5";
+import { BsFillFuelPumpFill } from "react-icons/bs";
 import { Car } from "@/types/car";
 
 interface CarCardProps {
@@ -30,126 +31,103 @@ const getColorValue = (colorName: string): string => {
 
 export const CarCard = ({ car, onCarClick }: CarCardProps) => {
   return (
-    <div className="group">
-      <div
-        onClick={() => onCarClick(car)}
-        className={`relative bg-white/95 backdrop-blur-xl border rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 cursor-pointer ${
-          car.available ? "border-slate-200/80 hover:border-slate-300" : "border-red-200/60 opacity-75"
-        }`}
-      >
-        {/* Availability Badge */}
-        <div
-          className={`absolute top-4 right-4 z-10 px-3 py-1 rounded-full text-xs font-semibold ${
-            car.available
-              ? "bg-green-500/20 text-green-700 border border-green-500/30"
-              : "bg-red-500/20 text-red-700 border border-red-500/30"
-          }`}
-        >
-          {car.available ? "Available" : "Rented"}
-        </div>
-
+    <div onClick={() => onCarClick(car)} className="group cursor-pointer">
+      <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
         {/* Car Image */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-60 overflow-hidden">
           <Image
             src={car.image}
             alt={car.name}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         </div>
 
         {/* Car Info */}
-        <div className="relative p-6">
-          <div className="flex justify-between items-start mb-6">
+        <div className="p-5">
+          {/* Header */}
+          <div className="flex justify-between items-start mb-4">
             <div className="flex-1 min-w-0">
-              <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-slate-700 transition-colors duration-300">
-                {car.name}
-              </h3>
-              <div className="flex items-center gap-2 mb-1">
-                <p className="text-md text-slate-500">{car.category}</p>
-                <div
-                  className="w-4 h-4 rounded-full border-2 border-white shadow-sm"
-                  style={{ backgroundColor: getColorValue(car.color) }}
-                  title={car.color}
-                />
+              <h3 className="text-lg font-bold text-slate-900 truncate mb-1">{car.name}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                {Array.isArray(car.color) ? (
+                  <div className="flex items-center gap-1">
+                    {car.color.map((colorName, index) => (
+                      <div
+                        key={index}
+                        className="w-3 h-3 rounded-full border border-slate-300"
+                        style={{ backgroundColor: getColorValue(colorName) }}
+                        title={colorName}
+                      />
+                    ))}
+                    <span className="text-sm text-slate-500 ml-1">{car.color.join(" / ")}</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1">
+                    <div
+                      className="w-3 h-3 rounded-full border border-slate-300"
+                      style={{ backgroundColor: getColorValue(car.color) }}
+                      title={car.color}
+                    />
+                    <span className="text-sm text-slate-500">{car.color}</span>
+                  </div>
+                )}
               </div>
-              <p className="text-md text-slate-400">{car.features.date}</p>
             </div>
-            <div className="text-right ml-4">
-              <div className="text-2xl font-bold text-slate-800">€{car.price}</div>
-              <div className="text-xs text-slate-500">per day</div>
-            </div>
-          </div>
 
-          {/* Enhanced Features Section */}
-          <div className="mb-4">
-            <h4 className="text-sm font-semibold text-slate-800 mb-4 uppercase tracking-wide">Key Features</h4>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/50 hover:shadow-sm transition-all duration-300">
-                <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                  <IoPeople className="text-lg text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-800">{car.features.seats} Seats</div>
-                  <div className="text-xs text-slate-500">Passenger capacity</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/50 hover:shadow-sm transition-all duration-300">
-                <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                  <IoExit className="text-lg text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-800">{car.features.doors} Doors</div>
-                  <div className="text-xs text-slate-500">Entry points</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/50 hover:shadow-sm transition-all duration-300">
-                <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                  <IoSettings className="text-lg text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-800">{car.features.transmission}</div>
-                  <div className="text-xs text-slate-500">Transmission</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/50 hover:shadow-sm transition-all duration-300">
-                <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                  <IoAccessibility className="text-lg text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-800">{car.features.fuel}</div>
-                  <div className="text-xs text-slate-500">Fuel type</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/50 hover:shadow-sm transition-all duration-300">
-                <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                  <IoSnow className="text-lg text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-800">{car.features.ac ? "A/C" : "No A/C"}</div>
-                  <div className="text-xs text-slate-500">Climate control</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/50 hover:shadow-sm transition-all duration-300">
-                <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                  <IoSpeedometer className="text-lg text-primary" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-slate-800">{car.features.cc}cc</div>
-                  <div className="text-xs text-slate-500">Engine size</div>
-                </div>
-              </div>
+            <div className="text-right ml-3">
+              <div className="text-lg font-bold text-slate-800">{car.features.date}</div>
+              <div className="text-sm text-slate-500">{car.category}</div>
             </div>
           </div>
 
-          {/* Animated underline */}
-          <div className="w-0 h-0.5 bg-gradient-to-r from-primary to-[#256bae] mx-auto group-hover:w-16 transition-all duration-500 rounded-full"></div>
+          {/* Key Features - Complete Grid */}
+          <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
+              <IoPeople className="text-lg text-primary mb-1" />
+              <span className="text-xs font-medium text-slate-700">{car.features.seats}</span>
+              <span className="text-xs text-slate-500">Seats</span>
+            </div>
+
+            <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
+              <BsFillFuelPumpFill className="text-lg text-primary mb-1" />
+              <span className="text-xs font-medium text-slate-700">{car.features.fuel}</span>
+              <span className="text-xs text-slate-500">Fuel</span>
+            </div>
+
+            <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
+              <IoSettings className="text-lg text-primary mb-1" />
+              <span className="text-xs font-medium text-slate-700">{car.features.transmission}</span>
+              <span className="text-xs text-slate-500">Trans.</span>
+            </div>
+
+            <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
+              <IoExit className="text-lg text-primary mb-1" />
+              <span className="text-xs font-medium text-slate-700">{car.features.doors}</span>
+              <span className="text-xs text-slate-500">Doors</span>
+            </div>
+
+            <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
+              <IoSpeedometer className="text-lg text-primary mb-1" />
+              <span className="text-xs font-medium text-slate-700">{car.features.cc}cc</span>
+              <span className="text-xs text-slate-500">Engine</span>
+            </div>
+
+            {car.features.ac ? (
+              <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
+                <IoSnow className="text-lg text-primary mb-1" />
+                <span className="text-xs font-medium text-slate-700">A/C</span>
+                <span className="text-xs text-slate-500">Climate</span>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center p-2 bg-slate-50/50 rounded-lg opacity-50">
+                <IoSnow className="text-lg text-slate-400 mb-1" />
+                <span className="text-xs font-medium text-slate-500">No A/C</span>
+                <span className="text-xs text-slate-400">Climate</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

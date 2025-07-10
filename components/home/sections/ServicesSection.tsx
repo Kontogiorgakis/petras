@@ -1,6 +1,6 @@
 "use client";
 
-import { IoCarSport, IoShield, IoTime, IoCard, IoCheckmarkCircle, IoStar } from "react-icons/io5";
+import { IoCarSport, IoShield, IoTime, IoPin, IoCheckmarkCircle, IoStar } from "react-icons/io5";
 
 const SERVICES = [
   {
@@ -19,9 +19,10 @@ const SERVICES = [
     description: "Daily customer support (09:00-20:00) and assistance throughout your rental period.",
   },
   {
-    icon: IoCard,
-    title: "Easy Booking",
-    description: "Simple online booking process with transparent pricing and absolutely no hidden fees.",
+    icon: IoPin,
+    title: "Local Experts",
+    description:
+      "Get insider tips and recommendations for the best hidden spots, beaches, and authentic experiences in Sitia.",
   },
   {
     icon: IoCheckmarkCircle,

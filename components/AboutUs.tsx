@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { IoCarSport, IoShield, IoStar, IoHeart, IoTrophy, IoGlobe, IoCall, IoMail, IoLocation } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 
@@ -35,20 +36,20 @@ const COMPANY_VALUES = [
 
 const COMPANY_STATS = [
   {
-    number: "15+",
+    number: "100+",
     label: "Years of Experience",
     description: "Serving customers since 2008",
     gradient: "from-primary to-[#256bae]",
   },
   {
-    number: "5000+",
+    number: "500+",
     label: "Happy Customers",
     description: "Satisfied travelers each year",
     gradient: "from-blue-600 to-indigo-600",
   },
   {
-    number: "50+",
-    label: "Premium Vehicles",
+    number: "12+",
+    label: "Reliable Vehicles",
     description: "Modern, well-maintained fleet",
     gradient: "from-emerald-600 to-teal-600",
   },
@@ -86,26 +87,35 @@ export default function AboutUs() {
 
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
                 For over 15 years, Petras Rental has been the premier choice for travelers exploring the beautiful
-                island of Crete. We combine local expertise with premium vehicles to create unforgettable journeys.
+                island of Crete. We combine local expertise with reliable vehicles to create unforgettable journeys.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Button className="bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 text-white px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                  <IoCall className="mr-2" />
-                  Contact Us
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-primary/30 text-primary hover:bg-primary/5 px-8 py-3 rounded-2xl"
-                >
-                  View Our Fleet
-                </Button>
+                <Link href="/contact-us">
+                  <Button className="bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 text-white px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <IoCall className="mr-2" />
+                    Contact Us
+                  </Button>
+                </Link>
+                <Link href="/cars">
+                  <Button
+                    variant="outline"
+                    className="border-primary/30 text-primary hover:bg-primary/5 px-8 py-3 rounded-2xl"
+                  >
+                    View Our Fleet
+                  </Button>
+                </Link>
               </div>
             </div>
 
             <div className="relative">
               <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-                <Image src="/home/sitia.jpg" alt="Beautiful Crete landscape" fill className="object-cover" />
+                <Image
+                  src="/about/store.jpg"
+                  alt="Beautiful Crete landscape"
+                  fill
+                  className="object-cover object-left"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
               </div>
 
@@ -117,7 +127,7 @@ export default function AboutUs() {
                   </div>
                   <div>
                     <div className="text-2xl font-bold bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
-                      5000+
+                      500+
                     </div>
                     <div className="text-sm text-slate-600">Happy Customers</div>
                   </div>
@@ -145,7 +155,7 @@ export default function AboutUs() {
               services.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Today, we&apos;re proud to offer a diverse fleet of over 50 premium vehicles, from compact city cars to
+              Today, we&apos;re proud to offer a diverse fleet of over 50 reliable vehicles, from compact city cars to
               spacious SUVs, all maintained to the highest standards. Our local expertise and commitment to exceptional
               service have made us the preferred choice for thousands of travelers seeking to explore Crete&apos;s
               stunning landscapes, historic sites, and hidden gems.
@@ -284,17 +294,21 @@ export default function AboutUs() {
               </div>
 
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button className="bg-gradient-to-r from-primary to-[#256bae] text-white hover:from-primary/90 hover:to-[#256bae]/90 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <IoCall className="mr-2" />
-                  Call Now
-                </Button>
-                <Button
-                  variant="outline"
-                  className="bg-white/10 border-white/20 text-white/90 hover:bg-white/20 hover:text-white px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"
-                >
-                  <IoMail className="mr-2" />
-                  Send Email
-                </Button>
+                <a href="tel:+306936685610">
+                  <Button className="bg-gradient-to-r from-primary to-[#256bae] text-white hover:from-primary/90 hover:to-[#256bae]/90 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <IoCall className="mr-2" />
+                    Call Now
+                  </Button>
+                </a>
+                <a href="mailto:info@petras-rentals.gr">
+                  <Button
+                    variant="outline"
+                    className="bg-white/10 border-white/20 text-white/90 hover:bg-white/20 hover:text-white px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"
+                  >
+                    <IoMail className="mr-2" />
+                    Send Email
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

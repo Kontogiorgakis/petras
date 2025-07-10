@@ -1,20 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import {
-  IoCarSport,
-  IoCallSharp,
-  IoMail,
-  IoLocation,
-  IoTime,
-  IoLogoFacebook,
-  IoLogoInstagram,
-  IoLogoWhatsapp,
-  IoShield,
-  IoCard,
-  IoCheckmarkCircle,
-} from "react-icons/io5";
+import { IoCarSport, IoCallSharp, IoMail, IoLocation, IoTime, IoShield, IoCheckmarkCircle } from "react-icons/io5";
 
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
@@ -26,7 +13,6 @@ const QUICK_LINKS = [
 const SERVICES = [
   { icon: IoCarSport, label: "Premium Fleet" },
   { icon: IoShield, label: "Fully Insured" },
-  { icon: IoCard, label: "Easy Booking" },
   { icon: IoCheckmarkCircle, label: "Clean & Sanitized" },
 ] as const;
 
@@ -57,50 +43,15 @@ export const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <Image
-                  src="/logo/car.svg"
-                  height={50}
-                  width={50}
-                  alt="Petras Rental Logo"
-                  className="h-[50px] w-auto"
-                />
                 <span className="text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                  Petras Rental
+                  Car Rental Petras
                 </span>
               </div>
 
               <p className="text-white/70 leading-relaxed mb-6 text-sm sm:text-base">
-                Your trusted car rental partner in Crete. Experience the freedom of the road with our premium vehicles
+                Your trusted car rental partner in Crete. Experience the freedom of the road with our reliable vehicles
                 and exceptional service across the beautiful island.
               </p>
-
-              {/* Social Links */}
-              <div className="flex gap-4">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 group"
-                >
-                  <IoLogoFacebook className="text-lg text-white/70 group-hover:text-white transition-colors duration-300" />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 group"
-                >
-                  <IoLogoInstagram className="text-lg text-white/70 group-hover:text-white transition-colors duration-300" />
-                </a>
-                <a
-                  href="https://wa.me/306936685610"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 group"
-                >
-                  <IoLogoWhatsapp className="text-lg text-white/70 group-hover:text-white transition-colors duration-300" />
-                </a>
-              </div>
             </div>
 
             {/* Quick Links */}
