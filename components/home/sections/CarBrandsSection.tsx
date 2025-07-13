@@ -1,21 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { IoCarSport } from "react-icons/io5";
 
 const CAR_BRANDS = [
-  { name: "Kia", logo: "/brands/kia.svg" },
-  { name: "Suzuki", logo: "/brands/suzuki.svg" },
-  { name: "Hyundai", logo: "/brands/hyundai.svg" },
-  { name: "Škoda", logo: "/brands/skoda.svg" },
-  { name: "Volkswagen", logo: "/brands/volkswagen-1-logo-svgrepo-com.svg" },
-  { name: "Fiat", logo: "/brands/fiat.svg" },
-  { name: "Toyota", logo: "/brands/toyota.svg" },
+  { name: "Kia", logo: "/brands/kia.svg", key: "kia" },
+  { name: "Suzuki", logo: "/brands/suzuki.svg", key: "suzuki" },
+  { name: "Hyundai", logo: "/brands/hyundai.svg", key: "hyundai" },
+  { name: "Škoda", logo: "/brands/skoda.svg", key: "skoda" },
+  { name: "Volkswagen", logo: "/brands/volkswagen-1-logo-svgrepo-com.svg", key: "volkswagen" },
+  { name: "Toyota", logo: "/brands/toyota.svg", key: "toyota" },
 ] as const;
 
 export default function CarBrandsSection() {
+  const t = useTranslations("home.carBrands");
+
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="hidden md:block py-20 relative overflow-hidden">
       {/* Enhanced Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50/60 via-white to-blue-50/40"></div>
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
@@ -30,16 +32,16 @@ export default function CarBrandsSection() {
             <div className="w-7 h-7 bg-gradient-to-br from-primary/15 to-[#256bae]/15 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <IoCarSport className="text-sm" />
             </div>
-            <span>Trusted Partnerships</span>
+            <span>{t("badge.title")}</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            Premium{" "}
+            {t("title.main")}{" "}
             <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
-              Vehicle Brands
+              {t("title.highlight")}
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We partner with the world&apos;s leading automotive manufacturers to bring you the finest rental experience
+            {t("description")}
           </p>
         </div>
 
@@ -62,7 +64,7 @@ export default function CarBrandsSection() {
                     <div className="h-16 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
                       <Image
                         src={brand.logo}
-                        alt={`${brand.name} logo`}
+                        alt={`${t(`brands.${brand.key}`)} logo`}
                         width={120}
                         height={64}
                         className="max-h-16 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-400"
@@ -71,7 +73,7 @@ export default function CarBrandsSection() {
 
                     {/* Brand Name */}
                     <div className="text-lg font-semibold text-muted-foreground/80 group-hover:text-primary transition-colors duration-300">
-                      {brand.name}
+                      {t(`brands.${brand.key}`)}
                     </div>
 
                     {/* Animated underline */}
@@ -92,7 +94,7 @@ export default function CarBrandsSection() {
                     <div className="h-16 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
                       <Image
                         src={brand.logo}
-                        alt={`${brand.name} logo`}
+                        alt={`${t(`brands.${brand.key}`)} logo`}
                         width={120}
                         height={64}
                         className="max-h-16 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-400"
@@ -101,7 +103,7 @@ export default function CarBrandsSection() {
 
                     {/* Brand Name */}
                     <div className="text-lg font-semibold text-muted-foreground/80 group-hover:text-primary transition-colors duration-300">
-                      {brand.name}
+                      {t(`brands.${brand.key}`)}
                     </div>
 
                     {/* Animated underline */}

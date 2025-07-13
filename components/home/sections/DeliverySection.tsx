@@ -1,73 +1,76 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { IoLocation, IoArrowForward, IoCallSharp, IoCheckmarkCircle } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 
 const DELIVERY_LOCATIONS = [
   {
-    name: "Heraklion Airport",
-    description: "International Airport",
+    nameKey: "locations.airports.heraklion.name",
+    descriptionKey: "locations.airports.heraklion.description",
     icon: "✈️",
     coordinates: { lat: 35.3387, lng: 25.1803 },
   },
   {
-    name: "Chania Airport",
-    description: "International Airport",
+    nameKey: "locations.airports.chania.name",
+    descriptionKey: "locations.airports.chania.description",
     icon: "✈️",
     coordinates: { lat: 35.5317, lng: 24.1497 },
   },
   {
-    name: "Sitia Airport",
-    description: "Regional Airport",
+    nameKey: "locations.airports.sitia.name",
+    descriptionKey: "locations.airports.sitia.description",
     icon: "✈️",
     coordinates: { lat: 35.2166, lng: 26.1018 },
   },
   {
-    name: "Heraklion Port",
-    description: "Main Ferry Port",
+    nameKey: "locations.ports.heraklion.name",
+    descriptionKey: "locations.ports.heraklion.description",
     icon: "⚓",
     coordinates: { lat: 35.3442, lng: 25.1332 },
   },
   {
-    name: "Chania Port",
-    description: "Main Ferry Port",
+    nameKey: "locations.ports.chania.name",
+    descriptionKey: "locations.ports.chania.description",
     icon: "⚓",
     coordinates: { lat: 35.5178, lng: 24.0212 },
   },
   {
-    name: "Sitia Port",
-    description: "Main Ferry Port",
+    nameKey: "locations.ports.sitia.name",
+    descriptionKey: "locations.ports.sitia.description",
     icon: "⚓",
     coordinates: { lat: 35.2089, lng: 26.1049 },
   },
   {
-    name: "Agios Nikolaos",
-    description: "City Center",
+    nameKey: "locations.cities.agiosNikolaos.name",
+    descriptionKey: "locations.cities.agiosNikolaos.description",
     icon: "🏛️",
     coordinates: { lat: 35.1908, lng: 25.7164 },
   },
   {
-    name: "Ierapetra",
-    description: "Coastal Town",
+    nameKey: "locations.cities.ierapetra.name",
+    descriptionKey: "locations.cities.ierapetra.description",
     icon: "🏖️",
     coordinates: { lat: 35.0097, lng: 25.7397 },
   },
   {
-    name: "Palekastro",
-    description: "Beach Resort",
+    nameKey: "locations.cities.palekastro.name",
+    descriptionKey: "locations.cities.palekastro.description",
     icon: "🏖️",
     coordinates: { lat: 35.1972, lng: 26.2611 },
   },
   {
-    name: "Xerokampos",
-    description: "Remote Beach",
+    nameKey: "locations.cities.xerokampos.name",
+    descriptionKey: "locations.cities.xerokampos.description",
     icon: "🌊",
     coordinates: { lat: 35.1019, lng: 26.2397 },
   },
 ] as const;
 
 export default function DeliverySection() {
+  const t = useTranslations("home.delivery");
+
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Enhanced Background */}
@@ -89,25 +92,23 @@ export default function DeliverySection() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-[#256bae]/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <IoLocation className="text-sm" />
             </div>
-            <span>Island-Wide Delivery Service</span>
+            <span>{t("badge.title")}</span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            <span className="text-foreground">We Deliver </span>
+            <span className="text-foreground">{t("title.main")} </span>
             <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">
-              Anywhere
+              {t("title.highlight")}
             </span>
             <br />
-            <span className="text-foreground">You Are</span>
+            <span className="text-foreground">{t("title.sub")}</span>
           </h2>
 
           <div className="max-w-5xl mx-auto space-y-4">
             <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground leading-relaxed font-light">
-              Experience ultimate convenience with our premium door-to-door delivery service
+              {t("description.main")}
             </p>
-            <p className="text-lg text-muted-foreground/80 max-w-3xl mx-auto">
-              From major airports to hidden beaches, we bring your perfect rental car directly to you
-            </p>
+            <p className="text-lg text-muted-foreground/80 max-w-3xl mx-auto">{t("description.sub")}</p>
           </div>
         </div>
 
@@ -150,10 +151,10 @@ export default function DeliverySection() {
                       {/* Enhanced Text */}
                       <div className="flex flex-col">
                         <span className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300 text-sm sm:text-base whitespace-nowrap">
-                          {location.name}
+                          {t(location.nameKey)}
                         </span>
                         <span className="text-xs text-muted-foreground/70 group-hover:text-muted-foreground transition-colors duration-300">
-                          {location.description}
+                          {t(location.descriptionKey)}
                         </span>
                       </div>
 
@@ -191,21 +192,18 @@ export default function DeliverySection() {
                 </div>
 
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
-                  <span className="text-foreground">Need a </span>
+                  <span className="text-foreground">{t("customLocation.title.main")} </span>
                   <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                    Custom Location
+                    {t("customLocation.title.highlight")}
                   </span>
-                  <span className="text-foreground">?</span>
+                  <span className="text-foreground">{t("customLocation.title.question")}</span>
                 </h3>
 
                 <div className="max-w-3xl mx-auto space-y-3">
                   <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Don&apos;t see your location above? No problem! We deliver anywhere across Crete.
+                    {t("customLocation.description.main")}
                   </p>
-                  <p className="text-base text-muted-foreground/80">
-                    From remote beaches to mountain villages, our team will bring your perfect rental car directly to
-                    you.
-                  </p>
+                  <p className="text-base text-muted-foreground/80">{t("customLocation.description.sub")}</p>
                 </div>
               </div>
 
@@ -217,7 +215,7 @@ export default function DeliverySection() {
                     className="w-full bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-6 rounded-2xl group"
                   >
                     <IoCallSharp className="mr-3 text-xl group-hover:scale-110 transition-transform duration-300" />
-                    Call Us Now
+                    {t("customLocation.buttons.call")}
                     <div className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <IoArrowForward className="text-sm" />
                     </div>
@@ -230,7 +228,7 @@ export default function DeliverySection() {
                     className="w-full border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/5 text-lg px-8 py-6 rounded-2xl backdrop-blur group transition-all duration-300"
                   >
                     <IoLocation className="mr-3 text-xl group-hover:scale-110 transition-transform duration-300" />
-                    Request Custom Location
+                    {t("customLocation.buttons.request")}
                   </Button>
                 </Link>
               </div>
@@ -244,24 +242,36 @@ export default function DeliverySection() {
                       <div className="w-12 h-12 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                       </div>
-                      <span className="text-sm font-medium text-foreground">Available Daily 09:00-20:00</span>
-                      <span className="text-xs text-muted-foreground">Daily delivery service</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {t("customLocation.features.availability.title")}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {t("customLocation.features.availability.description")}
+                      </span>
                     </div>
 
                     <div className="flex flex-col items-center text-center group">
                       <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                         <IoCheckmarkCircle className="text-primary text-xl" />
                       </div>
-                      <span className="text-sm font-medium text-foreground">Free Consultation</span>
-                      <span className="text-xs text-muted-foreground">No hidden charges</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {t("customLocation.features.consultation.title")}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {t("customLocation.features.consultation.description")}
+                      </span>
                     </div>
 
                     <div className="flex flex-col items-center text-center group">
                       <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                         <IoLocation className="text-indigo-500 text-xl" />
                       </div>
-                      <span className="text-sm font-medium text-foreground">Island-Wide</span>
-                      <span className="text-xs text-muted-foreground">Anywhere in Crete</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {t("customLocation.features.coverage.title")}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {t("customLocation.features.coverage.description")}
+                      </span>
                     </div>
                   </div>
                 </div>

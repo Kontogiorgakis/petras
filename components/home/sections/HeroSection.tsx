@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { IoCarSport, IoCallSharp, IoStar, IoLocation, IoLibrary } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/CountUp";
@@ -14,6 +16,7 @@ const CAROUSEL_IMAGES = [
 ];
 
 export default function HeroSection() {
+  const t = useTranslations("home.hero");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Auto-play functionality
@@ -24,10 +27,6 @@ export default function HeroSection() {
 
     return () => clearInterval(interval);
   }, []);
-
-  const goToImage = (index: number) => {
-    setCurrentImageIndex(index);
-  };
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-primary/5 via-[#256bae]/5 to-primary/10 pt-16 pb-16 overflow-hidden">
@@ -44,33 +43,20 @@ export default function HeroSection() {
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover object-center"
+              className="object-cover object-center pointer-events-none"
               priority={index === 0}
               quality={90}
+              draggable={false}
             />
           </div>
         ))}
 
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/50 pointer-events-none"></div>
         {/* Color overlay to maintain brand colors */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-[#256bae]/15 to-primary/25"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-[#256bae]/15 to-primary/25 pointer-events-none"></div>
         {/* Glass-morphism overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/10"></div>
-      </div>
-
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex space-x-3">
-        {CAROUSEL_IMAGES.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToImage(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentImageIndex ? "bg-white scale-125 shadow-lg" : "bg-white/40 hover:bg-white/60"
-            }`}
-            aria-label={`Go to image ${index + 1}`}
-          />
-        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/10 pointer-events-none"></div>
       </div>
 
       {/* Floating background elements */}
@@ -89,9 +75,9 @@ export default function HeroSection() {
             {/* Title with subtle enhancements */}
             <div className="relative">
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight break-words drop-shadow-2xl relative">
-                Your Journey Starts
+                {t("title")}
                 <span className="text-primary block bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent drop-shadow-lg relative">
-                  With Petras Rental
+                  {t("subtitle")}
                   {/* Simple accent line */}
                   <div className="absolute -bottom-1 left-0 w-16 h-0.5 bg-gradient-to-r from-primary to-[#256bae] rounded-full opacity-70"></div>
                 </span>
@@ -99,28 +85,31 @@ export default function HeroSection() {
             </div>
 
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-8 mx-auto lg:mx-0 leading-relaxed font-light break-words drop-shadow-lg relative">
-              Experience the ultimate freedom of the road with our premium car rental service. From economy to luxury,
-              we have the perfect vehicle for every adventure across beautiful Crete.
+              {t("description")}
               {/* Simple side accent */}
               <div className="absolute -left-2 top-0 w-0.5 h-8 bg-gradient-to-b from-primary/50 to-transparent rounded-full"></div>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button
-                size="lg"
-                className="text-lg px-8 py-6 rounded-full bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300 border border-white/20"
-              >
-                <IoCarSport className="mr-2 size-6" />
-                Our Cars
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6 rounded-full border-white/40 hover:bg-white/10 text-white hover:text-white shadow-xl backdrop-blur-sm bg-white/5 hover:border-white/60 transform hover:scale-105 transition-all duration-300"
-              >
-                <IoCallSharp className="mr-2 size-6" />
-                Contact Us
-              </Button>
+              <Link href="/cars">
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-6 rounded-full bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300 border border-white/20"
+                >
+                  <IoCarSport className="mr-2 size-6" />
+                  {t("buttons.ourCars")}
+                </Button>
+              </Link>
+              <Link href="/contact-us">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-6 rounded-full border-white/40 hover:bg-white/10 text-white hover:text-white shadow-xl backdrop-blur-sm bg-white/5 hover:border-white/60 transform hover:scale-105 transition-all duration-300"
+                >
+                  <IoCallSharp className="mr-2 size-6" />
+                  {t("buttons.contactUs")}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -151,7 +140,7 @@ export default function HeroSection() {
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-[#256bae] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
                   />
                   <div className="text-sm sm:text-base text-white/90 mt-2 group-hover:text-white transition-colors duration-300 font-medium drop-shadow-lg">
-                    Happy Customers
+                    {t("stats.customers.label")}
                   </div>
                 </div>
 
@@ -177,13 +166,13 @@ export default function HeroSection() {
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={12}
+                    to={13}
                     suffix="+"
                     duration={2000}
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-[#256bae] group-hover:to-indigo-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
                   />
                   <div className="text-sm sm:text-base text-white/90 mt-2 group-hover:text-white transition-colors duration-300 font-medium drop-shadow-lg">
-                    Premium Cars
+                    {t("stats.cars.label")}
                   </div>
                 </div>
 
@@ -215,7 +204,7 @@ export default function HeroSection() {
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-emerald-500 group-hover:to-teal-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
                   />
                   <div className="text-sm sm:text-base text-white/90 mt-2 group-hover:text-white transition-colors duration-300 font-medium drop-shadow-lg">
-                    Locations
+                    {t("stats.locations.label")}
                   </div>
                 </div>
 
@@ -241,13 +230,13 @@ export default function HeroSection() {
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={100}
+                    to={50}
                     suffix="+"
                     duration={1000}
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-[#256bae] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
                   />
                   <div className="text-sm sm:text-base text-white/90 mt-2 group-hover:text-white transition-colors duration-300 font-medium drop-shadow-lg">
-                    Years History
+                    {t("stats.years.label")}
                   </div>
                 </div>
 

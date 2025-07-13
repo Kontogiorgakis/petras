@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { IoCarSport, IoPeople, IoSend, IoMenu, IoDocumentText, IoHome } from "react-icons/io5";
 import { Button } from "../ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
@@ -12,22 +13,22 @@ import Image from "next/image";
 const NAVIGATION_ITEMS = [
   {
     href: "/",
-    label: "Home",
+    key: "home",
     icon: IoHome,
   },
   {
     href: "/cars",
-    label: "Cars",
+    key: "cars",
     icon: IoCarSport,
   },
   {
     href: "/about-us",
-    label: "About Us",
+    key: "aboutUs",
     icon: IoPeople,
   },
   {
     href: "/terms-and-conditions",
-    label: "Terms and Conditions",
+    key: "termsAndConditions",
     icon: IoDocumentText,
   },
 ] as const;
@@ -44,6 +45,7 @@ const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale();
+  const t = useTranslations("layout.header");
 
   useEffect(() => {
     setIsMounted(true);
@@ -76,7 +78,7 @@ const Header = () => {
             </div>
             <Link href="/" className="text-base">
               <h1 className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent text-2xl font-bold">
-                Car Rental Petras
+                {t("brand")}
               </h1>
             </Link>
           </div>
@@ -94,7 +96,7 @@ const Header = () => {
                           <IconComponent className="text-lg group-hover:text-primary transition-colors duration-300" />
                         </div>
                         <span className="relative">
-                          {item.label}
+                          {t(`navigation.${item.key}`)}
                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full rounded-full"></span>
                         </span>
                       </div>
@@ -141,7 +143,7 @@ const Header = () => {
                 className="px-4 py-2 rounded-xl font-medium text-sm flex items-center gap-2 transition-colors duration-300 bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 <IoSend className="text-base" />
-                <span>Contact Us</span>
+                <span>{t("contact")}</span>
               </Button>
             </div>
           </div>
@@ -176,7 +178,7 @@ const Header = () => {
                             <IconComponent className="text-base group-hover:text-primary transition-colors duration-300" />
                           </div>
                           <span className="font-medium text-sm group-hover:text-primary transition-colors duration-300">
-                            {item.label}
+                            {t(`navigation.${item.key}`)}
                           </span>
                         </Link>
                       </DropdownMenuItem>
@@ -191,14 +193,14 @@ const Header = () => {
                         <IoSend className="text-base group-hover:text-primary transition-colors duration-300" />
                       </div>
                       <span className="font-medium text-sm group-hover:text-primary transition-colors duration-300">
-                        Contact Us
+                        {t("contact")}
                       </span>
                     </button>
                   </DropdownMenuItem>
 
                   <div className="border-t border-border/50 mt-2 pt-2">
                     <div className="flex items-center justify-between p-2 rounded-lg bg-muted/30">
-                      <span className="text-xs font-medium text-muted-foreground">Language</span>
+                      <span className="text-xs font-medium text-muted-foreground">{t("language")}</span>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button variant="ghost" size="sm" className="h-6 px-2 text-xs font-medium rounded-full">

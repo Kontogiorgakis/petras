@@ -6,6 +6,8 @@ import { RentalTerms } from "@/components/RentalTerms";
 import { IoSpeedometer, IoColorPalette, IoCar } from "react-icons/io5";
 import { Car } from "@/types/car";
 import Link from "next/link";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface CarDetailsModalProps {
   car: Car | null;
@@ -14,6 +16,18 @@ interface CarDetailsModalProps {
 }
 
 export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) => {
+  const t = useTranslations("carModal");
+  const tData = useTranslations("carData");
+
+  // Helper function to safely get translated values
+  const getTranslatedValue = (namespace: string, key: string): string => {
+    try {
+      return (tData.raw(`${namespace}.${key}` as never) as string) || key;
+    } catch {
+      return key;
+    }
+  };
+
   if (!car) return null;
 
   return (
@@ -28,7 +42,7 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
               <div>
                 <DialogTitle className="text-2xl font-bold text-slate-800">{car.name}</DialogTitle>
                 <DialogDescription className="text-slate-600 mt-1">
-                  {car.category} - {car.features.date}
+                  {getTranslatedValue("categories", car.category)} - {car.features.date}
                 </DialogDescription>
               </div>
             </div>
@@ -36,27 +50,32 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
         </DialogHeader>
 
         <ScrollArea className="h-[calc(95vh-140px)]">
-          <div className="p-8 space-y-6">
+          <div className="p-8 space-y-8">
+            {/* Car Image Section */}
+            <div className="relative w-full h-[500px] md:h-[600px] bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src={car.image}
+                alt={car.name}
+                fill
+                className="object-contain"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                priority
+              />
+            </div>
+
             {/* Car Info Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Small Image */}
-              <div className="lg:col-span-1 space-y-4">
-                <div className="relative h-48 bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden shadow-sm">
-                  <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
-                </div>
-
-                {/* Contact Section */}
-                <div className="bg-gradient-to-br from-primary/5 to-[#256bae]/5 border border-primary/20 rounded-2xl p-4">
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">Ready to Rent?</h3>
-                  <p className="text-slate-600 mb-3 text-sm">
-                    Contact us to reserve this vehicle or get more information.
-                  </p>
-                  <div className="flex flex-col gap-2">
+              {/* Contact Section */}
+              <div className="lg:col-span-1">
+                <div className="bg-gradient-to-br from-primary/5 to-[#256bae]/5 border border-primary/20 rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">{t("contact.title")}</h3>
+                  <p className="text-slate-600 mb-4 text-sm">{t("contact.description")}</p>
+                  <div className="flex flex-col gap-3">
                     <Link
                       href="/contact-us"
-                      className="border border-primary text-primary px-4 py-2 rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300 text-center"
+                      className="bg-primary text-white px-4 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 text-center shadow-lg hover:shadow-xl"
                     >
-                      Contact Us
+                      {t("contact.contactButton")}
                     </Link>
                   </div>
                 </div>
@@ -71,26 +90,32 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <IoSpeedometer className="text-lg text-primary" />
                       </div>
-                      Vehicle Specifications
+                      {t("specifications.title")}
                     </h3>
 
                     <div className="grid grid-cols-1 gap-6">
                       {/* Main specs in 2x2 grid */}
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-white rounded-lg p-4 border border-slate-100">
-                          <span className="text-sm text-slate-500">Passengers</span>
-                          <div className="text-lg font-semibold text-slate-800">{car.features.seats} seats</div>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.passengers")}</span>
+                          <div className="text-lg font-semibold text-slate-800">
+                            {car.features.seats} {t("specifications.values.seats")}
+                          </div>
                         </div>
                         <div className="bg-white rounded-lg p-4 border border-slate-100">
-                          <span className="text-sm text-slate-500">Transmission</span>
-                          <div className="text-lg font-semibold text-slate-800">{car.features.transmission}</div>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.transmission")}</span>
+                          <div className="text-lg font-semibold text-slate-800">
+                            {getTranslatedValue("transmission", car.features.transmission)}
+                          </div>
                         </div>
                         <div className="bg-white rounded-lg p-4 border border-slate-100">
-                          <span className="text-sm text-slate-500">Fuel Type</span>
-                          <div className="text-lg font-semibold text-slate-800">{car.features.fuel}</div>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.fuelType")}</span>
+                          <div className="text-lg font-semibold text-slate-800">
+                            {getTranslatedValue("fuel", car.features.fuel)}
+                          </div>
                         </div>
                         <div className="bg-white rounded-lg p-4 border border-slate-100">
-                          <span className="text-sm text-slate-500">Engine</span>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.engine")}</span>
                           <div className="text-lg font-semibold text-slate-800">{car.features.cc}cc</div>
                         </div>
                       </div>
@@ -98,18 +123,20 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
                       {/* Secondary specs */}
                       <div className="flex justify-between items-center pt-4 border-t border-slate-200">
                         <div className="text-center">
-                          <span className="text-sm text-slate-500">Doors</span>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.doors")}</span>
                           <div className="text-lg font-semibold text-slate-800">{car.features.doors}</div>
                         </div>
 
                         <div className="text-center">
-                          <span className="text-sm text-slate-500">Year</span>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.year")}</span>
                           <div className="text-lg font-semibold text-slate-800">{car.features.date}</div>
                         </div>
 
                         <div className="text-center">
-                          <span className="text-sm text-slate-500">A/C</span>
-                          <div className="text-lg font-semibold text-slate-800">{car.features.ac ? "Yes" : "No"}</div>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.ac")}</span>
+                          <div className="text-lg font-semibold text-slate-800">
+                            {car.features.ac ? t("specifications.values.yes") : t("specifications.values.no")}
+                          </div>
                         </div>
                       </div>
 
@@ -117,11 +144,13 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
                       <div className="bg-white rounded-lg p-4 border border-slate-100">
                         <div className="flex items-center gap-3 mb-3">
                           <IoColorPalette className="text-lg text-primary" />
-                          <span className="text-sm text-slate-500">Available Colors</span>
+                          <span className="text-sm text-slate-500">{t("specifications.labels.colors")}</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <span className="font-semibold text-slate-800">
-                            {Array.isArray(car.color) ? car.color.join(" / ") : car.color}
+                            {Array.isArray(car.color)
+                              ? car.color.map((color) => getTranslatedValue("colors", color)).join(" / ")
+                              : getTranslatedValue("colors", car.color)}
                           </span>
                           {Array.isArray(car.color) ? (
                             <div className="flex gap-2">
@@ -185,7 +214,6 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
 
                 {/* Right Column - Additional Info */}
                 <div className="space-y-6">
-                  {/* Rental Terms */}
                   <RentalTerms />
                 </div>
               </div>

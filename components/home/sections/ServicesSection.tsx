@@ -1,42 +1,44 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { IoCarSport, IoShield, IoTime, IoPin, IoCheckmarkCircle, IoStar } from "react-icons/io5";
 
 const SERVICES = [
   {
     icon: IoCarSport,
-    title: "Premium Fleet",
-    description: "Choose from our collection of well-maintained, modern vehicles for every occasion and adventure.",
+    titleKey: "fleet.title",
+    descriptionKey: "fleet.description",
   },
   {
     icon: IoShield,
-    title: "Fully Insured",
-    description: "All our vehicles come with comprehensive insurance coverage for your complete peace of mind.",
+    titleKey: "insurance.title",
+    descriptionKey: "insurance.description",
   },
   {
     icon: IoTime,
-    title: "Daily Support",
-    description: "Daily customer support (09:00-20:00) and assistance throughout your rental period.",
+    titleKey: "support.title",
+    descriptionKey: "support.description",
   },
   {
     icon: IoPin,
-    title: "Local Experts",
-    description:
-      "Get insider tips and recommendations for the best hidden spots, beaches, and authentic experiences in Sitia.",
+    titleKey: "expertise.title",
+    descriptionKey: "expertise.description",
   },
   {
     icon: IoCheckmarkCircle,
-    title: "Clean & Sanitized",
-    description: "Every vehicle is thoroughly cleaned and sanitized before each rental for your safety.",
+    titleKey: "cleanliness.title",
+    descriptionKey: "cleanliness.description",
   },
   {
     icon: IoStar,
-    title: "Best Rates",
-    description: "Competitive pricing with price-match guarantee to ensure you get the best value possible.",
+    titleKey: "pricing.title",
+    descriptionKey: "pricing.description",
   },
 ] as const;
 
 export default function ServicesSection() {
+  const t = useTranslations("home.services");
+
   return (
     <section className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-50/50 via-white to-slate-50/50">
       {/* Background Elements */}
@@ -51,19 +53,18 @@ export default function ServicesSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-[#256bae]/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary/20">
             <IoShield className="text-base" />
-            Premium Services
+            {t("badge.title")}
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-            Why Choose{" "}
+            {t("title.main")}{" "}
             <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
-              Petras Rental?
+              {t("title.highlight")}
             </span>
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We provide exceptional car rental services with a focus on quality, reliability, and customer satisfaction
-            across beautiful Crete.
+            {t("description")}
           </p>
         </div>
 
@@ -84,11 +85,13 @@ export default function ServicesSection() {
 
                     {/* Title */}
                     <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
-                      {service.title}
+                      {t(`features.${service.titleKey}`)}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-base text-muted-foreground leading-relaxed flex-grow">{service.description}</p>
+                    <p className="text-base text-muted-foreground leading-relaxed flex-grow">
+                      {t(`features.${service.descriptionKey}`)}
+                    </p>
 
                     {/* Animated underline */}
                     <div className="w-0 h-0.5 bg-gradient-to-r from-primary to-[#256bae] mx-auto mt-6 group-hover:w-16 transition-all duration-500 rounded-full"></div>

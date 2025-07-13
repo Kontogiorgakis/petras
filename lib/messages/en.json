@@ -1,6 +1,860 @@
 {
-    "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Journey Starts",
+      "subtitle": "With Petras Rental",
+      "description": "Experience the ultimate freedom of the road with our premium car rental service. From economy to luxury, we have the perfect vehicle for every adventure across beautiful Crete.",
+      "buttons": {
+        "ourCars": "Our Cars",
+        "contactUs": "Contact Us"
+      },
+      "stats": {
+        "customers": {
+          "value": "500+",
+          "label": "Happy Customers"
+        },
+        "cars": {
+          "value": "13+",
+          "label": "Reliable Cars"
+        },
+        "locations": {
+          "value": "10+",
+          "label": "Locations"
+        },
+        "years": {
+          "value": "50+",
+          "label": "Years History"
+        }
+      }
+    },
+    "benefits": {
+      "badge": {
+        "icon": "Iconic Experience"
+      },
+      "title": {
+        "main": "Experience Excellence",
+        "highlight": "In Every Mile"
+      },
+      "description": "With years of experience in the car rental industry, we understand what matters most to our customers. From reliable vehicles to exceptional service, we deliver the perfect rental experience.",
+      "list": [
+        "No hidden fees or charges",
+        "Free cancellation up to 24 hours",
+        "Clean and sanitized vehicles",
+        "Flexible rental periods",
+        "Local pickup and drop-off",
+        "Competitive pricing"
+      ],
+      "buttons": {
+        "learnMore": "Learn More About Us",
+        "viewFleet": "View Our Fleet"
+      },
+      "imageOverlay": {
+        "title": "Discover Crete",
+        "description": "Explore the island's hidden gems"
+      },
+      "stats": {
+        "rating": {
+          "value": "4.9/5",
+          "label": "Customer Rating"
+        },
+        "price": {
+          "value": "€25+",
+          "label": "Starting Price"
+        },
+        "delivery": {
+          "title": "Free Delivery",
+          "subtitle": "Island-wide"
+        }
+      }
+    },
+    "carBrands": {
+      "badge": {
+        "title": "Trusted Partnerships"
+      },
+      "title": {
+        "main": "Reliable",
+        "highlight": "Vehicle Brands"
+      },
+      "description": "We partner with the world's leading automotive manufacturers to bring you the finest rental experience",
+      "brands": {
+        "kia": "Kia",
+        "suzuki": "Suzuki",
+        "hyundai": "Hyundai",
+        "skoda": "Škoda",
+        "volkswagen": "Volkswagen",
+        "toyota": "Toyota"
+      }
+    },
+    "delivery": {
+      "badge": {
+        "title": "Island-Wide Delivery Service"
+      },
+      "title": {
+        "main": "We",
+        "highlight": "Deliver & Pickup",
+        "sub": "Anywhere in Crete"
+      },
+      "description": {
+        "main": "Experience ultimate convenience with our premium door-to-door delivery service",
+        "sub": "From major airports to hidden beaches, we bring your perfect rental car directly to you"
+      },
+      "locations": {
+        "airports": {
+          "heraklion": {
+            "name": "Heraklion Airport",
+            "description": "International Airport"
+          },
+          "chania": {
+            "name": "Chania Airport",
+            "description": "International Airport"
+          },
+          "sitia": {
+            "name": "Sitia Airport",
+            "description": "Regional Airport"
+          }
+        },
+        "ports": {
+          "heraklion": {
+            "name": "Heraklion Port",
+            "description": "Main Ferry Port"
+          },
+          "chania": {
+            "name": "Chania Port",
+            "description": "Main Ferry Port"
+          },
+          "sitia": {
+            "name": "Sitia Port",
+            "description": "Main Ferry Port"
+          }
+        },
+        "cities": {
+          "agiosNikolaos": {
+            "name": "Agios Nikolaos",
+            "description": "City Center"
+          },
+          "ierapetra": {
+            "name": "Ierapetra",
+            "description": "Coastal Town"
+          },
+          "palekastro": {
+            "name": "Palekastro",
+            "description": "Beach Resort"
+          },
+          "xerokampos": {
+            "name": "Xerokampos",
+            "description": "Remote Beach"
+          }
+        }
+      },
+      "customLocation": {
+        "title": {
+          "main": "Need a",
+          "highlight": "Custom Location",
+          "question": "?"
+        },
+        "description": {
+          "main": "Don't see your location above? No problem! We deliver anywhere across Crete.",
+          "sub": "From remote beaches to mountain villages, our team will bring your perfect rental car directly to you. We can also arrange pickup from your chosen location."
+        },
+        "buttons": {
+          "call": "Call Us Now",
+          "request": "Request Delivery"
+        },
+        "features": {
+          "availability": {
+            "title": "Available Daily 09:00-20:00",
+            "description": "Daily delivery service"
+          },
+          "consultation": {
+            "title": "Free Consultation",
+            "description": "No hidden charges"
+          },
+          "coverage": {
+            "title": "Island-Wide",
+            "description": "Anywhere in Crete"
+          }
+        }
+      }
+    },
+    "services": {
+      "badge": {
+        "title": "Reliable Services"
+      },
+      "title": {
+        "main": "Why Choose",
+        "highlight": "Petras Rental?"
+      },
+      "description": "We provide exceptional car rental services with a focus on quality, reliability, and customer satisfaction across beautiful Crete.",
+      "features": {
+        "fleet": {
+          "title": "Reliable Fleet",
+          "description": "Choose from our collection of well-maintained, modern vehicles for every occasion and adventure."
+        },
+        "insurance": {
+          "title": "Fully Insured",
+          "description": "All our vehicles come with comprehensive insurance coverage for your complete peace of mind."
+        },
+        "support": {
+          "title": "Daily Support",
+          "description": "Daily customer support (09:00-20:00) and assistance throughout your rental period."
+        },
+        "expertise": {
+          "title": "Local Experts",
+          "description": "Get insider tips and recommendations for the best hidden spots, beaches, and authentic experiences in Sitia."
+        },
+        "cleanliness": {
+          "title": "Clean & Sanitized",
+          "description": "Every vehicle is thoroughly cleaned and sanitized before each rental for your safety."
+        },
+        "pricing": {
+          "title": "Best Rates",
+          "description": "Competitive pricing with price-match guarantee to ensure you get the best value possible."
+        }
+      }
+    },
+    "cta": {
+      "badge": {
+        "title": "Explore Our Services"
+      },
+      "title": {
+        "main": "Ready to Explore",
+        "highlight": "Crete?"
+      },
+      "description": "Discover everything Petras Rental offers - from our compact fleet to personalized local expertise for your perfect Cretan adventure",
+      "cards": {
+        "fleet": {
+          "title": "Reliable Fleet",
+          "description": "13+ modern vehicles from economy to luxury models",
+          "content": "Explore our extensive collection of well-maintained reliable vehicles, perfect for every adventure across beautiful Crete.",
+          "button": "View Our Fleet"
+        },
+        "heritage": {
+          "title": "Our Heritage",
+          "description": "100+ years of family tradition in beautiful Sitia",
+          "content": "Learn about our century-long heritage, family values, and unwavering commitment to providing exceptional rental experiences in Crete.",
+          "button": "Learn Our Story"
+        },
+        "contact": {
+          "title": "Contact Us",
+          "description": "Daily support 09:00-20:00 • Local expertise",
+          "content": "Get in touch with our friendly team for instant bookings, personalized recommendations, and expert local guidance for your Cretan journey.",
+          "button": "Get in Touch"
+        }
+      }
+    },
+    "testimonials": {
+      "badge": {
+        "title": "Customer Reviews"
+      },
+      "title": {
+        "main": "What Our",
+        "highlight": "Customers",
+        "sub": "Say"
+      },
+      "description": "Don't just take our word for it. Here's what our valued customers have to say about their experience with Petras Rental.",
+      "data": [
+        {
+          "name": "Marina B.S",
+          "location": "Greece",
+          "text": "We rented a car — everything was great, and Soula was incredibly friendly and helpful! She's definitely worth choosing if you're looking to rent a vehicle and explore the beautiful places around the city of Sitia... the nearby villages and the amazing beaches! The prices were very good! Many kudos!"
+        },
+        {
+          "name": "Caroline Monnet",
+          "location": "France",
+          "text": "I got the contact details for Petras Rent a Car from the backpacker's guide. And indeed, I was glad to have done business with Soula twice this year! A brand-new car, very reasonable price, and Soula arranged my arrival in Heraklion. She is incredibly kind, and it's also a real pleasure to chat with her. I recommend it with my eyes closed!"
+        },
+        {
+          "name": "Mc Bourdieu",
+          "location": "France",
+          "text": "I've been going to Sitia for 10 years and I always rent my vehicle from Petras Car Rentals. The manager of this local agency, Soula, is a capable person who knows how to adapt to her clients' needs. Efficient, available, always smiling, with attractive prices! Highly recommended 👍"
+        },
+        {
+          "name": "Blanc Cristophe",
+          "location": "France",
+          "text": "We rented a car from Soula in September 2019. She gave us a warm welcome, and we had no issues at all with the rental car. An added bonus is that the car is available upon arrival at the airport and can also be dropped off at the airport when departing from Heraklion. Highly recommended..."
+        },
+        {
+          "name": "Sandrine Garcin",
+          "location": "France",
+          "text": "For the past 4 years, I've been renting my cars from Soula. Reliable and well-maintained. Fair price and car as well. I had a flat tire this summer, and it was fixed within half an hour. I highly recommend her!"
+        },
+        {
+          "name": "Manolis Hatzidakis",
+          "location": "Germany",
+          "text": "Soula is always helpful and always kind. I'm absolutely satisfied with the cars she provides, and I will continue renting cars from Petras Car."
+        },
+        {
+          "name": "JML OKS",
+          "location": "England",
+          "text": "I had a warm welcome and was completely satisfied with Soula's services! I was even given an upgrade!!!"
+        },
+        {
+          "name": "Dimosthenis Zioulas",
+          "location": "Greece",
+          "text": "The car we were given was a 2023 model. Kudos to the woman who runs the company — some of the best prices in town and very good cars."
+        }
+      ]
+    }
+  },
+  "fleet": {
+    "title": {
+      "main": "Our",
+      "highlight": "Fleet"
+    },
+    "description": "Choose from our extensive collection of reliable vehicles, from economy cars to luxury SUVs",
+    "noCars": {
+      "title": "No cars available",
+      "description": "Please check back later for available vehicles."
+    },
+    "cta": {
+      "title": "Ready to Book Your Perfect Car?",
+      "description": "Contact us now to reserve your vehicle and start exploring the beautiful island of Crete with confidence.",
+      "contact": {
+        "mobile": {
+          "label": "Mobile",
+          "value": "+30 693 668 5610"
+        },
+        "email": {
+          "label": "Email",
+          "value": "info@petras-rentals.gr"
+        },
+        "location": {
+          "label": "Location",
+          "value": "Sitia, Crete"
+        },
+        "hours": {
+          "label": "Hours",
+          "value": "09:00 - 20:00"
+        }
+      },
+      "buttons": {
+        "call": "Call Now",
+        "quote": "Get Quote"
+      }
+    }
+  },
+  "carCard": {
+    "labels": {
+      "seats": "Seats",
+      "fuel": "Fuel",
+      "transmission": "Trans.",
+      "doors": "Doors",
+      "engine": "Engine",
+      "climate": "Climate",
+      "ac": "A/C",
+      "noAc": "No A/C"
+    }
+  },
+  "carData": {
+    "categories": {
+      "SUV": "SUV",
+      "Mini SUV": "Mini SUV",
+      "B-segment": "Compact",
+      "A-segment": "City Car"
+    },
+    "fuel": {
+      "Petrol": "Petrol",
+      "Diesel": "Diesel",
+      "Hybrid": "Hybrid",
+      "Electric": "Electric"
+    },
+    "transmission": {
+      "Manual": "Manual",
+      "Automatic": "Automatic",
+      "DSG": "DSG"
+    },
+    "colors": {
+      "White": "White",
+      "Black": "Black",
+      "Blue": "Blue",
+      "Red": "Red",
+      "Green": "Green",
+      "Pencil": "Silver",
+      "Sea": "Teal",
+      "Grey": "Grey",
+      "Yellow": "Yellow",
+      "Orange": "Orange"
+    },
+    "specs": {
+      "Air Conditioning": "Air Conditioning",
+      "Bluetooth": "Bluetooth",
+      "USB Port": "USB Port",
+      "Electric Windows": "Electric Windows",
+      "ABS": "ABS",
+      "Hybrid Engine": "Hybrid Engine",
+      "Panoramic Roof": "Panoramic Roof",
+      "Safety Pack": "Safety Pack",
+      "4WD": "4WD",
+      "Cruise Control": "Cruise Control",
+      "Parking Sensors": "Parking Sensors",
+      "Navigation": "Navigation",
+      "Central Locking": "Central Locking",
+      "DSG": "DSG Transmission"
+    }
+  },
+  "carModal": {
+    "header": {
+      "title": "Vehicle Details"
+    },
+    "contact": {
+      "title": "Ready to Rent?",
+      "description": "Contact us to reserve this vehicle or get more information.",
+      "contactButton": "Contact Us",
+      "viewAllButton": "View All Cars"
+    },
+    "specifications": {
+      "title": "Vehicle Specifications",
+      "labels": {
+        "passengers": "Passengers",
+        "transmission": "Transmission",
+        "fuelType": "Fuel Type",
+        "engine": "Engine",
+        "doors": "Doors",
+        "year": "Year",
+        "ac": "A/C",
+        "colors": "Available Colors"
+      },
+      "values": {
+        "seats": "seats",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "features": {
+      "title": "Key Features",
+      "included": "Included Features"
+    }
+  },
+  "rentalTerms": {
+    "title": "Rental Terms & Conditions",
+    "sections": {
+      "driverRequirements": {
+        "title": "Driver Requirements",
+        "items": [
+          "Valid driving license (minimum 1 year)",
+          "Age 21+ (additional fees for under 25)",
+          "Credit card for security deposit",
+          "International license for non-EU residents"
+        ]
+      },
+      "rentalTerms": {
+        "title": "Rental Terms",
+        "items": [
+          "Minimum rental period: 24 hours",
+          "Pick-up/drop-off times: 8 AM - 8 PM",
+          "Late return fee: €20 per hour",
+          "Free cancellation up to 24h before"
+        ]
+      },
+      "insurance": {
+        "title": "Insurance Coverage",
+        "items": [
+          "Comprehensive insurance included",
+          "Collision damage waiver available",
+          "Theft protection included",
+          "Third-party liability covered"
+        ]
+      }
+    },
+    "importantNotes": {
+      "title": "Important Notes",
+      "items": [
+        "Security deposit: €200-500 (varies by vehicle)",
+        "Fuel policy: Return with same fuel level",
+        "Mileage: Unlimited within Crete",
+        "Additional driver fee: €10 per day"
+      ]
+    },
+    "quickInfo": {
+      "title": "Need help?",
+      "description": "Our team is available daily (09:00-20:00) to assist you with your rental needs. Contact us for personalized service and special offers."
+    }
+  },
+  "aboutUs": {
+    "hero": {
+      "badge": {
+        "title": "About Petras Rental"
+      },
+      "title": {
+        "main": "Your Trusted ",
+        "highlight": "Car Rental Partner",
+        "sub": " in Crete"
+      },
+      "description": "For over 15 years, Petras Rental has been the premier choice for travelers exploring the beautiful island of Crete. We combine local expertise with reliable vehicles to create unforgettable journeys.",
+      "buttons": {
+        "contactUs": "Contact Us",
+        "viewFleet": "View Our Fleet"
+      },
+      "stats": {
+        "customers": "500+",
+        "customersLabel": "Happy Customers"
+      }
+    },
+    "story": {
+      "title": {
+        "main": "Our ",
+        "highlight": "Story"
+      },
+      "description1": "Founded in 2008 by Petros Nikolakis, Petras Rental started with a simple mission: to help visitors discover the authentic beauty of Crete through reliable, comfortable transportation. What began as a small family business with just five vehicles has grown into one of the island's most trusted car rental services.",
+      "description2": "Today, we're proud to offer a diverse fleet of over 50 reliable vehicles, from compact city cars to spacious SUVs, all maintained to the highest standards. Our local expertise and commitment to exceptional service have made us the preferred choice for thousands of travelers seeking to explore Crete's stunning landscapes, historic sites, and hidden gems."
+    },
+    "values": {
+      "title": {
+        "main": "Our ",
+        "highlight": "Values"
+      },
+      "description": "These core principles guide everything we do and shape every interaction with our customers.",
+      "list": {
+        "trust": {
+          "title": "Trust & Reliability",
+          "description": "We build lasting relationships through honest service and dependable vehicles that you can count on."
+        },
+        "customerFirst": {
+          "title": "Customer First",
+          "description": "Your satisfaction is our priority. We go above and beyond to ensure every rental experience exceeds expectations."
+        },
+        "quality": {
+          "title": "Quality Excellence",
+          "description": "From our reliable fleet to our professional service, we maintain the highest standards in everything we do."
+        },
+        "local": {
+          "title": "Local Expertise",
+          "description": "As a local Crete business, we know the island inside out and provide personalized recommendations."
+        }
+      }
+    },
+    "stats": {
+      "title": {
+        "main": "By the ",
+        "highlight": "Numbers"
+      },
+      "description": "Our commitment to excellence is reflected in these achievements.",
+      "list": {
+        "experience": {
+          "number": "100+",
+          "label": "Years of Experience",
+          "description": "Serving customers since 2008"
+        },
+        "customers": {
+          "number": "500+",
+          "label": "Happy Customers",
+          "description": "Satisfied travelers each year"
+        },
+        "vehicles": {
+          "number": "13+",
+          "label": "Reliable Vehicles",
+          "description": "Modern, well-maintained fleet"
+        },
+        "support": {
+          "number": "24/7",
+          "label": "Customer Support",
+          "description": "Available 09:00-20:00 every day"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Explore Crete?",
+      "description": "Get in touch with our friendly team to book your perfect vehicle and start planning your Crete adventure.",
+      "contact": {
+        "mobile": {
+          "title": "Mobile",
+          "value": "+30 693 668 5610"
+        },
+        "email": {
+          "title": "Email",
+          "value": "info@petras-rentals.gr"
+        },
+        "location": {
+          "title": "Location",
+          "value": "Sitia, Crete"
+        }
+      },
+      "buttons": {
+        "callNow": "Call Now",
+        "sendEmail": "Send Email"
+      }
+    }
+  },
+  "contactUs": {
+    "hero": {
+      "badge": {
+        "title": "Get in Touch"
+      },
+      "title": {
+        "main": "Contact ",
+        "highlight": "Petras Rental"
+      },
+      "description": "Ready to explore Crete? Get in touch with our friendly team for personalized service, instant quotes, and expert advice on your perfect vehicle."
+    },
+    "methods": {
+      "mobile": {
+        "title": "Mobile",
+        "description": "Call us directly",
+        "value": "+30 693 668 5610"
+      },
+      "landline": {
+        "title": "Landline",
+        "description": "Office line",
+        "value": "+30 284 302 4849"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Chat with us",
+        "value": "+30 693 668 5610"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Send us a message",
+        "value": "info@petras-rentals.gr"
+      }
+    },
+    "form": {
+      "title": {
+        "main": "Send us a ",
+        "highlight": "Message"
+      },
+      "fields": {
+        "name": {
+          "label": "Full Name *",
+          "placeholder": "Your full name"
+        },
+        "email": {
+          "label": "Email Address *",
+          "placeholder": "your.email@example.com"
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "+30 693 668 5610"
+        },
+        "subject": {
+          "label": "Subject *",
+          "placeholder": "Subject"
+        },
+        "message": {
+          "label": "Message *",
+          "placeholder": "Tell us about your rental needs, travel dates, or any questions you have..."
+        }
+      },
+      "button": {
+        "send": "Send Message",
+        "sending": "Sending..."
+      },
+      "success": "Thank you for your message! We'll get back to you soon."
+    },
+    "office": {
+      "title": {
+        "main": "Office ",
+        "highlight": "Information"
+      },
+      "address": {
+        "title": "Address",
+        "value": "Papandreou Andrea 10\nSitia 72300\nLassithi, Crete, Greece"
+      },
+      "phones": {
+        "title": "Phone Numbers",
+        "mobile": "Mobile: +30 693 668 5610",
+        "landline": "Landline: +30 284 302 4849"
+      },
+      "email": {
+        "title": "Email",
+        "value": "info@petras-rentals.gr"
+      }
+    },
+    "hours": {
+      "title": {
+        "main": "Business ",
+        "highlight": "Hours"
+      },
+      "schedule": {
+        "days": "Monday - Sunday",
+        "hours": "09:00 - 20:00",
+        "everyday": "Every Day",
+        "dailyService": "Daily Service Available"
+      },
+      "notice": {
+        "title": "Daily Service",
+        "description": "Open every day from 09:00 to 20:00"
+      }
+    },
+    "map": {
+      "title": {
+        "main": "Visit ",
+        "highlight": "Our Office"
+      },
+      "description": "Located in the heart of Sitia, eastern Crete. Our office is easily accessible and perfectly positioned for exploring the beautiful region.",
+      "building": {
+        "title": "Petras Rental Office",
+        "address": "Papandreou Andrea 10, Sitia"
+      },
+      "info": {
+        "address": {
+          "title": "Address",
+          "description": "Easy to find location"
+        },
+        "contact": {
+          "title": "Contact",
+          "description": "Call us directly",
+          "mobile": "(Mobile)",
+          "landline": "(Landline)"
+        },
+        "hours": {
+          "title": "Hours",
+          "description": "Daily service",
+          "schedule": "Monday - Sunday\n09:00 - 20:00"
+        }
+      }
+    }
+  },
+  "termsAndConditions": {
+    "header": {
+      "badge": {
+        "title": "Legal Information"
+      },
+      "title": {
+        "main": "Terms and",
+        "highlight": "Conditions"
+      },
+      "description": "Please read these terms and conditions carefully before renting a vehicle from Petras Rental. Your use of our services constitutes acceptance of these terms."
+    },
+    "sections": {
+      "vehicleRental": {
+        "title": "Vehicle Rental Conditions",
+        "items": [
+          "The mentioned car types are indicative only and subject to availability.",
+          "Rental days are calculated on a 24-hour basis, starting from the vehicle pick-up time.",
+          "One-way rentals are available on request with extra charge, depending on different locations.",
+          "International one-way rentals are not available. Transporting and driving vehicles outside the island of Crete is strictly prohibited.",
+          "All vehicles must be returned to the agreed location unless prior arrangements have been made."
+        ]
+      },
+      "driverRequirements": {
+        "title": "Driver Requirements",
+        "items": [
+          "All renters must hold a valid EU or International Driving License.",
+          "Driver must be 24+ years old, with driver's license held for minimum 3 years.",
+          "Additional drivers must meet the same requirements and be registered at pickup.",
+          "Service will not be provided for any unconfirmed reservation.",
+          "Valid identification (passport or national ID) is required at pickup."
+        ]
+      },
+      "rentalTerms": {
+        "title": "Rental Terms",
+        "items": [
+          "Fuel policy: Cars must be returned at the same fuel level as delivery.",
+          "Late return charges apply after the agreed return time (24-hour grace period).",
+          "Early returns do not qualify for refunds unless previously agreed.",
+          "Vehicle inspections are conducted at pickup and return.",
+          "Any damages must be reported immediately to our office."
+        ]
+      }
+    },
+    "extraCharges": {
+      "title": "Extra Charges",
+      "items": [
+        { "service": "Baby/Booster Seats", "price": "First seat free, additional seats 2€ per day" },
+        { "service": "After Hours Service", "price": "25€ (Between 22:00 - 07:00)" },
+        { "service": "Additional Driver", "price": "3€ per day" },
+        { "service": "GPS Navigation", "price": "5€ per day" },
+        { "service": "One-Way Rental", "price": "Varies by distance (min. 30€)" }
+      ],
+      "coverage": {
+        "title": "Full Coverage Included",
+        "description": "Our prices include Full Damage Waiver for your peace of mind. No Credit Card Required. We do not need to preauthorize any amount as warranty."
+      }
+    },
+    "notCovered": {
+      "title": "Important: Not Covered by Insurance",
+      "description": "Please note that the following are NOT covered by any insurance and may result in charges to the renter:",
+      "items": [
+        "Damage caused by driving under the influence of alcohol or drugs, reckless driving, or traffic law violations",
+        "All traffic fines resulting from violations of Greek traffic regulations",
+        "Damage to the underside of the vehicle, wheels, tires, roof, and interior",
+        "Loss or damage to vehicle keys, GPS devices, or child seats",
+        "Off-road driving on dirt roads or unauthorized terrain",
+        "Damages if driver fails to stop after an accident and take necessary actions",
+        "Transporting the vehicle outside Crete island"
+      ]
+    },
+    "cancellation": {
+      "title": "Cancellation Rights",
+      "description": "The company reserves the right to cancel any reservation at any point if:",
+      "items": [
+        "The renter uses the car for unfair and illegal purposes (smuggling, theft, illegal transport)",
+        "The driver uses the car for any kind of racing or competition",
+        "Traffic violations result in license plate confiscation by police"
+      ]
+    },
+    "contact": {
+      "title": "Do you have any questions?",
+      "description": "Our support team is here to help you with any questions about our terms and conditions. Available daily from 09:00 to 20:00.",
+      "buttons": {
+        "call": "Call Us Now",
+        "email": "Send Email"
+      }
+    },
+    "lastUpdated": "Last updated: January 2025"
+  },
+  "layout": {
+    "header": {
+      "brand": "Car Rental Petras",
+      "navigation": {
+        "home": "Home",
+        "cars": "Cars",
+        "aboutUs": "About Us",
+        "termsAndConditions": "Terms and Conditions"
+      },
+      "contact": "Contact Us",
+      "language": "Language"
+    },
+    "footer": {
+      "brand": "Car Rental Petras",
+      "description": "Your trusted car rental partner in Crete. Experience the freedom of the road with our reliable vehicles and exceptional service across the beautiful island.",
+      "sections": {
+        "quickLinks": "Quick Links",
+        "contactInfo": "Contact Info",
+        "location": "Our Location",
+        "readyToDrive": "Ready to Drive?"
+      },
+      "navigation": {
+        "home": "Home",
+        "cars": "Our Cars",
+        "aboutUs": "About Us",
+        "termsAndConditions": "Terms and Conditions",
+        "contactUs": "Contact Us"
+      },
+      "contact": {
+        "mobile": {
+          "value": "+30 693 668 5610",
+          "label": "Mobile & WhatsApp"
+        },
+        "email": {
+          "value": "info@petras-rentals.gr",
+          "label": "Get in Touch"
+        },
+        "landline": {
+          "value": "+30 284 302 4849",
+          "label": "Landline"
+        }
+      },
+      "location": {
+        "name": "Sitia Main Office",
+        "address": "Papandreou Andrea 10, 72300 Sitia, Crete",
+        "viewOnMaps": "View on Google Maps →"
+      },
+      "cta": {
+        "description": "Book your perfect vehicle today and explore Crete with confidence.",
+        "button": "View Cars"
+      },
+      "bottom": {
+        "copyright": "© 2025 Petras Rental. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "madeIn": "Made in Crete 🏛️"
+      }
     }
   }
+}

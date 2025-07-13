@@ -5,54 +5,38 @@ import Image from "next/image";
 import { IoCall, IoMail, IoLocation, IoTime, IoSend, IoLogoWhatsapp } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 const CONTACT_METHODS = [
   {
     icon: IoCall,
-    title: "Mobile",
-    description: "Call us directly",
-    value: "+30 693 668 5610",
+    key: "mobile",
     action: "tel:+306936685610",
     color: "from-green-500 to-emerald-600",
   },
   {
     icon: IoCall,
-    title: "Landline",
-    description: "Office line",
-    value: "+30 284 302 4849",
+    key: "landline",
     action: "tel:+302843024849",
     color: "from-blue-500 to-primary",
   },
   {
     icon: IoLogoWhatsapp,
-    title: "WhatsApp",
-    description: "Chat with us",
-    value: "+30 693 668 5610",
+    key: "whatsapp",
     action: "https://wa.me/306936685610",
     color: "from-green-600 to-teal-600",
   },
   {
     icon: IoMail,
-    title: "Email",
-    description: "Send us a message",
-    value: "info@petras-rentals.gr",
+    key: "email",
     action: "mailto:info@petras-rentals.gr",
     color: "from-purple-500 to-indigo-600",
   },
 ] as const;
 
-const BUSINESS_HOURS = [
-  {
-    day: "Monday - Sunday",
-    hours: "09:00 - 20:00",
-  },
-  {
-    day: "Every Day",
-    hours: "Daily Service Available",
-  },
-] as const;
-
 export default function ContactUs() {
+  const t = useTranslations("contactUs");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -76,7 +60,7 @@ export default function ContactUs() {
 
     setIsSubmitting(false);
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    alert("Thank you for your message! We'll get back to you soon.");
+    alert(t("form.success"));
   };
 
   return (
@@ -90,20 +74,17 @@ export default function ContactUs() {
               <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-[#256bae]/20 rounded-lg flex items-center justify-center">
                 <IoMail className="text-primary text-sm" />
               </div>
-              <span>Get in Touch</span>
+              <span>{t("hero.badge.title")}</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              <span className="text-slate-900">Contact </span>
+              <span className="text-slate-900">{t("hero.title.main")}</span>
               <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">
-                Petras Rental
+                {t("hero.title.highlight")}
               </span>
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Ready to explore Crete? Get in touch with our friendly team for personalized service, instant quotes, and
-              expert advice on your perfect vehicle.
-            </p>
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">{t("hero.description")}</p>
           </div>
 
           {/* Contact Methods Grid */}
@@ -120,9 +101,9 @@ export default function ContactUs() {
                   >
                     <method.icon className="text-white text-2xl" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{method.title}</h3>
-                  <p className="text-sm text-slate-600 mb-3">{method.description}</p>
-                  <p className="text-sm font-semibold text-primary">{method.value}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{t(`methods.${method.key}.title`)}</h3>
+                  <p className="text-sm text-slate-600 mb-3">{t(`methods.${method.key}.description`)}</p>
+                  <p className="text-sm font-semibold text-primary">{t(`methods.${method.key}.value`)}</p>
                 </div>
               </a>
             ))}
@@ -138,9 +119,9 @@ export default function ContactUs() {
             <div>
               <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl p-8 shadow-xl">
                 <h2 className="text-3xl font-bold mb-6">
-                  <span className="text-slate-900">Send us a </span>
+                  <span className="text-slate-900">{t("form.title.main")}</span>
                   <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                    Message
+                    {t("form.title.highlight")}
                   </span>
                 </h2>
 
@@ -148,7 +129,7 @@ export default function ContactUs() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                        Full Name *
+                        {t("form.fields.name.label")}
                       </label>
                       <input
                         type="text"
@@ -158,12 +139,12 @@ export default function ContactUs() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                        placeholder="Your full name"
+                        placeholder={t("form.fields.name.placeholder")}
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                        Email Address *
+                        {t("form.fields.email.label")}
                       </label>
                       <input
                         type="email"
@@ -173,7 +154,7 @@ export default function ContactUs() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                        placeholder="your.email@example.com"
+                        placeholder={t("form.fields.email.placeholder")}
                       />
                     </div>
                   </div>
@@ -181,7 +162,7 @@ export default function ContactUs() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
-                        Phone Number
+                        {t("form.fields.phone.label")}
                       </label>
                       <input
                         type="tel"
@@ -190,34 +171,29 @@ export default function ContactUs() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                        placeholder="+30 693 668 5610"
+                        placeholder={t("form.fields.phone.placeholder")}
                       />
                     </div>
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
-                        Subject *
+                        {t("form.fields.subject.label")}
                       </label>
-                      <select
+                      <input
+                        type="text"
                         id="subject"
                         name="subject"
+                        required
                         value={formData.subject}
                         onChange={handleInputChange}
-                        required
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="rental-inquiry">Rental Inquiry</option>
-                        <option value="booking-modification">Booking Modification</option>
-                        <option value="customer-support">Customer Support</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="other">Other</option>
-                      </select>
+                        placeholder={t("form.fields.subject.placeholder")}
+                      />
                     </div>
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                      Message *
+                      {t("form.fields.message.label")}
                     </label>
                     <textarea
                       id="message"
@@ -227,7 +203,7 @@ export default function ContactUs() {
                       required
                       rows={6}
                       className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
-                      placeholder="Tell us about your rental needs, travel dates, or any questions you have..."
+                      placeholder={t("form.fields.message.placeholder")}
                     />
                   </div>
 
@@ -239,12 +215,12 @@ export default function ContactUs() {
                     {isSubmitting ? (
                       <div className="flex items-center justify-center gap-2">
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        <span>Sending...</span>
+                        <span>{t("form.button.sending")}</span>
                       </div>
                     ) : (
                       <div className="flex items-center justify-center gap-2">
                         <IoSend className="text-lg" />
-                        <span>Send Message</span>
+                        <span>{t("form.button.send")}</span>
                       </div>
                     )}
                   </Button>
@@ -257,9 +233,9 @@ export default function ContactUs() {
               {/* Office Information */}
               <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold mb-6">
-                  <span className="text-slate-900">Office </span>
+                  <span className="text-slate-900">{t("office.title.main")}</span>
                   <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                    Information
+                    {t("office.title.highlight")}
                   </span>
                 </h3>
 
@@ -269,14 +245,8 @@ export default function ContactUs() {
                       <IoLocation className="text-primary text-xl" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Address</h4>
-                      <p className="text-slate-600">
-                        Papandreou Andrea 10
-                        <br />
-                        Sitia 72300
-                        <br />
-                        Lassithi, Crete, Greece
-                      </p>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t("office.address.title")}</h4>
+                      <p className="text-slate-600 whitespace-pre-line">{t("office.address.value")}</p>
                     </div>
                   </div>
 
@@ -285,11 +255,11 @@ export default function ContactUs() {
                       <IoCall className="text-green-600 text-xl" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Phone Numbers</h4>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t("office.phones.title")}</h4>
                       <p className="text-slate-600">
-                        Mobile: +30 693 668 5610
+                        {t("office.phones.mobile")}
                         <br />
-                        Landline: +30 284 302 4849
+                        {t("office.phones.landline")}
                       </p>
                     </div>
                   </div>
@@ -299,8 +269,8 @@ export default function ContactUs() {
                       <IoMail className="text-primary text-xl" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Email</h4>
-                      <p className="text-slate-600">info@petras-rentals.gr</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">{t("office.email.title")}</h4>
+                      <p className="text-slate-600">{t("office.email.value")}</p>
                     </div>
                   </div>
                 </div>
@@ -309,30 +279,29 @@ export default function ContactUs() {
               {/* Business Hours */}
               <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl p-8 shadow-xl">
                 <h3 className="text-2xl font-bold mb-6">
-                  <span className="text-slate-900">Business </span>
+                  <span className="text-slate-900">{t("hours.title.main")}</span>
                   <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                    Hours
+                    {t("hours.title.highlight")}
                   </span>
                 </h3>
 
                 <div className="space-y-4">
-                  {BUSINESS_HOURS.map((schedule, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between items-center py-2 border-b border-slate-100 last:border-b-0"
-                    >
-                      <span className="font-medium text-slate-900">{schedule.day}</span>
-                      <span className="text-slate-600">{schedule.hours}</span>
-                    </div>
-                  ))}
+                  <div className="flex justify-between items-center py-2 border-b border-slate-100">
+                    <span className="font-medium text-slate-900">{t("hours.schedule.days")}</span>
+                    <span className="text-slate-600">{t("hours.schedule.hours")}</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-slate-100">
+                    <span className="font-medium text-slate-900">{t("hours.schedule.everyday")}</span>
+                    <span className="text-slate-600">{t("hours.schedule.dailyService")}</span>
+                  </div>
                 </div>
 
                 <div className="mt-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
                   <div className="flex items-center gap-3">
                     <IoTime className="text-primary text-xl" />
                     <div>
-                      <p className="font-semibold text-slate-900">Daily Service</p>
-                      <p className="text-sm text-slate-600">Open every day from 09:00 to 20:00</p>
+                      <p className="font-semibold text-slate-900">{t("hours.notice.title")}</p>
+                      <p className="text-sm text-slate-600">{t("hours.notice.description")}</p>
                     </div>
                   </div>
                 </div>
@@ -347,15 +316,12 @@ export default function ContactUs() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-slate-900">Visit </span>
+              <span className="text-slate-900">{t("map.title.main")}</span>
               <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                Our Office
+                {t("map.title.highlight")}
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Located in the heart of Sitia, eastern Crete. Our office is easily accessible and perfectly positioned for
-              exploring the beautiful region.
-            </p>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">{t("map.description")}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-6 lg:mb-8 w-full">
@@ -365,8 +331,8 @@ export default function ContactUs() {
                 <Image src="/about/store.jpg" alt="Petras Rental Office Building" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-white">
-                  <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Petras Rental Office</h3>
-                  <p className="text-sm sm:text-base text-white/90">Papandreou Andrea 10, Sitia</p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{t("map.building.title")}</h3>
+                  <p className="text-sm sm:text-base text-white/90">{t("map.building.address")}</p>
                 </div>
               </div>
             </Card>
@@ -397,17 +363,18 @@ export default function ContactUs() {
                   <IoLocation className="text-primary text-xl" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Address</h4>
-                  <p className="text-sm text-slate-600">Easy to find location</p>
+                  <h4 className="font-semibold text-slate-900">{t("map.info.address.title")}</h4>
+                  <p className="text-sm text-slate-600">{t("map.info.address.description")}</p>
                 </div>
               </div>
-              <p className="text-slate-700">
-                Papandreou Andrea 10
-                <br />
-                Sitia 72300
-                <br />
-                Lassithi, Crete
-              </p>
+              <a
+                href="https://maps.google.com/?q=Papandreou+Andrea+10,+Sitia+72300,+Lassithi,+Crete"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-700 hover:text-primary transition-colors group"
+              >
+                <p className="group-hover:underline whitespace-pre-line">{t("office.address.value")}</p>
+              </a>
             </Card>
 
             <Card className="bg-white/95 backdrop-blur-xl border border-white/60 p-6 shadow-lg">
@@ -416,15 +383,26 @@ export default function ContactUs() {
                   <IoCall className="text-green-600 text-xl" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Contact</h4>
-                  <p className="text-sm text-slate-600">Call us directly</p>
+                  <h4 className="font-semibold text-slate-900">{t("map.info.contact.title")}</h4>
+                  <p className="text-sm text-slate-600">{t("map.info.contact.description")}</p>
                 </div>
               </div>
-              <p className="text-slate-700">
-                +30 693 668 5610
-                <br />
-                +30 284 302 4849
-              </p>
+              <div className="flex flex-col gap-2">
+                <a
+                  href="tel:+306936685610"
+                  className="text-slate-700 hover:text-green-600 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="group-hover:underline">{t("methods.mobile.value")}</span>
+                  <span className="text-xs text-slate-500">{t("map.info.contact.mobile")}</span>
+                </a>
+                <a
+                  href="tel:+302843024849"
+                  className="text-slate-700 hover:text-green-600 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="group-hover:underline">{t("methods.landline.value")}</span>
+                  <span className="text-xs text-slate-500">{t("map.info.contact.landline")}</span>
+                </a>
+              </div>
             </Card>
 
             <Card className="bg-white/95 backdrop-blur-xl border border-white/60 p-6 shadow-lg">
@@ -433,15 +411,11 @@ export default function ContactUs() {
                   <IoTime className="text-primary text-xl" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Hours</h4>
-                  <p className="text-sm text-slate-600">Daily service</p>
+                  <h4 className="font-semibold text-slate-900">{t("map.info.hours.title")}</h4>
+                  <p className="text-sm text-slate-600">{t("map.info.hours.description")}</p>
                 </div>
               </div>
-              <p className="text-slate-700">
-                Monday - Sunday
-                <br />
-                09:00 - 20:00
-              </p>
+              <p className="text-slate-700 whitespace-pre-line">{t("map.info.hours.schedule")}</p>
             </Card>
           </div>
         </div>

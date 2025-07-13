@@ -1,74 +1,45 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { IoChevronBack, IoChevronForward, IoStar } from "react-icons/io5";
 import Avatar from "react-avatar";
 
-const TESTIMONIALS = [
-  {
-    name: "Μαρινα Β.Σ",
-    location: "Greece",
-    rating: 5,
-    text: "We rented a car — everything was great, and Soula was incredibly friendly and helpful! She’s definitely worth choosing if you’re looking to rent a vehicle and explore the beautiful places around the city of Sitia... the nearby villages and the amazing beaches! The prices were very good! Many kudos!",
-    avatar: "MP",
-  },
-  {
-    name: "Caroline Monnet",
-    location: "France",
-    rating: 5,
-    text: "I got the contact details for Petras Rent a Car from the backpacker's guide. And indeed, I was glad to have done business with Soula twice this year! A brand-new car, very reasonable price, and Soula arranged my arrival in Heraklion. She is incredibly kind, and it's also a real pleasure to chat with her. I recommend it with my eyes closed!",
-    avatar: "JA",
-  },
-  {
-    name: "Mc Bourdieu",
-    location: "France",
-    rating: 5,
-    text: "I’ve been going to Sitia for 10 years and I always rent my vehicle from Petras Car Rentals. The manager of this local agency, Soula, is a capable person who knows how to adapt to her clients’ needs. Efficient, available, always smiling, with attractive prices! Highly recommended 👍",
-    avatar: "SM",
-  },
-  {
-    name: "Blanc Cristophe",
-    location: "France",
-    rating: 5,
-    text: "We rented a car from Soula in September 2019. She gave us a warm welcome, and we had no issues at all with the rental car. An added bonus is that the car is available upon arrival at the airport and can also be dropped off at the airport when departing from Heraklion. Highly recommended...",
-    avatar: "AR",
-  },
-  {
-    name: "Sandrine Garcin",
-    location: "France",
-    rating: 5,
-    text: "For the past 4 years, I’ve been renting my cars from Soula.Reliable and well-maintained. Fair price and car as well. I had a flat tire this summer, and it was fixed within half an hour. I highly recommend her!",
-    avatar: "ET",
-  },
-  {
-    name: "Manolis Hatzidakis",
-    location: "Germany",
-    rating: 5,
-    text: "Soula is always helpful and always kind. sI’m absolutely satisfied with the cars she provides, and I will continue renting cars from Petras Car.",
-    avatar: "CR",
-  },
-  {
-    name: "JML OKS",
-    location: "England",
-    rating: 5,
-    text: "I had a warm welcome and was completely satisfied with Soula’s services! I was even given an upgrade!!!",
-    avatar: "LW",
-  },
-  {
-    name: "ΔΗΜΟΣΘΕΝΗΣ ΖΙΟΥΛΑΣ",
-    location: "Greece",
-    rating: 4,
-    text: "The car we were given was a 2023 model. Kudos to the woman who runs the company — some of the best prices in town and very good cars.",
-    avatar: "FD",
-  },
-] as const;
-
 const TestimonialsCarousel = () => {
+  const t = useTranslations("home.testimonials");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   // Check screen size for responsive layout
   const [isTablet, setIsTablet] = useState(false);
+
+  // Get testimonials from translations
+  const getTestimonials = () => {
+    const testimonials = [];
+
+    // We know we have exactly 8 testimonials based on our translation files
+    const testimonialCount = 8;
+
+    for (let index = 0; index < testimonialCount; index++) {
+      try {
+        const testimonial = {
+          name: t(`data.${index}.name`),
+          location: t(`data.${index}.location`),
+          text: t(`data.${index}.text`),
+          rating: 5, // All testimonials have 5 stars
+          avatar: t(`data.${index}.name`).substring(0, 2).toUpperCase(),
+        };
+        testimonials.push(testimonial);
+      } catch {
+        // If we can't get a testimonial, stop here
+        break;
+      }
+    }
+
+    return testimonials;
+  };
+
+  const TESTIMONIALS = getTestimonials();
 
   // Set items per page based on screen size
   const getItemsPerPage = () => {

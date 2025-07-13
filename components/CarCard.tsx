@@ -1,7 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { IoPeople, IoSettings, IoSnow, IoSpeedometer, IoExit } from "react-icons/io5";
+import { IoPeople, IoSnow } from "react-icons/io5";
+import { GiGearStickPattern, GiCarDoor } from "react-icons/gi";
+import { PiEngineBold } from "react-icons/pi";
+import { useTranslations } from "next-intl";
+
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import { Car } from "@/types/car";
 
@@ -30,11 +34,23 @@ const getColorValue = (colorName: string): string => {
 };
 
 export const CarCard = ({ car, onCarClick }: CarCardProps) => {
+  const t = useTranslations("carCard");
+  const tData = useTranslations("carData");
+
+  // Helper function to safely get translated values
+  const getTranslatedValue = (namespace: string, key: string): string => {
+    try {
+      return (tData.raw(`${namespace}.${key}` as never) as string) || key;
+    } catch {
+      return key;
+    }
+  };
+
   return (
     <div onClick={() => onCarClick(car)} className="group cursor-pointer">
       <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
         {/* Car Image */}
-        <div className="relative h-60 overflow-hidden">
+        <div className="relative h-70 overflow-hidden">
           <Image
             src={car.image}
             alt={car.name}
@@ -61,7 +77,9 @@ export const CarCard = ({ car, onCarClick }: CarCardProps) => {
                         title={colorName}
                       />
                     ))}
-                    <span className="text-sm text-slate-500 ml-1">{car.color.join(" / ")}</span>
+                    <span className="text-sm text-slate-500 ml-1">
+                      {car.color.map((color) => getTranslatedValue("colors", color)).join(" / ")}
+                    </span>
                   </div>
                 ) : (
                   <div className="flex items-center gap-1">
@@ -70,7 +88,7 @@ export const CarCard = ({ car, onCarClick }: CarCardProps) => {
                       style={{ backgroundColor: getColorValue(car.color) }}
                       title={car.color}
                     />
-                    <span className="text-sm text-slate-500">{car.color}</span>
+                    <span className="text-sm text-slate-500">{getTranslatedValue("colors", car.color)}</span>
                   </div>
                 )}
               </div>
@@ -78,7 +96,7 @@ export const CarCard = ({ car, onCarClick }: CarCardProps) => {
 
             <div className="text-right ml-3">
               <div className="text-lg font-bold text-slate-800">{car.features.date}</div>
-              <div className="text-sm text-slate-500">{car.category}</div>
+              <div className="text-sm text-slate-500">{getTranslatedValue("categories", car.category)}</div>
             </div>
           </div>
 
@@ -87,44 +105,48 @@ export const CarCard = ({ car, onCarClick }: CarCardProps) => {
             <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
               <IoPeople className="text-lg text-primary mb-1" />
               <span className="text-xs font-medium text-slate-700">{car.features.seats}</span>
-              <span className="text-xs text-slate-500">Seats</span>
+              <span className="text-xs text-slate-500">{t("labels.seats")}</span>
             </div>
 
             <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
               <BsFillFuelPumpFill className="text-lg text-primary mb-1" />
-              <span className="text-xs font-medium text-slate-700">{car.features.fuel}</span>
-              <span className="text-xs text-slate-500">Fuel</span>
+              <span className="text-xs font-medium text-slate-700">
+                {getTranslatedValue("fuel", car.features.fuel)}
+              </span>
+              <span className="text-xs text-slate-500">{t("labels.fuel")}</span>
             </div>
 
             <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
-              <IoSettings className="text-lg text-primary mb-1" />
-              <span className="text-xs font-medium text-slate-700">{car.features.transmission}</span>
-              <span className="text-xs text-slate-500">Trans.</span>
+              <GiGearStickPattern className="text-lg text-primary mb-1" />
+              <span className="text-xs font-medium text-slate-700">
+                {getTranslatedValue("transmission", car.features.transmission)}
+              </span>
+              <span className="text-xs text-slate-500">{t("labels.transmission")}</span>
             </div>
 
             <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
-              <IoExit className="text-lg text-primary mb-1" />
+              <GiCarDoor className="text-lg text-primary mb-1" />
               <span className="text-xs font-medium text-slate-700">{car.features.doors}</span>
-              <span className="text-xs text-slate-500">Doors</span>
+              <span className="text-xs text-slate-500">{t("labels.doors")}</span>
             </div>
 
             <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
-              <IoSpeedometer className="text-lg text-primary mb-1" />
+              <PiEngineBold className="text-lg text-primary mb-1" />
               <span className="text-xs font-medium text-slate-700">{car.features.cc}cc</span>
-              <span className="text-xs text-slate-500">Engine</span>
+              <span className="text-xs text-slate-500">{t("labels.engine")}</span>
             </div>
 
             {car.features.ac ? (
               <div className="flex flex-col items-center p-2 bg-slate-50 rounded-lg">
                 <IoSnow className="text-lg text-primary mb-1" />
-                <span className="text-xs font-medium text-slate-700">A/C</span>
-                <span className="text-xs text-slate-500">Climate</span>
+                <span className="text-xs font-medium text-slate-700">{t("labels.ac")}</span>
+                <span className="text-xs text-slate-500">{t("labels.climate")}</span>
               </div>
             ) : (
               <div className="flex flex-col items-center p-2 bg-slate-50/50 rounded-lg opacity-50">
                 <IoSnow className="text-lg text-slate-400 mb-1" />
-                <span className="text-xs font-medium text-slate-500">No A/C</span>
-                <span className="text-xs text-slate-400">Climate</span>
+                <span className="text-xs font-medium text-slate-500">{t("labels.noAc")}</span>
+                <span className="text-xs text-slate-400">{t("labels.climate")}</span>
               </div>
             )}
           </div>

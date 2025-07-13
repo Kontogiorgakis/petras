@@ -1,9 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { IoStar } from "react-icons/io5";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 export default function TestimonialsSection() {
+  const t = useTranslations("home.testimonials");
+
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
       {/* Enhanced Background */}
@@ -21,17 +24,18 @@ export default function TestimonialsSection() {
             <div className="w-7 h-7 bg-gradient-to-br from-primary/15 to-[#256bae]/15 rounded-lg flex items-center justify-center">
               <IoStar className="text-sm" />
             </div>
-            <span>Customer Reviews</span>
+            <span>{t("badge.title")}</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            What Our{" "}
-            <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">Customers</span>{" "}
-            Say
+            {t("title.main")}{" "}
+            <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
+              {t("title.highlight")}
+            </span>{" "}
+            {t("title.sub")}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don&apos;t just take our word for it. Here&apos;s what our valued customers have to say about their
-            experience with Petras Rental.
+            {t("description")}
           </p>
         </div>
 

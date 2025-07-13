@@ -11,62 +11,26 @@ import {
   IoCallSharp,
   IoMail,
 } from "react-icons/io5";
+import { useTranslations } from "next-intl";
 
 const TERMS_SECTIONS = [
   {
     icon: IoCarSport,
-    title: "Vehicle Rental Conditions",
-    items: [
-      "The mentioned car types are indicative only and subject to availability.",
-      "Rental days are calculated on a 24-hour basis, starting from the vehicle pick-up time.",
-      "One-way rentals are available on request with extra charge, depending on different locations.",
-      "International one-way rentals are not available. Transporting and driving vehicles outside the island of Crete is strictly prohibited.",
-      "All vehicles must be returned to the agreed location unless prior arrangements have been made.",
-    ],
+    key: "vehicleRental",
   },
   {
     icon: IoShield,
-    title: "Driver Requirements",
-    items: [
-      "All renters must hold a valid EU or International Driving License.",
-      "Driver must be 24+ years old, with driver's license held for minimum 3 years.",
-      "Additional drivers must meet the same requirements and be registered at pickup.",
-      "Service will not be provided for any unconfirmed reservation.",
-      "Valid identification (passport or national ID) is required at pickup.",
-    ],
+    key: "driverRequirements",
   },
   {
     icon: IoTime,
-    title: "Rental Terms",
-    items: [
-      "Fuel policy: Cars must be returned at the same fuel level as delivery.",
-      "Late return charges apply after the agreed return time (24-hour grace period).",
-      "Early returns do not qualify for refunds unless previously agreed.",
-      "Vehicle inspections are conducted at pickup and return.",
-      "Any damages must be reported immediately to our office.",
-    ],
+    key: "rentalTerms",
   },
 ] as const;
 
-const EXTRA_CHARGES = [
-  { service: "Baby/Booster Seats", price: "First seat free, additional seats 2€ per day" },
-  { service: "After Hours Service", price: "25€ (Between 22:00 - 07:00)" },
-  { service: "Additional Driver", price: "3€ per day" },
-  { service: "GPS Navigation", price: "5€ per day" },
-  { service: "One-Way Rental", price: "Varies by distance (min. 30€)" },
-] as const;
-
-const NOT_COVERED = [
-  "Damage caused by driving under the influence of alcohol or drugs, reckless driving, or traffic law violations",
-  "All traffic fines resulting from violations of Greek traffic regulations",
-  "Damage to the underside of the vehicle, wheels, tires, roof, and interior",
-  "Loss or damage to vehicle keys, GPS devices, or child seats",
-  "Off-road driving on dirt roads or unauthorized terrain",
-  "Damages if driver fails to stop after an accident and take necessary actions",
-  "Transporting the vehicle outside Crete island",
-] as const;
-
 export const TermsAndConditions = () => {
+  const t = useTranslations("termsAndConditions");
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50/50 via-white to-slate-50/50 pt-24 pb-16">
       {/* Background Elements */}
@@ -81,17 +45,18 @@ export const TermsAndConditions = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-[#256bae]/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary/20">
             <IoShield className="text-base" />
-            Legal Information
+            {t("header.badge.title")}
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-            Terms and{" "}
-            <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">Conditions</span>
+            {t("header.title.main")}{" "}
+            <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
+              {t("header.title.highlight")}
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Please read these terms and conditions carefully before renting a vehicle from Petras Rental. Your use of
-            our services constitutes acceptance of these terms.
+            {t("header.description")}
           </p>
         </div>
 
@@ -110,11 +75,11 @@ export const TermsAndConditions = () => {
 
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-foreground mb-6 group-hover:text-primary transition-colors duration-300">
-                        {section.title}
+                        {t(`sections.${section.key}.title`)}
                       </h3>
 
                       <ul className="space-y-3">
-                        {section.items.map((item, itemIndex) => (
+                        {t.raw(`sections.${section.key}.items`).map((item: string, itemIndex: number) => (
                           <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                             <span>{item}</span>
@@ -136,11 +101,11 @@ export const TermsAndConditions = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-2xl flex items-center justify-center">
                 <IoCard className="text-2xl text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Extra Charges</h3>
+              <h3 className="text-2xl font-bold text-foreground">{t("extraCharges.title")}</h3>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {EXTRA_CHARGES.map((charge, index) => (
+              {t.raw("extraCharges.items").map((charge: { service: string; price: string }, index: number) => (
                 <div
                   key={index}
                   className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200"
@@ -155,11 +120,8 @@ export const TermsAndConditions = () => {
               <div className="flex items-start gap-3">
                 <IoCheckmarkCircle className="text-green-600 text-xl flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-green-800 mb-2">Full Coverage Included</h4>
-                  <p className="text-green-700 leading-relaxed">
-                    Our prices include Full Damage Waiver for your peace of mind.
-                    <strong> No Credit Card Required.</strong> We do not need to preauthorize any amount as warranty.
-                  </p>
+                  <h4 className="font-bold text-green-800 mb-2">{t("extraCharges.coverage.title")}</h4>
+                  <p className="text-green-700 leading-relaxed">{t("extraCharges.coverage.description")}</p>
                 </div>
               </div>
             </div>
@@ -173,16 +135,13 @@ export const TermsAndConditions = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl flex items-center justify-center">
                 <IoWarning className="text-2xl text-red-600" />
               </div>
-              <h3 className="text-2xl font-bold text-red-800">Important: Not Covered by Insurance</h3>
+              <h3 className="text-2xl font-bold text-red-800">{t("notCovered.title")}</h3>
             </div>
 
-            <p className="text-red-700 mb-6 leading-relaxed">
-              Please note that the following are <strong>NOT covered</strong> by any insurance and may result in charges
-              to the renter:
-            </p>
+            <p className="text-red-700 mb-6 leading-relaxed">{t("notCovered.description")}</p>
 
             <ul className="space-y-3">
-              {NOT_COVERED.map((item, index) => (
+              {t.raw("notCovered.items").map((item: string, index: number) => (
                 <li key={index} className="flex items-start gap-3 text-red-700 leading-relaxed">
                   <IoCloseCircle className="text-red-500 text-lg flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
@@ -199,28 +158,18 @@ export const TermsAndConditions = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-2xl flex items-center justify-center">
                 <IoTime className="text-2xl text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Cancellation Rights</h3>
+              <h3 className="text-2xl font-bold text-foreground">{t("cancellation.title")}</h3>
             </div>
 
             <div className="prose prose-slate max-w-none">
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The company reserves the right to cancel any reservation at any point if:
-              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">{t("cancellation.description")}</p>
               <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
-                  <span>
-                    The renter uses the car for unfair and illegal purposes (smuggling, theft, illegal transport)
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
-                  <span>The driver uses the car for any kind of racing or competition</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
-                  <span>Traffic violations result in license plate confiscation by police</span>
-                </li>
+                {t.raw("cancellation.items").map((item: string, index: number) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -229,11 +178,8 @@ export const TermsAndConditions = () => {
         {/* Contact Support */}
         <div className="text-center">
           <div className="relative bg-gradient-to-br from-slate-900/95 to-slate-800/95 backdrop-blur-lg border border-slate-700 rounded-3xl p-8 shadow-2xl text-white">
-            <h3 className="text-2xl font-bold mb-4">Do you have any questions?</h3>
-            <p className="text-slate-300 mb-6 leading-relaxed">
-              Our support team is here to help you with any questions about our terms and conditions. Available daily
-              from 09:00 to 20:00.
-            </p>
+            <h3 className="text-2xl font-bold mb-4">{t("contact.title")}</h3>
+            <p className="text-slate-300 mb-6 leading-relaxed">{t("contact.description")}</p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
@@ -256,7 +202,7 @@ export const TermsAndConditions = () => {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center mt-12 text-sm text-muted-foreground">Last updated: January 2024</div>
+        <div className="text-center mt-12 text-sm text-muted-foreground">{t("lastUpdated")}</div>
       </div>
     </div>
   );

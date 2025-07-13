@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { CarCard } from "./CarCard";
 import { CarDetailsModal } from "./CarDetailsModal";
 import { Car } from "@/types/car";
@@ -13,6 +14,7 @@ interface FleetProps {
 }
 
 const Fleet = ({ cars }: FleetProps) => {
+  const t = useTranslations("fleet");
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,12 +34,14 @@ const Fleet = ({ cars }: FleetProps) => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight mt-10">
-            <span className="text-slate-900">Our </span>
-            <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">Fleet</span>
+            <span className="text-slate-900">{t("title.main")} </span>
+            <span className="bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
+              {t("title.highlight")}
+            </span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed font-light max-w-3xl mx-auto">
-            Choose from our extensive collection of reliable vehicles, from economy cars to luxury SUVs
+            {t("description")}
           </p>
         </div>
 
@@ -48,8 +52,8 @@ const Fleet = ({ cars }: FleetProps) => {
           ) : (
             <div className="md:col-span-2 lg:col-span-3 text-center py-20">
               <div className="text-6xl mb-4">🚗</div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-2">No cars available</h3>
-              <p className="text-slate-600">Please check back later for available vehicles.</p>
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("noCars.title")}</h3>
+              <p className="text-slate-600">{t("noCars.description")}</p>
             </div>
           )}
         </div>
@@ -67,12 +71,9 @@ const Fleet = ({ cars }: FleetProps) => {
 
             <div className="relative z-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                Ready to Book Your Perfect Car?
+                {t("cta.title")}
               </h2>
-              <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Contact us now to reserve your vehicle and start exploring the beautiful island of Crete with
-                confidence.
-              </p>
+              <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">{t("cta.description")}</p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 <div className="flex items-center justify-center gap-3 text-white/70">
@@ -80,8 +81,8 @@ const Fleet = ({ cars }: FleetProps) => {
                     <IoCall className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-sm">Mobile</div>
-                    <div className="text-xs">+30 693 668 5610</div>
+                    <div className="font-semibold text-white text-sm">{t("cta.contact.mobile.label")}</div>
+                    <div className="text-xs">{t("cta.contact.mobile.value")}</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-white/70">
@@ -89,8 +90,8 @@ const Fleet = ({ cars }: FleetProps) => {
                     <IoMail className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-sm">Email</div>
-                    <div className="text-xs">info@petras-rentals.gr</div>
+                    <div className="font-semibold text-white text-sm">{t("cta.contact.email.label")}</div>
+                    <div className="text-xs">{t("cta.contact.email.value")}</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-white/70">
@@ -98,8 +99,8 @@ const Fleet = ({ cars }: FleetProps) => {
                     <IoLocation className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-sm">Location</div>
-                    <div className="text-xs">Sitia, Crete</div>
+                    <div className="font-semibold text-white text-sm">{t("cta.contact.location.label")}</div>
+                    <div className="text-xs">{t("cta.contact.location.value")}</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-white/70">
@@ -107,8 +108,8 @@ const Fleet = ({ cars }: FleetProps) => {
                     <IoTime className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white text-sm">Hours</div>
-                    <div className="text-xs">09:00 - 20:00</div>
+                    <div className="font-semibold text-white text-sm">{t("cta.contact.hours.label")}</div>
+                    <div className="text-xs">{t("cta.contact.hours.value")}</div>
                   </div>
                 </div>
               </div>
@@ -117,7 +118,7 @@ const Fleet = ({ cars }: FleetProps) => {
                 <a href="tel:+306936685610">
                   <Button className="bg-gradient-to-r from-primary to-[#256bae] text-white hover:from-primary/90 hover:to-[#256bae]/90 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <IoCall className="mr-2" />
-                    Call Now
+                    {t("cta.buttons.call")}
                   </Button>
                 </a>
                 <Link href="/contact-us">
@@ -126,7 +127,7 @@ const Fleet = ({ cars }: FleetProps) => {
                     className="bg-white/10 border-white/20 text-white/90 hover:bg-white/20 hover:text-white px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"
                   >
                     <IoMail className="mr-2" />
-                    Get Quote
+                    {t("cta.buttons.quote")}
                   </Button>
                 </Link>
               </div>

@@ -27,7 +27,7 @@ export default function BenefitsSection() {
           <div>
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <IoStar className="text-base" />
-              Premium Experience
+              Iconic Experience
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">

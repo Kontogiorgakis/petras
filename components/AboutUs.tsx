@@ -4,64 +4,53 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoCarSport, IoShield, IoStar, IoHeart, IoTrophy, IoGlobe, IoCall, IoMail, IoLocation } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 const COMPANY_VALUES = [
   {
     icon: IoShield,
-    title: "Trust & Reliability",
-    description: "We build lasting relationships through honest service and dependable vehicles that you can count on.",
+    key: "trust",
     color: "from-blue-500 to-primary",
   },
   {
     icon: IoHeart,
-    title: "Customer First",
-    description:
-      "Your satisfaction is our priority. We go above and beyond to ensure every rental experience exceeds expectations.",
+    key: "customerFirst",
     color: "from-red-500 to-rose-600",
   },
   {
     icon: IoStar,
-    title: "Quality Excellence",
-    description:
-      "From our premium fleet to our professional service, we maintain the highest standards in everything we do.",
+    key: "quality",
     color: "from-yellow-500 to-amber-600",
   },
   {
     icon: IoGlobe,
-    title: "Local Expertise",
-    description: "As a local Crete business, we know the island inside out and provide personalized recommendations.",
+    key: "local",
     color: "from-green-500 to-emerald-600",
   },
 ] as const;
 
 const COMPANY_STATS = [
   {
-    number: "100+",
-    label: "Years of Experience",
-    description: "Serving customers since 2008",
+    key: "experience",
     gradient: "from-primary to-[#256bae]",
   },
   {
-    number: "500+",
-    label: "Happy Customers",
-    description: "Satisfied travelers each year",
+    key: "customers",
     gradient: "from-blue-600 to-indigo-600",
   },
   {
-    number: "12+",
-    label: "Reliable Vehicles",
-    description: "Modern, well-maintained fleet",
+    key: "vehicles",
     gradient: "from-emerald-600 to-teal-600",
   },
   {
-    number: "Daily",
-    label: "Customer Support",
-    description: "Available 09:00-20:00 every day",
+    key: "support",
     gradient: "from-violet-600 to-purple-600",
   },
 ] as const;
 
 export default function AboutUs() {
+  const t = useTranslations("aboutUs");
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 mt-12">
       {/* Hero Section */}
@@ -74,27 +63,24 @@ export default function AboutUs() {
                 <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-[#256bae]/20 rounded-lg flex items-center justify-center">
                   <IoCarSport className="text-primary text-sm" />
                 </div>
-                <span>About Petras Rental</span>
+                <span>{t("hero.badge.title")}</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight">
-                <span className="text-slate-900">Your Trusted </span>
+                <span className="text-slate-900">{t("hero.title.main")}</span>
                 <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">
-                  Car Rental Partner
+                  {t("hero.title.highlight")}
                 </span>
-                <span className="text-slate-900"> in Crete</span>
+                <span className="text-slate-900">{t("hero.title.sub")}</span>
               </h1>
 
-              <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
-                For over 15 years, Petras Rental has been the premier choice for travelers exploring the beautiful
-                island of Crete. We combine local expertise with reliable vehicles to create unforgettable journeys.
-              </p>
+              <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">{t("hero.description")}</p>
 
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact-us">
                   <Button className="bg-gradient-to-r from-primary to-[#256bae] hover:from-primary/90 hover:to-[#256bae]/90 text-white px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                     <IoCall className="mr-2" />
-                    Contact Us
+                    {t("hero.buttons.contactUs")}
                   </Button>
                 </Link>
                 <Link href="/cars">
@@ -102,7 +88,7 @@ export default function AboutUs() {
                     variant="outline"
                     className="border-primary/30 text-primary hover:bg-primary/5 px-8 py-3 rounded-2xl"
                   >
-                    View Our Fleet
+                    {t("hero.buttons.viewFleet")}
                   </Button>
                 </Link>
               </div>
@@ -127,9 +113,9 @@ export default function AboutUs() {
                   </div>
                   <div>
                     <div className="text-2xl font-bold bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
-                      500+
+                      {t("hero.stats.customers")}
                     </div>
-                    <div className="text-sm text-slate-600">Happy Customers</div>
+                    <div className="text-sm text-slate-600">{t("hero.stats.customersLabel")}</div>
                   </div>
                 </div>
               </div>
@@ -143,23 +129,13 @@ export default function AboutUs() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Our </span>
+              <span className="text-slate-900">{t("story.title.main")}</span>
               <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                Story
+                {t("story.title.highlight")}
               </span>
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-12">
-              Founded in 2008 by Petros Nikolakis, Petras Rental started with a simple mission: to help visitors
-              discover the authentic beauty of Crete through reliable, comfortable transportation. What began as a small
-              family business with just five vehicles has grown into one of the island&apos;s most trusted car rental
-              services.
-            </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Today, we&apos;re proud to offer a diverse fleet of over 50 reliable vehicles, from compact city cars to
-              spacious SUVs, all maintained to the highest standards. Our local expertise and commitment to exceptional
-              service have made us the preferred choice for thousands of travelers seeking to explore Crete&apos;s
-              stunning landscapes, historic sites, and hidden gems.
-            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-12">{t("story.description1")}</p>
+            <p className="text-lg text-slate-600 leading-relaxed">{t("story.description2")}</p>
           </div>
         </div>
       </section>
@@ -170,14 +146,12 @@ export default function AboutUs() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Our </span>
+              <span className="text-slate-900">{t("values.title.main")}</span>
               <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                Values
+                {t("values.title.highlight")}
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              These core principles guide everything we do and shape every interaction with our customers.
-            </p>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">{t("values.description")}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -194,8 +168,8 @@ export default function AboutUs() {
                   >
                     <value.icon className="text-white text-2xl" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{value.title}</h3>
-                  <p className="text-slate-600 leading-relaxed relative">{value.description}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">{t(`values.list.${value.key}.title`)}</h3>
+                  <p className="text-slate-600 leading-relaxed relative">{t(`values.list.${value.key}.description`)}</p>
                 </div>
               </div>
             ))}
@@ -209,14 +183,12 @@ export default function AboutUs() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">By the </span>
+              <span className="text-slate-900">{t("stats.title.main")}</span>
               <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent">
-                Numbers
+                {t("stats.title.highlight")}
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Our commitment to excellence is reflected in these achievements.
-            </p>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">{t("stats.description")}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -231,10 +203,12 @@ export default function AboutUs() {
                   <div
                     className={`text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent relative`}
                   >
-                    {stat.number}
+                    {t(`stats.list.${stat.key}.number`)}
                   </div>
-                  <div className="text-lg font-semibold text-slate-700 mb-2 relative">{stat.label}</div>
-                  <div className="text-sm text-slate-600 relative">{stat.description}</div>
+                  <div className="text-lg font-semibold text-slate-700 mb-2 relative">
+                    {t(`stats.list.${stat.key}.label`)}
+                  </div>
+                  <div className="text-sm text-slate-600 relative">{t(`stats.list.${stat.key}.description`)}</div>
                 </div>
               </div>
             ))}
@@ -256,12 +230,9 @@ export default function AboutUs() {
 
             <div className="relative z-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                Ready to Explore Crete?
+                {t("cta.title")}
               </h2>
-              <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Get in touch with our friendly team to book your perfect vehicle and start planning your Crete
-                adventure.
-              </p>
+              <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">{t("cta.description")}</p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 <div className="flex items-center justify-center gap-3 text-white/70">
@@ -269,8 +240,8 @@ export default function AboutUs() {
                     <IoCall className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Mobile</div>
-                    <div className="text-sm">+30 693 668 5610</div>
+                    <div className="font-semibold text-white">{t("cta.contact.mobile.title")}</div>
+                    <div className="text-sm">{t("cta.contact.mobile.value")}</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-white/70">
@@ -278,8 +249,8 @@ export default function AboutUs() {
                     <IoMail className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Email</div>
-                    <div className="text-sm">info@petras-rentals.gr</div>
+                    <div className="font-semibold text-white">{t("cta.contact.email.title")}</div>
+                    <div className="text-sm">{t("cta.contact.email.value")}</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-white/70">
@@ -287,8 +258,8 @@ export default function AboutUs() {
                     <IoLocation className="text-2xl text-primary" />
                   </div>
                   <div>
-                    <div className="font-semibold text-white">Location</div>
-                    <div className="text-sm">Sitia, Crete</div>
+                    <div className="font-semibold text-white">{t("cta.contact.location.title")}</div>
+                    <div className="text-sm">{t("cta.contact.location.value")}</div>
                   </div>
                 </div>
               </div>
@@ -297,7 +268,7 @@ export default function AboutUs() {
                 <a href="tel:+306936685610">
                   <Button className="bg-gradient-to-r from-primary to-[#256bae] text-white hover:from-primary/90 hover:to-[#256bae]/90 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     <IoCall className="mr-2" />
-                    Call Now
+                    {t("cta.buttons.callNow")}
                   </Button>
                 </a>
                 <a href="mailto:info@petras-rentals.gr">
@@ -306,7 +277,7 @@ export default function AboutUs() {
                     className="bg-white/10 border-white/20 text-white/90 hover:bg-white/20 hover:text-white px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"
                   >
                     <IoMail className="mr-2" />
-                    Send Email
+                    {t("cta.buttons.sendEmail")}
                   </Button>
                 </a>
               </div>
