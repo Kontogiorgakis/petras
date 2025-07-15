@@ -34,8 +34,8 @@ const NAVIGATION_ITEMS = [
 ] as const;
 
 const LANGUAGES = [
-  { code: "en", name: "English", shortName: "EN" },
   { code: "el", name: "Ελληνικά", shortName: "GR" },
+  { code: "en", name: "English", shortName: "EN" },
   { code: "fr", name: "Français", shortName: "FR" },
   { code: "de", name: "Deutsch", shortName: "DE" },
 ] as const;

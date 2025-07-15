@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { IoCarSport, IoShield, IoStar, IoHeart, IoTrophy, IoGlobe, IoCall, IoMail, IoLocation } from "react-icons/io5";
+import { IoShield, IoStar, IoHeart, IoGlobe, IoCall, IoMail, IoLocation } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
@@ -59,13 +59,6 @@ export default function AboutUs() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-[#256bae]/10 backdrop-blur-xl border border-primary/20 text-primary px-6 py-3 rounded-2xl text-sm font-semibold mb-8 shadow-lg">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-[#256bae]/20 rounded-lg flex items-center justify-center">
-                  <IoCarSport className="text-primary text-sm" />
-                </div>
-                <span>{t("hero.badge.title")}</span>
-              </div>
-
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight">
                 <span className="text-slate-900">{t("hero.title.main")}</span>
                 <span className="bg-gradient-to-r from-primary via-[#256bae] to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">
@@ -103,21 +96,6 @@ export default function AboutUs() {
                   className="object-cover object-left"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
-              </div>
-
-              {/* Floating stats card */}
-              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-xl border border-primary/20 rounded-2xl p-6 shadow-xl shadow-primary/10">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-[#256bae]/20 rounded-xl flex items-center justify-center">
-                    <IoTrophy className="text-primary text-xl" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold bg-gradient-to-r from-primary to-[#256bae] bg-clip-text text-transparent">
-                      {t("hero.stats.customers")}
-                    </div>
-                    <div className="text-sm text-slate-600">{t("hero.stats.customersLabel")}</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

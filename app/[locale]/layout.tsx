@@ -25,6 +25,11 @@ export default async function MainLayout({ children, params }: BaseLayoutProps) 
 
   return (
     <html lang={locale}>
+      <head>
+        <link rel="icon" href="/logo/logo2.png" sizes="any" />
+        <title>Car Rental Petras</title>
+        <meta name="description" content="Petras Car Rental" />
+      </head>
       <body className={roboto.className}>
         <Providers>
           <Header />

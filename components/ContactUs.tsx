@@ -22,7 +22,7 @@ const CONTACT_METHODS = [
   },
   {
     icon: IoLogoWhatsapp,
-    key: "whatsapp",
+    key: "messaging",
     action: "https://wa.me/306936685610",
     color: "from-green-600 to-teal-600",
   },
@@ -90,20 +90,22 @@ export default function ContactUs() {
           {/* Contact Methods Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 w-full">
             {CONTACT_METHODS.map((method, index) => (
-              <a key={index} href={method.action} className="group block">
-                <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center relative overflow-hidden">
+              <a key={index} href={method.action} className="group block h-full">
+                <div className="bg-white/95 backdrop-blur-xl border border-white/60 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center relative overflow-hidden h-full flex flex-col justify-between">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${method.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}
                   ></div>
 
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg relative`}
-                  >
-                    <method.icon className="text-white text-2xl" />
+                  <div className="flex-1 flex flex-col justify-center">
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg relative`}
+                    >
+                      <method.icon className="text-white text-2xl" />
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{t(`methods.${method.key}.title`)}</h3>
+                    <p className="text-sm text-slate-600 mb-3">{t(`methods.${method.key}.description`)}</p>
+                    <p className="text-sm font-semibold text-primary">{t(`methods.${method.key}.value`)}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{t(`methods.${method.key}.title`)}</h3>
-                  <p className="text-sm text-slate-600 mb-3">{t(`methods.${method.key}.description`)}</p>
-                  <p className="text-sm font-semibold text-primary">{t(`methods.${method.key}.value`)}</p>
                 </div>
               </a>
             ))}

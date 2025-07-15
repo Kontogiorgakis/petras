@@ -200,9 +200,6 @@ export const TermsAndConditions = () => {
             </div>
           </div>
         </div>
-
-        {/* Last Updated */}
-        <div className="text-center mt-12 text-sm text-muted-foreground">{t("lastUpdated")}</div>
       </div>
     </div>
   );

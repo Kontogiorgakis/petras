@@ -41,9 +41,7 @@ export const CarDetailsModal = ({ car, isOpen, onClose }: CarDetailsModalProps) 
               </div>
               <div>
                 <DialogTitle className="text-2xl font-bold text-slate-800">{car.name}</DialogTitle>
-                <DialogDescription className="text-slate-600 mt-1">
-                  {getTranslatedValue("categories", car.category)} - {car.features.date}
-                </DialogDescription>
+                <DialogDescription className="text-slate-600 mt-1">{car.features.date}</DialogDescription>
               </div>
             </div>
           </div>

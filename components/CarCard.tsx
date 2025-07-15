@@ -96,7 +96,6 @@ export const CarCard = ({ car, onCarClick }: CarCardProps) => {
 
             <div className="text-right ml-3">
               <div className="text-lg font-bold text-slate-800">{car.features.date}</div>
-              <div className="text-sm text-slate-500">{getTranslatedValue("categories", car.category)}</div>
             </div>
           </div>
 

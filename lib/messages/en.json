@@ -7,18 +7,18 @@
     "hero": {
       "title": "Your Journey Starts",
       "subtitle": "With Petras Rental",
-      "description": "Experience the ultimate freedom of the road with our premium car rental service. From economy to luxury, we have the perfect vehicle for every adventure across beautiful Crete.",
+      "description": "Experience the ultimate freedom of the road with our reliable car rental service. We have the perfect vehicle for every adventure across beautiful Crete.",
       "buttons": {
         "ourCars": "Our Cars",
         "contactUs": "Contact Us"
       },
       "stats": {
         "customers": {
-          "value": "500+",
+          "value": "100+",
           "label": "Happy Customers"
         },
         "cars": {
-          "value": "13+",
+          "value": "15+",
           "label": "Reliable Cars"
         },
         "locations": {
@@ -228,14 +228,14 @@
       "cards": {
         "fleet": {
           "title": "Reliable Fleet",
-          "description": "13+ modern vehicles from economy to luxury models",
+          "description": "15+ modern vehicles to drive in Crete",
           "content": "Explore our extensive collection of well-maintained reliable vehicles, perfect for every adventure across beautiful Crete.",
           "button": "View Our Fleet"
         },
         "heritage": {
-          "title": "Our Heritage",
-          "description": "100+ years of family tradition in beautiful Sitia",
-          "content": "Learn about our century-long heritage, family values, and unwavering commitment to providing exceptional rental experiences in Crete.",
+          "title": "Our Story",
+          "description": "50+ years of family tradition in beautiful Sitia",
+          "content": "Learn about our 50+ years of history, family values, and unwavering commitment to providing exceptional rental experiences in Crete.",
           "button": "Learn Our Story"
         },
         "contact": {
@@ -305,7 +305,7 @@
       "main": "Our",
       "highlight": "Fleet"
     },
-    "description": "Choose from our extensive collection of reliable vehicles, from economy cars to luxury SUVs",
+    "description": "Choose from our extensive collection of reliable vehicles, from economy cars to SUVs",
     "noCars": {
       "title": "No cars available",
       "description": "Please check back later for available vehicles."
@@ -484,7 +484,7 @@
         "highlight": "Car Rental Partner",
         "sub": " in Crete"
       },
-      "description": "For over 15 years, Petras Rental has been the premier choice for travelers exploring the beautiful island of Crete. We combine local expertise with reliable vehicles to create unforgettable journeys.",
+      "description": "For over 50 years, Petras Rental has been the premier choice for travelers exploring the beautiful island of Crete. We combine local expertise with reliable vehicles to create unforgettable journeys.",
       "buttons": {
         "contactUs": "Contact Us",
         "viewFleet": "View Our Fleet"
@@ -535,17 +535,17 @@
       "description": "Our commitment to excellence is reflected in these achievements.",
       "list": {
         "experience": {
-          "number": "100+",
+          "number": "50+",
           "label": "Years of Experience",
-          "description": "Serving customers since 2008"
+          "description": "Serving customers since 1969"
         },
         "customers": {
-          "number": "500+",
+          "number": "100+",
           "label": "Happy Customers",
           "description": "Satisfied travelers each year"
         },
         "vehicles": {
-          "number": "13+",
+          "number": "15+",
           "label": "Reliable Vehicles",
           "description": "Modern, well-maintained fleet"
         },
@@ -601,9 +601,9 @@
         "description": "Office line",
         "value": "+30 284 302 4849"
       },
-      "whatsapp": {
-        "title": "WhatsApp",
-        "description": "Chat with us",
+      "messaging": {
+        "title": "WhatsApp & Viber",
+        "description": "Message us on WhatsApp or Viber",
         "value": "+30 693 668 5610"
       },
       "email": {
@@ -829,7 +829,7 @@
       "contact": {
         "mobile": {
           "value": "+30 693 668 5610",
-          "label": "Mobile & WhatsApp"
+          "label": "Mobile, WhatsApp & Viber"
         },
         "email": {
           "value": "info@petras-rentals.gr",

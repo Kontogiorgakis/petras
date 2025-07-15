@@ -84,11 +84,11 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-8 mx-auto lg:mx-0 leading-relaxed font-light break-words drop-shadow-lg relative">
-              {t("description")}
+            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-8 mx-auto lg:mx-0 leading-relaxed font-light break-words drop-shadow-lg relative">
+              <p>{t("description")}</p>
               {/* Simple side accent */}
               <div className="absolute -left-2 top-0 w-0.5 h-8 bg-gradient-to-b from-primary/50 to-transparent rounded-full"></div>
-            </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link href="/cars">
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={500}
+                    to={100}
                     suffix="+"
                     duration={2500}
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-[#256bae] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
@@ -166,7 +166,7 @@ export default function HeroSection() {
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={13}
+                    to={15}
                     suffix="+"
                     duration={2000}
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-[#256bae] group-hover:to-indigo-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"

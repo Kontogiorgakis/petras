@@ -159,6 +159,8 @@ export const Footer = () => {
                 <span className="text-white/60">
                   Made by{" "}
                   <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href="https://github.com/Kontogiorgakis"
                     className="inline-flex items-center gap-1 text-white/60 hover:text-white transition-colors duration-300"
                   >
