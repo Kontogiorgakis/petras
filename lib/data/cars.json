@@ -1,6 +1,25 @@
 [
   {
     "id": 1,
+    "name": "Skoda Fabia",
+    "category": "B-segment",
+    "price": 36,
+    "image": "/cars/skoda_black.jpeg",
+    "color": ["Black", "Pencil"],
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2025,
+      "doors": 5,
+      "cc": 1000
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows"],
+    "available": true
+  },
+  {
+    "id": 3,
     "name": "Kia Stonic",
     "category": "SUV",
     "price": 25,
@@ -11,49 +30,11 @@
       "fuel": "Petrol",
       "transmission": "Manual",
       "ac": true,
-      "date": 2024,
+      "date": 2023,
       "doors": 5,
       "cc": 1200
     },
     "specs": ["Air Conditioning", "Bluetooth", "USB Port"],
-    "available": true
-  },
-  {
-    "id": 2,
-    "name": "Suzuki Jimmy",
-    "category": "Mini SUV",
-    "price": 32,
-    "image": "/cars/jimmy.JPG",
-    "color": "Red",
-    "features": {
-      "seats": 4,
-      "fuel": "Petrol",
-      "transmission": "Manual",
-      "ac": true,
-      "date": 2020,
-      "doors": 3,
-      "cc": 1300
-    },
-    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows"],
-    "available": true
-  },
-  {
-    "id": 3,
-    "name": "Hyundai i20",
-    "category": "B-segment",
-    "price": 28,
-    "image": "/cars/huy_blue.JPG",
-    "color": "Blue",
-    "features": {
-      "seats": 5,
-      "fuel": "Petrol",
-      "transmission": "Manual",
-      "ac": true,
-      "date": 2024,
-      "doors": 5,
-      "cc": 1200
-    },
-    "specs": ["Air Conditioning", "Bluetooth", "Central Locking"],
     "available": true
   },
   {
@@ -77,63 +58,6 @@
   },
   {
     "id": 5,
-    "name": "Skoda Fabia",
-    "category": "B-segment",
-    "price": 35,
-    "image": "/cars/skoda_white.JPG",
-    "color": "White",
-    "features": {
-      "seats": 5,
-      "fuel": "Petrol",
-      "transmission": "Manual",
-      "ac": true,
-      "date": 2020,
-      "doors": 5,
-      "cc": 1000
-    },
-    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Hybrid Engine"],
-    "available": true
-  },
-  {
-    "id": 6,
-    "name": "Kia Picanto",
-    "category": "A-segment",
-    "price": 33,
-    "image": "/cars/kia_blue.jpeg",
-    "color": "Sea",
-    "features": {
-      "seats": 4,
-      "fuel": "Petrol",
-      "transmission": "Manual",
-      "ac": true,
-      "date": 2020,
-      "doors": 5,
-      "cc": 1000
-    },
-    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows"],
-    "available": true
-  },
-  {
-    "id": 7,
-    "name": "Huyndai i10",
-    "category": "A-segment",
-    "price": 30,
-    "image": "/cars/huy_white.JPG",
-    "color": "White",
-    "features": {
-      "seats": 4,
-      "fuel": "Petrol",
-      "transmission": "Automatic",
-      "ac": true,
-      "date": 2024,
-      "doors": 5,
-      "cc": 1000
-    },
-    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Panoramic Roof"],
-    "available": true
-  },
-  {
-    "id": 8,
     "name": "Toyota Yaris",
     "category": "B-segment",
     "price": 45,
@@ -144,7 +68,7 @@
       "fuel": "Petrol",
       "transmission": "Manual",
       "ac": true,
-      "date": 2024,
+      "date": 2023,
       "doors": 5,
       "cc": 1000
     },
@@ -152,7 +76,7 @@
     "available": true
   },
   {
-    "id": 9,
+    "id": 6,
     "name": "Volkswagen Polo",
     "category": "B-segment",
     "price": 65,
@@ -163,7 +87,7 @@
       "fuel": "Petrol",
       "transmission": "Manual",
       "ac": true,
-      "date": 2022,
+      "date": 2019,
       "doors": 5,
       "cc": 1000
     },
@@ -179,7 +103,26 @@
     "available": true
   },
   {
-    "id": 10,
+    "id": 7,
+    "name": "Hyundai i10",
+    "category": "A-segment",
+    "price": 48,
+    "image": "/cars/huy_green.jpeg",
+    "color": "Green",
+    "features": {
+      "seats": 4,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "ac": true,
+      "date": 2024,
+      "doors": 5,
+      "cc": 1000
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Cruise Control", "DSG"],
+    "available": true
+  },
+  {
+    "id": 8,
     "name": "Kia Picanto",
     "category": "A-segment",
     "price": 70,
@@ -207,12 +150,50 @@
     "available": true
   },
   {
+    "id": 9,
+    "name": "Hyundai i20",
+    "category": "B-segment",
+    "price": 28,
+    "image": "/cars/huy_blue.JPG",
+    "color": "Blue",
+    "features": {
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2024,
+      "doors": 5,
+      "cc": 1200
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "Central Locking"],
+    "available": true
+  },
+  {
+    "id": 10,
+    "name": "Suzuki Jimny",
+    "category": "Mini SUV",
+    "price": 32,
+    "image": "/cars/jimmy.JPG",
+    "color": "Red",
+    "features": {
+      "seats": 4,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2010,
+      "doors": 3,
+      "cc": 1300
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows"],
+    "available": true
+  },
+  {
     "id": 11,
     "name": "Hyundai i10",
     "category": "A-segment",
-    "price": 48,
-    "image": "/cars/huy_green.jpeg",
-    "color": "Green",
+    "price": 30,
+    "image": "/cars/huy_white.JPG",
+    "color": "White",
     "features": {
       "seats": 4,
       "fuel": "Petrol",
@@ -222,22 +203,41 @@
       "doors": 5,
       "cc": 1000
     },
-    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Cruise Control", "DSG"],
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Panoramic Roof"],
     "available": true
   },
   {
-    "id": 13,
+    "id": 12,
     "name": "Skoda Fabia",
     "category": "B-segment",
-    "price": 36,
-    "image": "/cars/skoda_black.jpeg",
-    "color": ["Black", "Pencil"],
+    "price": 35,
+    "image": "/cars/skoda_white.JPG",
+    "color": "White",
     "features": {
       "seats": 5,
       "fuel": "Petrol",
       "transmission": "Manual",
       "ac": true,
-      "date": 2025,
+      "date": 2017,
+      "doors": 5,
+      "cc": 1000
+    },
+    "specs": ["Air Conditioning", "Bluetooth", "USB Port", "Electric Windows", "Hybrid Engine"],
+    "available": true
+  },
+  {
+    "id": 13,
+    "name": "Kia Picanto",
+    "category": "A-segment",
+    "price": 33,
+    "image": "/cars/kia_blue.jpeg",
+    "color": "Sea",
+    "features": {
+      "seats": 4,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "ac": true,
+      "date": 2017,
       "doors": 5,
       "cc": 1000
     },

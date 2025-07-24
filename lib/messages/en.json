@@ -7,7 +7,7 @@
     "hero": {
       "title": "Your Journey Starts",
       "subtitle": "With Petras Rental",
-      "description": "Experience the ultimate freedom of the road with our reliable car rental service. We have the perfect vehicle for every adventure across beautiful Crete.",
+      "description": "Credibility and reliability in car rentals. Experience Crete as it deserves – with freedom, security, and a smile.",
       "buttons": {
         "ourCars": "Our Cars",
         "contactUs": "Contact Us"
@@ -33,15 +33,15 @@
     },
     "benefits": {
       "badge": {
-        "icon": "Iconic Experience"
+        "icon": "Excellence Experience"
       },
       "title": {
         "main": "Experience Excellence",
-        "highlight": "In Every Mile"
+        "highlight": "In Every Kilometer"
       },
       "description": "With years of experience in the car rental industry, we understand what matters most to our customers. From reliable vehicles to exceptional service, we deliver the perfect rental experience.",
       "list": [
-        "No hidden fees or charges",
+        "No hidden charges",
         "Free cancellation up to 24 hours",
         "Clean and sanitized vehicles",
         "Flexible rental periods",
@@ -228,7 +228,7 @@
       "cards": {
         "fleet": {
           "title": "Reliable Fleet",
-          "description": "15+ modern vehicles to drive in Crete",
+          "description": "15+ modern and reliable vehicles",
           "content": "Explore our extensive collection of well-maintained reliable vehicles, perfect for every adventure across beautiful Crete.",
           "button": "View Our Fleet"
         },
@@ -499,31 +499,31 @@
         "main": "Our ",
         "highlight": "Story"
       },
-      "description1": "Founded in 2008 by Petros Nikolakis, Petras Rental started with a simple mission: to help visitors discover the authentic beauty of Crete through reliable, comfortable transportation. What began as a small family business with just five vehicles has grown into one of the island's most trusted car rental services.",
-      "description2": "Today, we're proud to offer a diverse fleet of over 50 reliable vehicles, from compact city cars to spacious SUVs, all maintained to the highest standards. Our local expertise and commitment to exceptional service have made us the preferred choice for thousands of travelers seeking to explore Crete's stunning landscapes, historic sites, and hidden gems."
+      "description1": "Welcome to Crete, the island of contrasts and authentic hospitality! To discover the hidden beauties, enchanting beaches, and traditional villages of eastern Crete, you need a partner who combines reliability, experience, and human approach. In the heart of Sitia, Petras Rent a Car offers you exactly that.",
+      "description2": "With roots in the rental industry since 1983 and active presence in car rental since 2007, Petras is a family business that prioritizes service quality and your satisfaction."
     },
     "values": {
       "title": {
-        "main": "Our ",
-        "highlight": "Values"
+        "main": "What Makes Us ",
+        "highlight": "Stand Out"
       },
       "description": "These core principles guide everything we do and shape every interaction with our customers.",
       "list": {
         "trust": {
-          "title": "Trust & Reliability",
-          "description": "We build lasting relationships through honest service and dependable vehicles that you can count on."
+          "title": "Modern and updated fleet",
+          "description": "We have safe, clean, and reliable cars suitable for every type of journey."
         },
         "customerFirst": {
-          "title": "Customer First",
-          "description": "Your satisfaction is our priority. We go above and beyond to ensure every rental experience exceeds expectations."
+          "title": "Comfort & Safety",
+          "description": "We care so that every journey of yours is relaxing and stress-free."
         },
         "quality": {
-          "title": "Quality Excellence",
-          "description": "From our reliable fleet to our professional service, we maintain the highest standards in everything we do."
+          "title": "Speed & Economy",
+          "description": "Competitive prices and immediate service, so you can start your vacation without delays."
         },
         "local": {
-          "title": "Local Expertise",
-          "description": "As a local Crete business, we know the island inside out and provide personalized recommendations."
+          "title": "Local Experience",
+          "description": "As a local Crete business, we know the island very well and provide personalized recommendations."
         }
       }
     },
@@ -582,7 +582,7 @@
   "contactUs": {
     "hero": {
       "badge": {
-        "title": "Get in Touch"
+        "title": "Contact"
       },
       "title": {
         "main": "Contact ",
@@ -726,8 +726,6 @@
         "items": [
           "The mentioned car types are indicative only and subject to availability.",
           "Rental days are calculated on a 24-hour basis, starting from the vehicle pick-up time.",
-          "One-way rentals are available on request with extra charge, depending on different locations.",
-          "International one-way rentals are not available. Transporting and driving vehicles outside the island of Crete is strictly prohibited.",
           "All vehicles must be returned to the agreed location unless prior arrangements have been made."
         ]
       },
@@ -758,8 +756,7 @@
         { "service": "Baby/Booster Seats", "price": "First seat free, additional seats 2€ per day" },
         { "service": "After Hours Service", "price": "25€ (Between 22:00 - 07:00)" },
         { "service": "Additional Driver", "price": "3€ per day" },
-        { "service": "GPS Navigation", "price": "5€ per day" },
-        { "service": "One-Way Rental", "price": "Varies by distance (min. 30€)" }
+        { "service": "GPS Navigation", "price": "5€ per day" }
       ],
       "coverage": {
         "title": "Full Coverage Included",

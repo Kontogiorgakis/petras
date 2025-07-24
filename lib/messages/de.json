@@ -7,7 +7,7 @@
     "hero": {
       "title": "Ihre Reise Beginnt",
       "subtitle": "Mit Petras Rental",
-      "description": "Erleben Sie die ultimative Freiheit der Straße mit unserem zuverlässigen Autovermietungsservice. Wir haben das perfekte Fahrzeug für jedes Abenteuer auf dem schönen Kreta.",
+      "description": "Glaubwürdigkeit und Zuverlässigkeit bei Autovermietungen. Erleben Sie Kreta, wie es es verdient – mit Freiheit, Sicherheit und einem Lächeln.",
       "buttons": {
         "ourCars": "Unsere Autos",
         "contactUs": "Kontakt"
@@ -33,7 +33,7 @@
     },
     "benefits": {
       "badge": {
-        "icon": "Ikoniche Erfahrung"
+        "icon": "Exzellenz-Erfahrung"
       },
       "title": {
         "main": "Erleben Sie Exzellenz",
@@ -99,35 +99,35 @@
         "sub": "Überall auf Kreta"
       },
       "description": {
-        "main": "Erleben Sie ultimative Bequemlichkeit mit unserem Premium-Tür-zu-Tür-Lieferdienst",
+        "main": "Erleben Sie ultimative Bequemlichkeit mit unserem Premium-Hauslieferdienst",
         "sub": "Von großen Flughäfen bis zu versteckten Stränden bringen wir Ihr perfektes Mietauto direkt zu Ihnen"
       },
       "locations": {
         "airports": {
           "heraklion": {
-            "name": "Heraklion Flughafen",
+            "name": "Flughafen Heraklion",
             "description": "Internationaler Flughafen"
           },
           "chania": {
-            "name": "Chania Flughafen",
+            "name": "Flughafen Chania",
             "description": "Internationaler Flughafen"
           },
           "sitia": {
-            "name": "Sitia Flughafen",
+            "name": "Flughafen Sitia",
             "description": "Regionalflughafen"
           }
         },
         "ports": {
           "heraklion": {
-            "name": "Heraklion Hafen",
+            "name": "Hafen Heraklion",
             "description": "Hauptfährhafen"
           },
           "chania": {
-            "name": "Chania Hafen",
+            "name": "Hafen Chania",
             "description": "Hauptfährhafen"
           },
           "sitia": {
-            "name": "Sitia Hafen",
+            "name": "Hafen Sitia",
             "description": "Hauptfährhafen"
           }
         },
@@ -152,7 +152,7 @@
       },
       "customLocation": {
         "title": {
-          "main": "Benötigen Sie einen",
+          "main": "Brauchen Sie einen",
           "highlight": "Individuellen Standort",
           "question": "?"
         },
@@ -196,15 +196,15 @@
         },
         "insurance": {
           "title": "Vollversichert",
-          "description": "Alle unsere Fahrzeuge sind umfassend versichert für Ihre vollständige Sicherheit."
+          "description": "Alle unsere Fahrzeuge kommen mit umfassender Versicherungsdeckung für Ihre vollständige Sicherheit."
         },
         "support": {
           "title": "Täglicher Support",
-          "description": "Täglicher Kundensupport (09:00-20:00) und Unterstützung während Ihrer Mietzeit."
+          "description": "Täglicher Kundensupport (09:00-20:00) und Unterstützung während Ihrer gesamten Mietzeit."
         },
         "expertise": {
           "title": "Lokale Experten",
-          "description": "Erhalten Sie Insider-Tipps und Empfehlungen für die besten versteckten Orte, Strände und authentische Erfahrungen in Sitia."
+          "description": "Erhalten Sie Insider-Tipps und Empfehlungen für die besten versteckten Orte, Strände und authentischen Erfahrungen in Sitia."
         },
         "cleanliness": {
           "title": "Sauber & Desinfiziert",
@@ -212,7 +212,7 @@
         },
         "pricing": {
           "title": "Beste Preise",
-          "description": "Wettbewerbsfähige Preise mit Preisgarantie, um Ihnen den besten Wert zu garantieren."
+          "description": "Wettbewerbsfähige Preise mit Preisgarantie, um sicherzustellen, dass Sie den besten Wert erhalten."
         }
       }
     },
@@ -222,14 +222,14 @@
       },
       "title": {
         "main": "Bereit Kreta zu",
-        "highlight": "Entdecken?"
+        "highlight": "Erkunden?"
       },
-      "description": "Entdecken Sie alles, was Petras Rental bietet - von unserer kompakten Flotte bis hin zu personalisierter lokaler Expertise für Ihr perfektes kretisches Abenteuer",
+      "description": "Entdecken Sie alles, was Petras Rental bietet - von unserer kompakten Flotte bis zur personalisierten lokalen Expertise für Ihr perfektes kretisches Abenteuer",
       "cards": {
         "fleet": {
           "title": "Zuverlässige Flotte",
-          "description": "15+ moderne Fahrzeuge zum Fahren auf Kreta",
-          "content": "Entdecken Sie unsere umfangreiche Sammlung gut gewarteter, zuverlässiger Fahrzeuge, perfekt für jedes Abenteuer auf dem schönen Kreta.",
+          "description": "15+ moderne und zuverlässige Fahrzeuge",
+          "content": "Entdecken Sie unsere umfangreiche Sammlung gut gewarteter zuverlässiger Fahrzeuge, perfekt für jedes Abenteuer auf dem schönen Kreta.",
           "button": "Unsere Flotte Ansehen"
         },
         "heritage": {
@@ -241,7 +241,7 @@
         "contact": {
           "title": "Kontakt",
           "description": "Täglicher Support 09:00-20:00 • Lokale Expertise",
-          "content": "Kontaktieren Sie unser freundliches Team für sofortige Buchungen, personalisierte Empfehlungen und Experten-Führung für Ihre kretische Reise.",
+          "content": "Kontaktieren Sie unser freundliches Team für sofortige Buchungen, personalisierte Empfehlungen und Experten-Beratung für Ihre kretische Reise.",
           "button": "Kontakt Aufnehmen"
         }
       }
@@ -255,7 +255,7 @@
         "highlight": "Kunden",
         "sub": "Sagen"
       },
-      "description": "Glauben Sie nicht nur unser Wort. Hier ist, was unsere geschätzten Kunden über ihre Erfahrung mit Petras Rental sagen.",
+      "description": "Nehmen Sie nicht nur unser Wort dafür. Hier ist, was unsere geschätzten Kunden über ihre Erfahrung mit Petras Rental sagen.",
       "data": [
         {
           "name": "Marina B.S",
@@ -265,7 +265,7 @@
         {
           "name": "Caroline Monnet",
           "location": "Frankreich",
-          "text": "Ich habe die Kontaktdaten für Petras Rent a Car aus dem Backpacker-Führer erhalten. Und tatsächlich war ich froh, zweimal in diesem Jahr mit Soula Geschäfte gemacht zu haben! Ein brandneues Auto, sehr vernünftiger Preis, und Soula hat meine Ankunft in Heraklion arrangiert. Sie ist unglaublich nett, und es ist auch ein echtes Vergnügen, mit ihr zu chatten. Ich empfehle es mit geschlossenen Augen!"
+          "text": "Ich habe die Kontaktdaten für Petras Rent a Car aus dem Backpacker-Führer erhalten. Und tatsächlich war ich froh, zweimal in diesem Jahr mit Soula Geschäfte gemacht zu haben! Ein brandneues Auto, sehr vernünftiger Preis, und Soula hat meine Ankunft in Heraklion organisiert. Sie ist unglaublich nett, und es ist auch eine echte Freude, mit ihr zu chatten. Ich empfehle es mit geschlossenen Augen!"
         },
         {
           "name": "Mc Bourdieu",
@@ -275,12 +275,12 @@
         {
           "name": "Blanc Cristophe",
           "location": "Frankreich",
-          "text": "Wir haben im September 2019 ein Auto von Soula gemietet. Sie gab uns einen herzlichen Empfang, und wir hatten überhaupt keine Probleme mit dem Mietauto. Ein zusätzlicher Bonus ist, dass das Auto bei der Ankunft am Flughafen verfügbar ist und auch am Flughafen bei der Abreise aus Heraklion abgegeben werden kann. Sehr empfehlenswert..."
+          "text": "Wir haben im September 2019 ein Auto bei Soula gemietet. Sie hat uns herzlich willkommen geheißen, und wir hatten überhaupt keine Probleme mit dem Mietauto. Ein zusätzlicher Bonus ist, dass das Auto bei der Ankunft am Flughafen verfügbar ist und auch am Flughafen bei der Abreise aus Heraklion abgegeben werden kann. Sehr empfehlenswert..."
         },
         {
           "name": "Sandrine Garcin",
           "location": "Frankreich",
-          "text": "Seit 4 Jahren miete ich meine Autos bei Soula. Zuverlässig und gut gewartet. Fairer Preis und Auto auch. Ich hatte diesen Sommer einen platten Reifen, und er wurde innerhalb einer halben Stunde repariert. Ich empfehle sie sehr!"
+          "text": "Seit 4 Jahren miete ich meine Autos bei Soula. Zuverlässig und gut gewartet. Fairer Preis und Auto auch. Ich hatte einen platten Reifen diesen Sommer, und es wurde innerhalb einer halben Stunde repariert. Ich empfehle sie sehr!"
         },
         {
           "name": "Manolis Hatzidakis",
@@ -290,7 +290,7 @@
         {
           "name": "JML OKS",
           "location": "England",
-          "text": "Ich hatte einen herzlichen Empfang und war völlig zufrieden mit Soulas Dienstleistungen! Ich bekam sogar ein Upgrade!!!"
+          "text": "Ich hatte eine herzliche Begrüßung und war völlig zufrieden mit Soulas Dienstleistungen! Ich bekam sogar ein Upgrade!!!"
         },
         {
           "name": "Dimosthenis Zioulas",
@@ -308,7 +308,7 @@
     "description": "Wählen Sie aus unserer umfangreichen Sammlung zuverlässiger Fahrzeuge, von Wirtschaftswagen bis SUVs",
     "noCars": {
       "title": "Keine Autos verfügbar",
-      "description": "Bitte schauen Sie später wieder vorbei für verfügbare Fahrzeuge."
+      "description": "Bitte schauen Sie später nach verfügbaren Fahrzeugen."
     },
     "cta": {
       "title": "Bereit Ihr Perfektes Auto zu Buchen?",
@@ -333,7 +333,7 @@
       },
       "buttons": {
         "call": "Jetzt Anrufen",
-        "quote": "Angebot Einholen"
+        "quote": "Angebot Erhalten"
       }
     }
   },
@@ -341,12 +341,12 @@
     "labels": {
       "seats": "Sitze",
       "fuel": "Kraftstoff",
-      "transmission": "Getriebe",
+      "transmission": "Getr.",
       "doors": "Türen",
       "engine": "Motor",
       "climate": "Klima",
-      "ac": "Klima",
-      "noAc": "Kein Klima"
+      "ac": "A/C",
+      "noAc": "Keine A/C"
     }
   },
   "carData": {
@@ -354,7 +354,7 @@
       "SUV": "SUV",
       "Mini SUV": "Mini SUV",
       "B-segment": "Kompakt",
-      "A-segment": "Kleinstwagen"
+      "A-segment": "Kleinwagen"
     },
     "fuel": {
       "Petrol": "Benzin",
@@ -374,7 +374,7 @@
       "Red": "Rot",
       "Green": "Grün",
       "Pencil": "Silber",
-      "Sea": "Türkis",
+      "Sea": "Petrol",
       "Grey": "Grau",
       "Yellow": "Gelb",
       "Orange": "Orange"
@@ -388,7 +388,7 @@
       "Hybrid Engine": "Hybrid-Motor",
       "Panoramic Roof": "Panoramadach",
       "Safety Pack": "Sicherheitspaket",
-      "4WD": "4x4",
+      "4WD": "Allradantrieb",
       "Cruise Control": "Tempomat",
       "Parking Sensors": "Einparkhilfe",
       "Navigation": "Navigation",
@@ -415,7 +415,7 @@
         "engine": "Motor",
         "doors": "Türen",
         "year": "Jahr",
-        "ac": "Klima",
+        "ac": "A/C",
         "colors": "Verfügbare Farben"
       },
       "values": {
@@ -425,8 +425,8 @@
       }
     },
     "features": {
-      "title": "Hauptmerkmale",
-      "included": "Inklusive Funktionen"
+      "title": "Wichtige Funktionen",
+      "included": "Inbegriffene Funktionen"
     }
   },
   "rentalTerms": {
@@ -436,8 +436,8 @@
         "title": "Fahreranforderungen",
         "items": [
           "Gültiger Führerschein (mindestens 1 Jahr)",
-          "Alter 21+ (Zusatzgebühren für unter 25)",
-          "Kreditkarte für Kaution",
+          "Alter 21+ (zusätzliche Gebühren für unter 25)",
+          "Kreditkarte für Sicherheitsleistung",
           "Internationaler Führerschein für Nicht-EU-Bewohner"
         ]
       },
@@ -453,9 +453,9 @@
       "insurance": {
         "title": "Versicherungsschutz",
         "items": [
-          "Vollkaskoversicherung inklusive",
+          "Vollkaskoversicherung inbegriffen",
           "Kollisionsschutz verfügbar",
-          "Diebstahlschutz inklusive",
+          "Diebstahlschutz inbegriffen",
           "Haftpflichtversicherung abgedeckt"
         ]
       }
@@ -463,10 +463,10 @@
     "importantNotes": {
       "title": "Wichtige Hinweise",
       "items": [
-        "Kaution: 200-500€ (variiert je nach Fahrzeug)",
-        "Kraftstoffrichtlinie: Rückgabe mit gleichem Kraftstoffstand",
+        "Sicherheitsleistung: 200-500€ (variiert je nach Fahrzeug)",
+        "Kraftstoffpolitik: Rückgabe mit gleichem Kraftstoffstand",
         "Kilometerleistung: Unbegrenzt auf Kreta",
-        "Zusatzfahrergebühr: 10€ pro Tag"
+        "Zusätzliche Fahrergebühr: 10€ pro Tag"
       ]
     },
     "quickInfo": {
@@ -484,7 +484,7 @@
         "highlight": "Autovermietungspartner",
         "sub": " auf Kreta"
       },
-      "description": "Seit über 50 Jahren ist Petras Rental die erste Wahl für Reisende, die die schöne Insel Kreta erkunden. Wir kombinieren lokale Expertise mit zuverlässigen Fahrzeugen, um unvergessliche Reisen zu schaffen.",
+      "description": "Seit über 50 Jahren ist Petras Rental die erste Wahl für Reisende, die die schöne Insel Kreta erkunden. Wir verbinden lokale Expertise mit zuverlässigen Fahrzeugen, um unvergessliche Reisen zu schaffen.",
       "buttons": {
         "contactUs": "Kontakt",
         "viewFleet": "Unsere Flotte Ansehen"
@@ -499,31 +499,31 @@
         "main": "Unsere",
         "highlight": "Geschichte"
       },
-      "description1": "Gegründet 2008 von Petros Nikolakis, begann Petras Rental mit einer einfachen Mission: Besuchern zu helfen, die authentische Schönheit Kretas durch zuverlässigen, komfortablen Transport zu entdecken. Was als kleines Familienunternehmen mit nur fünf Fahrzeugen begann, ist zu einem der vertrauenswürdigsten Autovermietungsdienste der Insel geworden.",
-      "description2": "Heute sind wir stolz darauf, eine vielfältige Flotte von über 50 zuverlässigen Fahrzeugen anzubieten, von kompakten Stadtautos bis hin zu geräumigen SUVs, alle nach höchsten Standards gewartet. Unsere lokale Expertise und unser Engagement für außergewöhnlichen Service haben uns zur bevorzugten Wahl für Tausende von Reisenden gemacht, die Kretas atemberaubende Landschaften, historische Stätten und versteckte Juwelen erkunden möchten."
+      "description1": "Willkommen auf Kreta, der Insel der Kontraste und authentischen Gastfreundschaft! Um die versteckten Schönheiten, bezaubernden Strände und traditionellen Dörfer Ostkretas zu entdecken, brauchen Sie einen Partner, der Zuverlässigkeit, Erfahrung und menschlichen Ansatz kombiniert. Im Herzen von Sitia bietet Ihnen Petras Rent a Car genau das.",
+      "description2": "Mit Wurzeln in der Mietbranche seit 1983 und aktiver Präsenz in der Autovermietung seit 2007 ist Petras ein Familienunternehmen, das Servicequalität und Ihre Zufriedenheit priorisiert."
     },
     "values": {
       "title": {
-        "main": "Unsere",
-        "highlight": "Werte"
+        "main": "Was Uns",
+        "highlight": "Auszeichnet"
       },
       "description": "Diese Grundprinzipien leiten alles, was wir tun, und prägen jede Interaktion mit unseren Kunden.",
       "list": {
         "trust": {
-          "title": "Vertrauen & Zuverlässigkeit",
-          "description": "Wir bauen dauerhafte Beziehungen durch ehrlichen Service und zuverlässige Fahrzeuge, auf die Sie sich verlassen können."
+          "title": "Moderne und aktualisierte Flotte",
+          "description": "Wir haben sichere, saubere und zuverlässige Autos, die für jede Art von Reise geeignet sind."
         },
         "customerFirst": {
-          "title": "Kunde an Erster Stelle",
-          "description": "Ihre Zufriedenheit ist unsere Priorität. Wir gehen über das Übliche hinaus, um sicherzustellen, dass jede Mietfahrzeug-Erfahrung die Erwartungen übertrifft."
+          "title": "Komfort & Sicherheit",
+          "description": "Wir sorgen dafür, dass jede Ihrer Reisen entspannend und stressfrei ist."
         },
         "quality": {
-          "title": "Qualitätsexzellenz",
-          "description": "Von unserer zuverlässigen Flotte bis hin zu unserem professionellen Service halten wir die höchsten Standards in allem, was wir tun."
+          "title": "Geschwindigkeit & Wirtschaftlichkeit",
+          "description": "Wettbewerbsfähige Preise und sofortiger Service, damit Sie Ihren Urlaub ohne Verzögerungen beginnen können."
         },
         "local": {
-          "title": "Lokale Expertise",
-          "description": "Als lokales kretisches Unternehmen kennen wir die Insel in- und auswendig und bieten personalisierte Empfehlungen."
+          "title": "Lokale Erfahrung",
+          "description": "Als lokales Kreta-Unternehmen kennen wir die Insel sehr gut und bieten personalisierte Empfehlungen."
         }
       }
     },
@@ -537,7 +537,7 @@
         "experience": {
           "number": "50+",
           "label": "Jahre Erfahrung",
-          "description": "Seit 1969 im Dienst der Kunden"
+          "description": "Bedienen von Kunden seit 1969"
         },
         "customers": {
           "number": "100+",
@@ -552,13 +552,13 @@
         "support": {
           "number": "24/7",
           "label": "Kundensupport",
-          "description": "Täglich 09:00-20:00 verfügbar"
+          "description": "Verfügbar 09:00-20:00 jeden Tag"
         }
       }
     },
     "cta": {
       "title": "Bereit Kreta zu Erkunden?",
-      "description": "Kontaktieren Sie unser freundliches Team, um Ihr perfektes Fahrzeug zu buchen und mit der Planung Ihres kretischen Abenteuers zu beginnen.",
+      "description": "Kontaktieren Sie unser freundliches Team, um Ihr perfektes Fahrzeug zu buchen und Ihre Kreta-Abenteuer zu planen.",
       "contact": {
         "mobile": {
           "title": "Mobil",
@@ -582,10 +582,10 @@
   "contactUs": {
     "hero": {
       "badge": {
-        "title": "Kontakt Aufnehmen"
+        "title": "Kontakt"
       },
       "title": {
-        "main": "Kontakt",
+        "main": "Kontakt ",
         "highlight": "Petras Rental"
       },
       "description": "Bereit Kreta zu erkunden? Kontaktieren Sie unser freundliches Team für personalisierten Service, sofortige Angebote und Expertenberatung für Ihr perfektes Fahrzeug."
@@ -614,7 +614,7 @@
     },
     "form": {
       "title": {
-        "main": "Senden Sie uns eine",
+        "main": "Senden Sie uns eine ",
         "highlight": "Nachricht"
       },
       "fields": {
@@ -647,7 +647,7 @@
     },
     "office": {
       "title": {
-        "main": "Büro",
+        "main": "Büro ",
         "highlight": "Informationen"
       },
       "address": {
@@ -666,8 +666,8 @@
     },
     "hours": {
       "title": {
-        "main": "Geschäfts",
-        "highlight": "zeiten"
+        "main": "Geschäfts ",
+        "highlight": "Zeiten"
       },
       "schedule": {
         "days": "Montag - Sonntag",
@@ -677,7 +677,7 @@
       },
       "notice": {
         "title": "Täglicher Service",
-        "description": "Täglich von 09:00 bis 20:00 geöffnet"
+        "description": "Täglich geöffnet von 09:00 bis 20:00 Uhr"
       }
     },
     "map": {
@@ -724,10 +724,8 @@
       "vehicleRental": {
         "title": "Fahrzeugmietbedingungen",
         "items": [
-          "Die genannten Fahrzeugtypen sind nur indikativ und unterliegen der Verfügbarkeit.",
+          "Die genannten Autotypen sind nur indikativ und unterliegen der Verfügbarkeit.",
           "Miettage werden auf 24-Stunden-Basis berechnet, beginnend mit der Fahrzeugabholzeit.",
-          "Einwegmieten sind auf Anfrage mit zusätzlicher Gebühr verfügbar, je nach verschiedenen Standorten.",
-          "Internationale Einwegmieten sind nicht verfügbar. Transport und Fahren von Fahrzeugen außerhalb der Insel Kreta ist strengstens verboten.",
           "Alle Fahrzeuge müssen am vereinbarten Standort zurückgegeben werden, es sei denn, es wurden vorherige Vereinbarungen getroffen."
         ]
       },
@@ -735,16 +733,16 @@
         "title": "Fahreranforderungen",
         "items": [
           "Alle Mieter müssen einen gültigen EU- oder internationalen Führerschein besitzen.",
-          "Fahrer muss 24+ Jahre alt sein, mit mindestens 3 Jahren Führerscheinbesitz.",
-          "Zusatzfahrer müssen die gleichen Anforderungen erfüllen und bei der Abholung registriert werden.",
-          "Service wird für keine unbestätigte Reservierung erbracht.",
+          "Der Fahrer muss 24+ Jahre alt sein, mit mindestens 3 Jahren Führerscheinbesitz.",
+          "Zusätzliche Fahrer müssen die gleichen Anforderungen erfüllen und bei der Abholung registriert werden.",
+          "Service wird für keine unbestätigte Reservierung bereitgestellt.",
           "Gültige Identifikation (Reisepass oder Personalausweis) ist bei der Abholung erforderlich."
         ]
       },
       "rentalTerms": {
         "title": "Mietbedingungen",
         "items": [
-          "Kraftstoffrichtlinie: Autos müssen mit dem gleichen Kraftstoffstand wie bei der Lieferung zurückgegeben werden.",
+          "Kraftstoffpolitik: Autos müssen mit dem gleichen Kraftstoffstand wie bei der Lieferung zurückgegeben werden.",
           "Verspätungsgebühren gelten nach der vereinbarten Rückgabezeit (24-Stunden-Gnadenfrist).",
           "Frühe Rückgaben qualifizieren sich nicht für Rückerstattungen, es sei denn, es wurde vorher vereinbart.",
           "Fahrzeuginspektionen werden bei Abholung und Rückgabe durchgeführt.",
@@ -753,46 +751,45 @@
       }
     },
     "extraCharges": {
-      "title": "Zusatzgebühren",
+      "title": "Zusätzliche Gebühren",
       "items": [
-        { "service": "Baby-/Booster-Sitze", "price": "Erster Sitz kostenlos, zusätzliche Sitze 2€ pro Tag" },
-        { "service": "Außerhalb der Geschäftszeiten", "price": "25€ (Zwischen 22:00 - 07:00)" },
-        { "service": "Zusatzfahrer", "price": "3€ pro Tag" },
-        { "service": "GPS-Navigation", "price": "5€ pro Tag" },
-        { "service": "Einwegmiete", "price": "Variiert je nach Entfernung (min. 30€)" }
+        { "service": "Baby-/Kindersitze", "price": "Erster Sitz kostenlos, zusätzliche Sitze 2€ pro Tag" },
+        { "service": "Service außerhalb der Geschäftszeiten", "price": "25€ (Zwischen 22:00 - 07:00)" },
+        { "service": "Zusätzlicher Fahrer", "price": "3€ pro Tag" },
+        { "service": "GPS-Navigation", "price": "5€ pro Tag" }
       ],
       "coverage": {
-        "title": "Vollkasko Inklusive",
-        "description": "Unsere Preise beinhalten Vollkasko für Ihre Sicherheit. Keine Kreditkarte erforderlich. Wir müssen keinen Betrag als Kaution vorab autorisieren."
+        "title": "Vollständige Deckung Inbegriffen",
+        "description": "Unsere Preise beinhalten Vollkasko-Schutz für Ihre Sicherheit. Keine Kreditkarte erforderlich. Wir müssen keinen Betrag als Garantie vorautorisieren."
       }
     },
     "notCovered": {
       "title": "Wichtig: Nicht von der Versicherung gedeckt",
       "description": "Bitte beachten Sie, dass Folgendes NICHT von keiner Versicherung gedeckt ist und zu Gebühren für den Mieter führen kann:",
       "items": [
-        "Schäden durch Fahren unter Alkohol- oder Drogeneinfluss, rücksichtsloses Fahren oder Verkehrsverstöße",
-        "Alle Verkehrsstrafen infolge von Verstößen gegen griechische Verkehrsvorschriften",
+        "Schäden durch Fahren unter Alkohol- oder Drogeneinfluss, rücksichtsloses Fahren oder Verkehrsgesetzesverstöße",
+        "Alle Verkehrsstrafen aus Verstößen gegen griechische Verkehrsvorschriften",
         "Schäden an der Unterseite des Fahrzeugs, Rädern, Reifen, Dach und Innenraum",
         "Verlust oder Schäden an Fahrzeugschlüsseln, GPS-Geräten oder Kindersitzen",
         "Offroad-Fahren auf Schotterstraßen oder unbefugtem Gelände",
-        "Schäden, wenn der Fahrer nach einem Unfall nicht anhält und notwendige Maßnahmen ergreift",
+        "Schäden, wenn der Fahrer nach einem Unfall nicht anhält und die notwendigen Maßnahmen ergreift",
         "Transport des Fahrzeugs außerhalb der Insel Kreta"
       ]
     },
     "cancellation": {
       "title": "Stornierungsrechte",
-      "description": "Das Unternehmen behält sich das Recht vor, jede Reservierung jederzeit zu stornieren, wenn:",
+      "description": "Das Unternehmen behält sich das Recht vor, jede Reservierung zu jedem Zeitpunkt zu stornieren, wenn:",
       "items": [
-        "Der Mieter das Auto für unfaire und illegale Zwecke nutzt (Schmuggel, Diebstahl, illegaler Transport)",
-        "Der Fahrer das Auto für jede Art von Rennen oder Wettbewerb nutzt",
-        "Verkehrsverstöße zur Beschlagnahme des Kennzeichens durch die Polizei führen"
+        "Der Mieter das Auto für unfaire und illegale Zwecke verwendet (Schmuggel, Diebstahl, illegaler Transport)",
+        "Der Fahrer das Auto für jede Art von Rennen oder Wettbewerb verwendet",
+        "Verkehrsverstöße zur Beschlagnahmung des Kennzeichens durch die Polizei führen"
       ]
     },
     "contact": {
       "title": "Haben Sie Fragen?",
-      "description": "Unser Support-Team ist hier, um Ihnen bei Fragen zu unseren Allgemeinen Geschäftsbedingungen zu helfen. Täglich von 09:00 bis 20:00 verfügbar.",
+      "description": "Unser Support-Team ist hier, um Ihnen bei Fragen zu unseren Allgemeinen Geschäftsbedingungen zu helfen. Täglich von 09:00 bis 20:00 Uhr verfügbar.",
       "buttons": {
-        "call": "Jetzt Anrufen",
+        "call": "Rufen Sie uns jetzt an",
         "email": "E-Mail Senden"
       }
     },
@@ -800,29 +797,29 @@
   },
   "layout": {
     "header": {
-      "brand": "Autovermietung Petras",
+      "brand": "Car Rental Petras",
       "navigation": {
         "home": "Startseite",
         "cars": "Autos",
-        "aboutUs": "Über Uns",
+        "aboutUs": "Über uns",
         "termsAndConditions": "Allgemeine Geschäftsbedingungen"
       },
       "contact": "Kontakt",
       "language": "Sprache"
     },
     "footer": {
-      "brand": "Autovermietung Petras",
+      "brand": "Car Rental Petras",
       "description": "Ihr vertrauenswürdiger Autovermietungspartner auf Kreta. Erleben Sie die Freiheit der Straße mit unseren zuverlässigen Fahrzeugen und außergewöhnlichem Service auf der schönen Insel.",
       "sections": {
         "quickLinks": "Schnelllinks",
-        "contactInfo": "Kontaktinformationen",
+        "contactInfo": "Kontaktinfo",
         "location": "Unser Standort",
         "readyToDrive": "Bereit zu Fahren?"
       },
       "navigation": {
         "home": "Startseite",
         "cars": "Unsere Autos",
-        "aboutUs": "Über Uns",
+        "aboutUs": "Über uns",
         "termsAndConditions": "Allgemeine Geschäftsbedingungen",
         "contactUs": "Kontakt"
       },
@@ -833,7 +830,7 @@
         },
         "email": {
           "value": "info@petras-rentals.gr",
-          "label": "Kontakt Aufnehmen"
+          "label": "Kontakt"
         },
         "landline": {
           "value": "+30 284 302 4849",

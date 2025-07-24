@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  IoCarSport,
-  IoShield,
-  IoTime,
-  IoCard,
-  IoWarning,
-  IoCheckmarkCircle,
-  IoCloseCircle,
-  IoCallSharp,
-  IoMail,
-} from "react-icons/io5";
+import { IoCarSport, IoShield, IoTime, IoWarning, IoCloseCircle, IoCallSharp, IoMail } from "react-icons/io5";
 import { useTranslations } from "next-intl";
 
 const TERMS_SECTIONS = [
@@ -92,40 +82,6 @@ export const TermsAndConditions = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Extra Charges Section */}
-        <div className="mb-16">
-          <div className="relative bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-primary/10 rounded-3xl p-8 shadow-lg">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-[#256bae]/10 rounded-2xl flex items-center justify-center">
-                <IoCard className="text-2xl text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground">{t("extraCharges.title")}</h3>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {t.raw("extraCharges.items").map((charge: { service: string; price: string }, index: number) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200"
-                >
-                  <span className="font-medium text-foreground">{charge.service}</span>
-                  <span className="text-primary font-bold">{charge.price}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6">
-              <div className="flex items-start gap-3">
-                <IoCheckmarkCircle className="text-green-600 text-xl flex-shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-green-800 mb-2">{t("extraCharges.coverage.title")}</h4>
-                  <p className="text-green-700 leading-relaxed">{t("extraCharges.coverage.description")}</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Not Covered Section */}
