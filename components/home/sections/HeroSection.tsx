@@ -230,7 +230,7 @@ export default function HeroSection() {
                 {/* Enhanced Counter */}
                 <div className="relative">
                   <CountUp
-                    to={50}
+                    to={41}
                     suffix="+"
                     duration={1000}
                     className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-[#256bae] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500"
