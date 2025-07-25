@@ -7,8 +7,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Button } from "./ui/button";
 
 const LANGUAGES = [
-  { code: "en", name: "English", flag: "🇺🇸" },
   { code: "el", name: "Ελληνικά", flag: "🇬🇷" },
+  { code: "en", name: "English", flag: "🇺🇸" },
   { code: "fr", name: "Français", flag: "🇫🇷" },
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
 ] as const;
