@@ -29,7 +29,7 @@ const CONTACT_METHODS = [
   {
     icon: IoMail,
     key: "email",
-    action: "mailto:aspasiakounelaki@gmail.com",
+    action: "mailto:manoskodos44@gmail.com",
     color: "from-purple-500 to-indigo-600",
   },
 ] as const;
@@ -56,23 +56,27 @@ export default function ContactUs() {
     setIsSubmitting(true);
 
     try {
-      // Formsubmit.co - Works immediately, no signup needed!
-      const formData2 = new FormData();
-      formData2.append("name", formData.name);
-      formData2.append("email", formData.email);
-      formData2.append("phone", formData.phone || "Not provided");
-      formData2.append("subject", formData.subject);
-      formData2.append("message", formData.message);
-
-      const response = await fetch("https://formsubmit.co/aspasiakounelaki@gmail.com", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData2,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "",
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
+
+      const result = await response.json();
 
       if (response.ok) {
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
         alert(t("form.success"));
       } else {
+        console.error("Contact form error:", result.error);
         alert(t("form.error"));
       }
     } catch (error) {
