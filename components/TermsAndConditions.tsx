@@ -147,11 +147,11 @@ export const TermsAndConditions = () => {
               </a>
 
               <a
-                href="mailto:info@petras-rentals.gr"
+                href="mailto:aspasiakounelaki@gmail.com"
                 className="inline-flex items-center gap-3 bg-white/10 text-white px-6 py-3 rounded-xl font-medium hover:bg-white/20 transition-all duration-300 border border-white/20"
               >
                 <IoMail className="text-lg" />
-                info@petras-rentals.gr
+                aspasiakounelaki@gmail.com
               </a>
             </div>
           </div>

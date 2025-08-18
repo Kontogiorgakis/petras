@@ -234,8 +234,8 @@
         },
         "heritage": {
           "title": "Our Story",
-          "description": "50+ years of family tradition in beautiful Sitia",
-          "content": "Learn about our 50+ years of history, family values, and unwavering commitment to providing exceptional rental experiences in Crete.",
+          "description": "41+ years of family tradition in beautiful Sitia",
+          "content": "Learn about our 41+ years of history, family values, and unwavering commitment to providing exceptional rental experiences in Crete.",
           "button": "Learn Our Story"
         },
         "contact": {
@@ -320,7 +320,7 @@
         },
         "email": {
           "label": "Email",
-          "value": "info@petras-rentals.gr"
+          "value": "aspasiakounelaki@gmail.com"
         },
         "location": {
           "label": "Location",
@@ -490,7 +490,7 @@
         "viewFleet": "View Our Fleet"
       },
       "stats": {
-        "customers": "500+",
+        "customers": "100+",
         "customersLabel": "Happy Customers"
       }
     },
@@ -566,7 +566,7 @@
         },
         "email": {
           "title": "Email",
-          "value": "info@petras-rentals.gr"
+          "value": "aspasiakounelaki@gmail.com"
         },
         "location": {
           "title": "Location",
@@ -609,7 +609,7 @@
       "email": {
         "title": "Email",
         "description": "Send us a message",
-        "value": "info@petras-rentals.gr"
+        "value": "aspasiakounelaki@gmail.com"
       }
     },
     "form": {
@@ -643,7 +643,8 @@
         "send": "Send Message",
         "sending": "Sending..."
       },
-      "success": "Thank you for your message! We'll get back to you soon."
+      "success": "Thank you for your message! We'll get back to you soon.",
+      "error": "Sorry, there was an error sending your message. Please try again or contact us directly."
     },
     "office": {
       "title": {
@@ -661,7 +662,7 @@
       },
       "email": {
         "title": "Email",
-        "value": "info@petras-rentals.gr"
+        "value": "aspasiakounelaki@gmail.com"
       }
     },
     "hours": {
@@ -829,7 +830,7 @@
           "label": "Mobile, WhatsApp & Viber"
         },
         "email": {
-          "value": "info@petras-rentals.gr",
+          "value": "aspasiakounelaki@gmail.com",
           "label": "Get in Touch"
         },
         "landline": {

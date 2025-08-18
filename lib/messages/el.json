@@ -320,7 +320,7 @@
         },
         "email": {
           "label": "Email",
-          "value": "info@petras-rentals.gr"
+          "value": "aspasiakounelaki@gmail.com"
         },
         "location": {
           "label": "Τοποθεσία",
@@ -566,7 +566,7 @@
         },
         "email": {
           "title": "Email",
-          "value": "info@petras-rentals.gr"
+          "value": "aspasiakounelaki@gmail.com"
         },
         "location": {
           "title": "Τοποθεσία",
@@ -609,7 +609,7 @@
       "email": {
         "title": "Email",
         "description": "Στείλτε μας μήνυμα",
-        "value": "info@petras-rentals.gr"
+        "value": "aspasiakounelaki@gmail.com"
       }
     },
     "form": {
@@ -643,7 +643,8 @@
         "send": "Αποστολή Μηνύματος",
         "sending": "Αποστέλλεται..."
       },
-      "success": "Ευχαριστούμε για το μήνυμά σας! Θα επικοινωνήσουμε σύντομα."
+      "success": "Ευχαριστούμε για το μήνυμά σας! Θα επικοινωνήσουμε σύντομα.",
+      "error": "Λυπούμαστε, υπήρξε σφάλμα κατά την αποστολή του μηνύματός σας. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας απευθείας."
     },
     "office": {
       "title": {
@@ -661,7 +662,7 @@
       },
       "email": {
         "title": "Email",
-        "value": "info@petras-rentals.gr"
+        "value": "aspasiakounelaki@gmail.com"
       }
     },
     "hours": {
@@ -829,7 +830,7 @@
           "label": "Κινητό, WhatsApp & Viber"
         },
         "email": {
-          "value": "info@petras-rentals.gr",
+          "value": "aspasiakounelaki@gmail.com",
           "label": "Επικοινωνήστε"
         },
         "landline": {

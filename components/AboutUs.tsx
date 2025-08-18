@@ -249,7 +249,7 @@ export default function AboutUs() {
                     {t("cta.buttons.callNow")}
                   </Button>
                 </a>
-                <a href="mailto:info@petras-rentals.gr">
+                <a href="mailto:aspasiakounelaki@gmail.com">
                   <Button
                     variant="outline"
                     className="bg-white/10 border-white/20 text-white/90 hover:bg-white/20 hover:text-white px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"

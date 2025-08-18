@@ -29,7 +29,7 @@ const CONTACT_METHODS = [
   {
     icon: IoMail,
     key: "email",
-    action: "mailto:info@petras-rentals.gr",
+    action: "mailto:aspasiakounelaki@gmail.com",
     color: "from-purple-500 to-indigo-600",
   },
 ] as const;
@@ -55,12 +55,32 @@ export default function ContactUs() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      // Formsubmit.co - Works immediately, no signup needed!
+      const formData2 = new FormData();
+      formData2.append("name", formData.name);
+      formData2.append("email", formData.email);
+      formData2.append("phone", formData.phone || "Not provided");
+      formData2.append("subject", formData.subject);
+      formData2.append("message", formData.message);
 
-    setIsSubmitting(false);
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    alert(t("form.success"));
+      const response = await fetch("https://formsubmit.co/aspasiakounelaki@gmail.com", {
+        method: "POST",
+        body: formData2,
+      });
+
+      if (response.ok) {
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        alert(t("form.success"));
+      } else {
+        alert(t("form.error"));
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(t("form.error"));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
