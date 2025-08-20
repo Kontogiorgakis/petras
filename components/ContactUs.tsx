@@ -29,7 +29,7 @@ const CONTACT_METHODS = [
   {
     icon: IoMail,
     key: "email",
-    action: "mailto:manoskodos44@gmail.com",
+    action: "mailto:aspasiakounelaki@gmail.com",
     color: "from-purple-500 to-indigo-600",
   },
 ] as const;
